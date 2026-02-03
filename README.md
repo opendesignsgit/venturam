@@ -19,12 +19,14 @@ python3 -m http.server 8000
 ├── css/
 │   ├── base.css       # CSS resets, variables, and base styles
 │   ├── navbar.css     # Navbar styles and responsive behavior
-│   └── hero.css       # Hero section styles and responsive behavior
+│   ├── hero.css       # Hero section styles and responsive behavior
+│   └── scroll-collage.css # Scroll collage section styles and responsive behavior
 ├── js/
 │   └── navbar.js      # Navbar scroll detection and mobile menu logic
 └── assets/
     └── images/
-        └── hero-bg.jpg # Hero section background image
+        ├── hero-bg.jpg # Hero section background image
+        └── collage/    # Scroll collage images (placeholders needed)
 ```
 
 ## ✨ Features
@@ -42,11 +44,19 @@ python3 -m http.server 8000
 - **Dark Gradient Overlay**: Top and bottom gradient for better text readability
 - **Fully Responsive**: Adapts layout for mobile, tablet, and desktop
 
+### Scroll Collage Section (New!)
+- **Masonry Grid Layout**: 7-image grid in 3 rows (1 wide + 3 images + 3 images)
+- **Static Display**: No animations, transforms, or scroll effects (animation-ready structure)
+- **Project Showcase**: Displays "Medley's Nest" project with title and description
+- **Responsive Grid**: Adapts to mobile with stacked layout
+- **Placeholder Images**: Currently using gradient placeholders (ready for actual property images)
+
 ## 🎨 Design Implementation
 
 The implementation follows the pixel-perfect designs from:
 - `/nav-bar.png` - Navbar reference design
 - `/hero-section.png` - Hero section reference design
+- `/scroll-section-initial.png` - Scroll collage section reference design (static state)
 
 ### Color Palette
 - **Cream/Beige Text**: `#E8D5B7`
@@ -74,6 +84,15 @@ To replace with a clean background:
 1. Place the new image in `/assets/images/hero-bg.jpg`
 2. Ensure it's a high-resolution photo suitable for full-screen display
 3. The image should not contain any text overlays
+
+### Scroll Collage Images
+**NOTE**: The scroll collage section currently uses CSS gradient placeholders. For production, replace these with actual property images:
+1. Add images to `/assets/images/collage/`
+2. Update the HTML divs to use `<img>` tags instead of inline gradient styles
+3. Recommended images (based on reference):
+   - Top: Interior architectural detail (wide format)
+   - Middle: Living space, building exterior, corridor (3 images)
+   - Bottom: Entertainment room, fitness area, lounge (3 images)
 
 ## 🔧 Customization
 
