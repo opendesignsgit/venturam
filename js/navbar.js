@@ -8,6 +8,12 @@
     const mobileMenu = document.querySelector('.mobile-menu');
     const mobileMenuLinks = document.querySelectorAll('.mobile-menu .nav-link');
     
+    // Exit early if required elements don't exist
+    if (!navbar) {
+        console.warn('Navbar element not found');
+        return;
+    }
+    
     // Scroll handler for navbar background
     function handleScroll() {
         if (window.scrollY > 50) {
@@ -19,6 +25,8 @@
     
     // Mobile menu toggle
     function toggleMobileMenu() {
+        if (!navbarToggle || !mobileMenu) return;
+        
         navbarToggle.classList.toggle('active');
         mobileMenu.classList.toggle('active');
         // Prevent body scroll when menu is open
@@ -27,6 +35,8 @@
     
     // Close mobile menu
     function closeMobileMenu() {
+        if (!navbarToggle || !mobileMenu) return;
+        
         navbarToggle.classList.remove('active');
         mobileMenu.classList.remove('active');
         document.body.style.overflow = '';
@@ -40,9 +50,11 @@
     }
     
     // Close menu when clicking on a menu item
-    mobileMenuLinks.forEach(link => {
-        link.addEventListener('click', closeMobileMenu);
-    });
+    if (mobileMenuLinks.length > 0) {
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+    }
     
     // Initial check on page load
     handleScroll();
