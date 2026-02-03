@@ -21,3 +21,9 @@ node_modules/
 # Build outputs (if ever added in future)
 dist/
 build/
+
+# Test files
+test-*.html
+
+# Shell scripts used for generation
+*.sh
