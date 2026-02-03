@@ -1,0 +1,62 @@
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* CSS Variables */
+:root {
+    /* Colors */
+    --color-cream: #E8D5B7;
+    --color-dark-overlay: rgba(0, 0, 0, 0.3);
+    --color-navbar-solid: rgba(20, 60, 60, 0.95);
+    --color-white: #ffffff;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 4rem;
+    
+    /* Typography */
+    --font-size-nav: 0.875rem;
+    --font-size-hero-main: 4rem;
+    --font-size-hero-secondary: 3rem;
+    --font-size-hero-location: 1.5rem;
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s ease;
+}
+
+/* Typography helpers */
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+/* Remove default list styles */
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
