@@ -13,6 +13,9 @@
     left: 0;
     width: 100%;
     height: 100%;
+    /* NOTE: Replace with clean background image without text overlay */
+    /* The provided hero-section.png has text baked in, causing duplication */
+    /* Use a clean photo or this gradient background until proper image is provided */
     background-image: url('../assets/images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
