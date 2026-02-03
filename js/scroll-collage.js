@@ -78,8 +78,11 @@
             
             // Transform surrounding images - move outward
             surroundingImages.forEach((img, index) => {
-                const imageNumber = parseInt(img.classList[0].split('-')[2]);
-                const movement = config.outwardDistance[imageNumber];
+                // Extract image number from class name (e.g., 'collage-image-1' -> 1)
+                const classList = Array.from(img.classList);
+                const imageClass = classList.find(cls => cls.startsWith('collage-image-'));
+                const imageNumber = imageClass ? parseInt(imageClass.split('-')[2]) : null;
+                const movement = imageNumber ? config.outwardDistance[imageNumber] : null;
                 
                 if (movement) {
                     const x = movement.x * easedProgress;
@@ -119,19 +122,14 @@
         // Run once on load to set initial state
         updateAnimation();
         
-        // Handle window resize - reinitialize if needed
+        // Handle window resize - update animation
         let resizeTimer;
         window.addEventListener('resize', function() {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(function() {
-                const newIsMobile = window.innerWidth <= 768;
-                if (newIsMobile !== isMobile) {
-                    // Reload page if switching between mobile/desktop
-                    // This ensures proper state
-                    window.location.reload();
-                } else {
-                    updateAnimation();
-                }
+                // Simply update animation on resize
+                // The CSS media queries handle mobile vs desktop layout
+                updateAnimation();
             }, 250);
         });
     }
