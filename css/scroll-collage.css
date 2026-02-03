@@ -1,0 +1,252 @@
+/* Scroll Collage Section Styles */
+.scroll-collage {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #2a5555 0%, #1a4040 100%);
+    padding: 5rem 2rem 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Header Section */
+.scroll-collage-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    max-width: 700px;
+}
+
+.scroll-collage-subtitle {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(232, 213, 183, 0.7);
+    margin-bottom: 1rem;
+}
+
+.scroll-collage-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--color-cream);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+}
+
+.scroll-collage-description {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: rgba(232, 213, 183, 0.85);
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Image Grid Container */
+.scroll-collage-grid {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Grid Layout - Masonry Style */
+.grid-row {
+    display: flex;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.grid-row:last-child {
+    margin-bottom: 0;
+}
+
+/* Image Containers */
+.grid-image {
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.grid-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Top Row - Single Wide Image */
+.grid-row-top {
+    justify-content: center;
+}
+
+.grid-image-wide {
+    width: 100%;
+    height: 160px;
+}
+
+/* Middle Row - Three Images */
+.grid-row-middle {
+    justify-content: space-between;
+}
+
+.grid-image-left {
+    width: calc(28% - 0.5rem);
+    height: 240px;
+}
+
+.grid-image-center {
+    width: calc(44% - 0.5rem);
+    height: 240px;
+}
+
+.grid-image-right {
+    width: calc(28% - 0.5rem);
+    height: 240px;
+}
+
+/* Bottom Row - Three Images */
+.grid-row-bottom {
+    justify-content: space-between;
+}
+
+.grid-image-bottom-left,
+.grid-image-bottom-center,
+.grid-image-bottom-right {
+    width: calc(33.333% - 0.84rem);
+    height: 200px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .scroll-collage {
+        padding: 3rem 2rem;
+    }
+    
+    .scroll-collage-title {
+        font-size: 2rem;
+    }
+    
+    .scroll-collage-grid {
+        max-width: 750px;
+    }
+    
+    .grid-image-wide {
+        height: 150px;
+    }
+    
+    .grid-image-left,
+    .grid-image-right,
+    .grid-image-center {
+        height: 220px;
+    }
+    
+    .grid-image-bottom-left,
+    .grid-image-bottom-center,
+    .grid-image-bottom-right {
+        height: 180px;
+    }
+}
+
+@media (max-width: 968px) {
+    .scroll-collage {
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .scroll-collage-title {
+        font-size: 1.75rem;
+    }
+    
+    .scroll-collage-description {
+        font-size: 0.875rem;
+    }
+    
+    .grid-row {
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .grid-image-wide {
+        height: 120px;
+    }
+    
+    .grid-image-left,
+    .grid-image-right,
+    .grid-image-center {
+        height: 180px;
+    }
+    
+    .grid-image-bottom-left,
+    .grid-image-bottom-center,
+    .grid-image-bottom-right {
+        height: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .scroll-collage {
+        padding: 2rem 1rem;
+    }
+    
+    .scroll-collage-header {
+        margin-bottom: 2rem;
+    }
+    
+    .scroll-collage-title {
+        font-size: 1.5rem;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    
+    .scroll-collage-description {
+        font-size: 0.8rem;
+    }
+    
+    /* Stack images vertically on mobile */
+    .grid-row {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .grid-image-wide,
+    .grid-image-left,
+    .grid-image-right,
+    .grid-image-center,
+    .grid-image-bottom-left,
+    .grid-image-bottom-center,
+    .grid-image-bottom-right {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .scroll-collage-title {
+        font-size: 1.25rem;
+    }
+    
+    .scroll-collage-description {
+        font-size: 0.75rem;
+        line-height: 1.6;
+    }
+    
+    .grid-image-wide,
+    .grid-image-left,
+    .grid-image-right,
+    .grid-image-center,
+    .grid-image-bottom-left,
+    .grid-image-bottom-center,
+    .grid-image-bottom-right {
+        height: 150px;
+    }
+}
