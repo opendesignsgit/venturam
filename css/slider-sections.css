@@ -113,13 +113,7 @@
 }
 
 /* Show only first slide or active slide */
-.experience-slider-new .swiper-slide:first-child {
-    position: relative !important;
-    opacity: 1;
-    visibility: visible;
-    z-index: 1;
-}
-
+.experience-slider-new .swiper-slide:first-child,
 .experience-slider-new .swiper-slide-active {
     position: relative !important;
     opacity: 1;
@@ -394,13 +388,7 @@
     z-index: 0;
 }
 
-.why-choose-slider-new .swiper-slide:first-child {
-    position: relative !important;
-    opacity: 1;
-    visibility: visible;
-    z-index: 1;
-}
-
+.why-choose-slider-new .swiper-slide:first-child,
 .why-choose-slider-new .swiper-slide-active {
     position: relative !important;
     opacity: 1;
@@ -479,13 +467,7 @@
     z-index: 0;
 }
 
-.why-choose-text-slider .swiper-slide:first-child {
-    position: relative !important;
-    opacity: 1;
-    visibility: visible;
-    z-index: 1;
-}
-
+.why-choose-text-slider .swiper-slide:first-child,
 .why-choose-text-slider .swiper-slide-active {
     position: relative !important;
     opacity: 1;

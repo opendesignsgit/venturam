@@ -200,9 +200,9 @@
                 prevEl: '.why-choose-prev-new'
             },
             onSlideChange: function(current, prev) {
-                // Sync text slider
+                // Sync text slider - handle loop mode consistently
                 if (whyTextSlider) {
-                    whyTextSlider.slideTo(current);
+                    whyTextSlider.goTo(current);
                 }
                 // Update counter
                 const counterEl = document.querySelector('.counter-current');

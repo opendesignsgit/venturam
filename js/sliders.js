@@ -80,8 +80,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         on: {
             slideChange: function() {
-                // Sync text slider with image slider
-                whyChooseTextSlider.slideTo(this.realIndex);
+                // Sync text slider with image slider - use slideToLoop for loop mode
+                whyChooseTextSlider.slideToLoop(this.realIndex);
                 // Update counter
                 updateWhyChooseCounter(this.realIndex + 1);
             }
