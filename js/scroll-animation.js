@@ -7,6 +7,12 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Ensure GSAP is loaded
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+        console.warn('GSAP or ScrollTrigger not loaded. Scroll animation disabled.');
+        return;
+    }
+    
     // Register ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
     
