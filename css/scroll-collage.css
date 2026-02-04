@@ -18,14 +18,14 @@
     --scroll-collage-text-primary: #c9b896;
     --scroll-collage-text-secondary: #1a3a4a;
     --scroll-collage-text-muted: #a8c4b8;
-    --scroll-collage-scroll-space: 100vh; /* Extra scroll space for animation */
+    --scroll-collage-animation-distance: 100vh; /* Extra scroll distance for animation */
 }
 
 .scroll-collage-section {
     position: relative;
     width: 100%;
-    /* Total height = viewport + scroll space for animation */
-    min-height: calc(100vh + var(--scroll-collage-scroll-space));
+    /* Total height = viewport + animation distance for scroll progression */
+    min-height: calc(100vh + var(--scroll-collage-animation-distance));
     background: var(--scroll-collage-bg);
     overflow: hidden;
     z-index: 10;
@@ -38,11 +38,11 @@
     box-sizing: border-box;
 }
 
-/* Sticky container that holds all images */
+/* Sticky container that holds all images - pins during scroll */
 .scroll-collage-sticky {
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -431,12 +431,13 @@
 
 @media (max-width: 968px) {
     .scroll-collage-section {
-        min-height: 100vh;
+        /* On mobile, disable animation and show static layout */
+        --scroll-collage-animation-distance: 0;
     }
     
     .scroll-collage-sticky {
         position: relative;
-        min-height: 100vh;
+        height: auto;
         padding: 60px 0 80px;
     }
     

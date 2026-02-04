@@ -5,6 +5,7 @@
  * - Other images translate outward
  * - scrub: true for scroll-bound animation
  * - Reusable: Works with class .scroll-collage-section
+ * - Position-independent: Works regardless of where section is placed
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -23,10 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
     scrollSections.forEach(function(scrollSection) {
         initScrollCollage(scrollSection);
     });
-    
-    // Refresh ScrollTrigger after all animations are set up
-    // This ensures proper calculation regardless of section position
-    ScrollTrigger.refresh();
     
     /**
      * Initialize scroll animation for a single collage section
@@ -50,16 +47,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Create the main timeline with ScrollTrigger
-        // invalidateOnRefresh: true ensures animation recalculates when position changes
+        // Configuration is position-independent:
+        // - trigger: the section element
+        // - start: when section top enters viewport (not when it reaches top)
+        // - end: when section bottom leaves viewport bottom
+        // - pin: sticky container stays fixed while scrolling through section
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: scrollSection,
-                start: 'top top',
-                end: 'bottom bottom',
-                scrub: true,
-                pin: stickyContainer,
-                anticipatePin: 1,
-                invalidateOnRefresh: true  // Recalculate on refresh/resize
+                start: 'top top',      // Animation starts when section top hits viewport top
+                end: 'bottom bottom',  // Animation ends when section bottom hits viewport bottom
+                scrub: 1,              // Smooth scrubbing with slight easing
+                pin: stickyContainer,  // Pin the sticky container
+                pinSpacing: false,     // Don't add extra spacing (section already has height)
+                invalidateOnRefresh: true  // Recalculate on resize
             }
         });
         
