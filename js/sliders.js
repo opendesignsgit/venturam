@@ -5,6 +5,12 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     
+    // Check if Swiper is available
+    if (typeof Swiper === 'undefined') {
+        console.log('Swiper not available, vanilla-slider.js will handle sliders');
+        return;
+    }
+    
     // Voices of Partners Slider - Vertical with Fade Effect
     const voicesSlider = new Swiper('.voices-slider', {
         direction: 'vertical',
@@ -24,104 +30,100 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Venturam Experience Slider - Horizontal Cards
-    const experienceSlider = new Swiper('.experience-slider', {
-        slidesPerView: 1,
-        spaceBetween: 30,
+    // ============================================
+    // NEW Venturam Experience Slider - Full Width with Fade
+    // ============================================
+    const experienceSliderNew = new Swiper('.experience-slider-new', {
         effect: 'fade',
         fadeEffect: {
             crossFade: true
         },
-        speed: 500,
+        speed: 800,
         loop: true,
         autoplay: {
-            delay: 4000,
+            delay: 6000,
             disableOnInteraction: false,
         },
         navigation: {
-            nextEl: '.experience-next',
-            prevEl: '.experience-prev',
+            nextEl: '.experience-next-new',
+            prevEl: '.experience-prev-new',
+        }
+    });
+    
+    // ============================================
+    // NEW Why Clients Choose Us - Synced Sliders
+    // ============================================
+    const whyChooseTextSlider = new Swiper('.why-choose-text-slider', {
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
         },
-        breakpoints: {
-            640: {
-                slidesPerView: 2,
-                effect: 'slide',
-            },
-            968: {
-                slidesPerView: 3,
-                effect: 'slide',
-            },
-            1200: {
-                slidesPerView: 4,
-                effect: 'slide',
+        speed: 600,
+        loop: true,
+        allowTouchMove: false,
+    });
+    
+    const whyChooseImageSlider = new Swiper('.why-choose-slider-new', {
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        speed: 600,
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: '.why-choose-next-new',
+            prevEl: '.why-choose-prev-new',
+        },
+        on: {
+            slideChange: function() {
+                // Sync text slider with image slider - use slideToLoop for loop mode
+                whyChooseTextSlider.slideToLoop(this.realIndex);
+                // Update counter
+                updateWhyChooseCounter(this.realIndex + 1);
             }
         }
     });
     
-    // Why Clients Choose Us Slider
-    const whyChooseSlider = new Swiper('.why-choose-slider', {
+    // Update counter function
+    function updateWhyChooseCounter(current) {
+        const counterEl = document.querySelector('.counter-current');
+        if (counterEl) {
+            counterEl.textContent = current.toString().padStart(2, '0');
+        }
+    }
+    
+    // ============================================
+    // NEW Excellence Awards Slider
+    // ============================================
+    const awardsSliderNew = new Swiper('.awards-slider-new', {
         slidesPerView: 1,
         spaceBetween: 30,
-        effect: 'fade',
-        fadeEffect: {
-            crossFade: true
-        },
-        speed: 500,
+        speed: 600,
         loop: true,
         autoplay: {
             delay: 4500,
             disableOnInteraction: false,
         },
-        pagination: {
-            el: '.why-choose-pagination',
-            clickable: true,
-        },
         navigation: {
-            nextEl: '.why-choose-next',
-            prevEl: '.why-choose-prev',
+            nextEl: '.awards-next-new',
+            prevEl: '.awards-prev-new',
         },
         breakpoints: {
             640: {
-                slidesPerView: 2,
-                effect: 'slide',
+                slidesPerView: 1.5,
+                spaceBetween: 25,
             },
             968: {
-                slidesPerView: 3,
-                effect: 'slide',
-            }
-        }
-    });
-    
-    // Excellence Awards Slider
-    const awardsSlider = new Swiper('.awards-slider', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        effect: 'fade',
-        fadeEffect: {
-            crossFade: true
-        },
-        speed: 500,
-        loop: true,
-        autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-        },
-        navigation: {
-            nextEl: '.awards-next',
-            prevEl: '.awards-prev',
-        },
-        breakpoints: {
-            640: {
                 slidesPerView: 2,
-                effect: 'slide',
-            },
-            968: {
-                slidesPerView: 3,
-                effect: 'slide',
+                spaceBetween: 30,
             },
             1200: {
-                slidesPerView: 4,
-                effect: 'slide',
+                slidesPerView: 2.3,
+                spaceBetween: 35,
             }
         }
     });
