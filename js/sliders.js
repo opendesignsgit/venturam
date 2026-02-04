@@ -21,11 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
         navigation: {
             nextEl: '.voices-next',
             prevEl: '.voices-prev',
-        },
-        on: {
-            init: function() {
-                console.log('Voices slider initialized');
-            }
         }
     });
     
