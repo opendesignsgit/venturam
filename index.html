@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/scroll-sections.css">
+    <link rel="stylesheet" href="css/scroll-collage.css">
     <link rel="stylesheet" href="css/new-sections.css">
     <link rel="stylesheet" href="css/slider-sections.css">
     
@@ -132,6 +133,42 @@
             <div class="hero-text-right">
                 <h2 class="hero-subheadline">At<br>Medley's<br>Nest</h2>
                 <p class="hero-location">Pallavaram</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Scroll Collage Section - Reusable ScrollTrigger Animation -->
+    <section class="scroll-collage" id="scroll-collage">
+        <div class="scroll-collage-sticky">
+            <!-- Image Grid -->
+            <div class="scroll-collage-grid">
+                <!-- Top image - wide horizontal -->
+                <div class="scroll-collage-item scroll-item-top" data-direction="top">
+                    <img src="assets/images/gallery/gallery-1.jpg" alt="Luxury outdoor space">
+                </div>
+                
+                <!-- Middle row -->
+                <div class="scroll-collage-item scroll-item-left" data-direction="left">
+                    <img src="assets/images/gallery/gallery-2.jpg" alt="Sunset lounge">
+                </div>
+                
+                <!-- Center image - primary, scales up -->
+                <div class="scroll-collage-item scroll-item-center" data-direction="center">
+                    <img src="assets/images/gallery/gallery-3.jpg" alt="Relaxation area">
+                </div>
+                
+                <div class="scroll-collage-item scroll-item-right" data-direction="right">
+                    <img src="assets/images/gallery/gallery-4.jpg" alt="Pool area">
+                </div>
+                
+                <!-- Bottom row -->
+                <div class="scroll-collage-item scroll-item-bottom-left" data-direction="bottom-left">
+                    <img src="assets/images/gallery/gallery-5.jpg" alt="Modern terrace">
+                </div>
+                
+                <div class="scroll-collage-item scroll-item-bottom-right" data-direction="bottom-right">
+                    <img src="assets/images/gallery/gallery-6.jpg" alt="Luxury villa">
+                </div>
             </div>
         </div>
     </section>
@@ -944,8 +981,10 @@
     
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Scroll animation uses vanilla JS implementation (GSAP optional) -->
     <script src="js/vanilla-slider.js"></script>
     <script src="js/navbar.js"></script>
     <script src="js/sliders.js"></script>
+    <script src="js/scroll-collage.js"></script>
 </body>
 </html>
