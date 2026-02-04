@@ -1,0 +1,270 @@
+/* ============================================
+   Scroll Collage Section - Reusable ScrollTrigger Animation
+   ============================================ */
+
+/* Main section container - provides scroll space */
+#scroll-collage {
+    position: relative;
+    width: 100%;
+    height: 200vh; /* Scroll space for animation */
+    background-color: #0d1b2a; /* Dark navy background */
+    overflow: hidden;
+    z-index: 10;
+}
+
+/* Sticky container - holds all images and stays in viewport */
+.scroll-collage-container {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Image grid wrapper */
+.collage-grid {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 700px;
+    margin: 0 auto;
+}
+
+/* Base styles for all collage images */
+.collage-item {
+    position: absolute;
+    overflow: hidden;
+    will-change: transform;
+    background: #1a2d3d;
+}
+
+.collage-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ============================================
+   Initial Grid Layout Positions
+   ============================================ */
+
+/* Top center - wide image */
+.collage-item-1 {
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 520px;
+    height: 170px;
+    z-index: 1;
+}
+
+/* Middle left */
+.collage-item-2 {
+    top: 35%;
+    left: 12%;
+    width: 220px;
+    height: 220px;
+    z-index: 2;
+}
+
+/* Center - main image that scales (building/main visual) */
+.collage-item-3 {
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    width: 460px;
+    height: 320px;
+    z-index: 10; /* Highest z-index for center image */
+}
+
+/* Middle right */
+.collage-item-4 {
+    top: 35%;
+    right: 12%;
+    width: 220px;
+    height: 220px;
+    z-index: 2;
+}
+
+/* Bottom left */
+.collage-item-5 {
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(calc(-100% - 10px));
+    width: 260px;
+    height: 180px;
+    z-index: 1;
+}
+
+/* Bottom right */
+.collage-item-6 {
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(10px);
+    width: 260px;
+    height: 180px;
+    z-index: 1;
+}
+
+/* ============================================
+   Responsive Design - Tablet
+   ============================================ */
+@media (max-width: 1200px) {
+    .collage-grid {
+        max-width: 900px;
+        height: 600px;
+    }
+    
+    .collage-item-1 {
+        width: 420px;
+        height: 140px;
+    }
+    
+    .collage-item-2,
+    .collage-item-4 {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .collage-item-3 {
+        width: 380px;
+        height: 260px;
+    }
+    
+    .collage-item-5,
+    .collage-item-6 {
+        width: 210px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 968px) {
+    #scroll-collage {
+        height: 180vh;
+    }
+    
+    .collage-grid {
+        max-width: 700px;
+        height: 500px;
+        padding: 0 20px;
+    }
+    
+    .collage-item-1 {
+        width: 340px;
+        height: 110px;
+    }
+    
+    .collage-item-2,
+    .collage-item-4 {
+        width: 140px;
+        height: 140px;
+        left: 5%;
+    }
+    
+    .collage-item-4 {
+        left: auto;
+        right: 5%;
+    }
+    
+    .collage-item-3 {
+        width: 300px;
+        height: 210px;
+    }
+    
+    .collage-item-5,
+    .collage-item-6 {
+        width: 160px;
+        height: 120px;
+    }
+}
+
+/* ============================================
+   Responsive Design - Mobile
+   ============================================ */
+@media (max-width: 768px) {
+    #scroll-collage {
+        height: 150vh;
+    }
+    
+    .collage-grid {
+        max-width: 100%;
+        height: 450px;
+        padding: 0 15px;
+    }
+    
+    .collage-item-1 {
+        width: 280px;
+        height: 90px;
+    }
+    
+    .collage-item-2,
+    .collage-item-4 {
+        width: 110px;
+        height: 110px;
+        left: 3%;
+    }
+    
+    .collage-item-4 {
+        left: auto;
+        right: 3%;
+    }
+    
+    .collage-item-3 {
+        width: 240px;
+        height: 170px;
+    }
+    
+    .collage-item-5,
+    .collage-item-6 {
+        width: 130px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    #scroll-collage {
+        height: 120vh;
+    }
+    
+    .collage-grid {
+        height: 380px;
+    }
+    
+    .collage-item-1 {
+        width: 200px;
+        height: 70px;
+        top: 5%;
+    }
+    
+    .collage-item-2,
+    .collage-item-4 {
+        width: 80px;
+        height: 80px;
+        top: 40%;
+    }
+    
+    .collage-item-3 {
+        width: 180px;
+        height: 130px;
+        top: 35%;
+    }
+    
+    .collage-item-5,
+    .collage-item-6 {
+        width: 100px;
+        height: 80px;
+        bottom: 5%;
+    }
+    
+    .collage-item-5 {
+        transform: translateX(calc(-100% - 5px));
+    }
+    
+    .collage-item-6 {
+        transform: translateX(5px);
+    }
+}
