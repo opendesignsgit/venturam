@@ -17,6 +17,8 @@ Thumbs.db
 
 # Node modules (if ever added in future)
 node_modules/
+package.json
+package-lock.json
 
 # Build outputs (if ever added in future)
 dist/

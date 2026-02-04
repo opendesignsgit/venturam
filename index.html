@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/scroll-collage.css">
     <link rel="stylesheet" href="css/scroll-sections.css">
     <link rel="stylesheet" href="css/new-sections.css">
     <link rel="stylesheet" href="css/slider-sections.css">
@@ -136,22 +137,22 @@
         </div>
     </section>
     
-    <!-- Our Current Project Section -->
-    <section class="project-section" id="projects">
-        <div class="project-section-content">
-            <!-- Header -->
-            <div class="project-header">
-                <p class="project-label">Our Current Project</p>
-                <div class="project-title-row">
-                    <h2 class="project-title">Medley's Nest</h2>
-                    <div class="project-location">
+    <!-- Scroll Collage Section - Combines Project and Elevating sections with scroll animation -->
+    <section id="scroll-collage" class="scroll-collage-section">
+        <div class="scroll-collage-sticky">
+            <!-- Header content - fades out on scroll -->
+            <div class="scroll-collage-header">
+                <p class="scroll-collage-label">Our Current Project</p>
+                <div class="scroll-collage-title-row">
+                    <h2 class="scroll-collage-title">Medley's Nest</h2>
+                    <div class="scroll-collage-location">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                         </svg>
                         <span>Pallavaram</span>
                     </div>
                 </div>
-                <p class="project-description">
+                <p class="scroll-collage-description">
                     Medley's Nest at Pallavaram is an ultra-luxury residential enclave
                     offering refined design, thoughtful spaces and elevated living. Strategically
                     located for seamless connectivity, comfort and long-term value
@@ -159,86 +160,84 @@
                 </p>
             </div>
             
-            <!-- Image Gallery -->
-            <div class="project-gallery">
-                <div class="gallery-grid">
-                    <div class="gallery-item gallery-item-1">
-                        <img src="assets/medleys-nest-01.png" alt="Luxury lobby interior">
-                    </div>
-                    <div class="gallery-item gallery-item-2">
-                        <img src="assets/medleys-nest-02.png" alt="Modern living room">
-                    </div>
-                    <div class="gallery-item gallery-item-3">
-                        <img src="assets/medleys-nest-03.png" alt="Building exterior">
-                    </div>
-                    <div class="gallery-item gallery-item-4">
-                        <img src="assets/medleys-nest-04.png" alt="Elegant hallway">
-                    </div>
-                    <div class="gallery-item gallery-item-5">
-                        <img src="assets/medleys-nest-05.png" alt="Entertainment room">
-                    </div>
-                    <div class="gallery-item gallery-item-6">
-                        <img src="assets/medleys-nest-06.png" alt="Living space">
-                    </div>
+            <!-- Image Gallery - animates on scroll -->
+            <div class="scroll-collage-gallery">
+                <!-- Top wide image -->
+                <div class="collage-item collage-top">
+                    <img src="assets/medleys-nest-01.png" alt="Luxury lobby interior">
                 </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Elevating Modern Living Section -->
-    <section class="elevating-section" id="medleys">
-        <!-- Background image -->
-        <div class="elevating-background"></div>
-        
-        <!-- Content -->
-        <div class="elevating-content">
-            <!-- Top Section -->
-            <div class="elevating-top">
-                <h2 class="elevating-title">Medley's Nest</h2>
-                
-                <!-- Stats Row -->
-                <div class="elevating-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">141</div>
-                        <div class="stat-label">Exclusive<br>Apartments</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">2<span>&</span>3</div>
-                        <div class="stat-label">BHK<br>Homes</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">40+</div>
-                        <div class="stat-label">World Class<br>Amenities</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">4+</div>
-                        <div class="stat-label">Signature<br>Floors</div>
-                    </div>
+                <!-- Left image -->
+                <div class="collage-item collage-left">
+                    <img src="assets/medleys-nest-02.png" alt="Modern living room">
                 </div>
-                
-                <!-- Location -->
-                <div class="elevating-location">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                    </svg>
-                    <span>Pallavaram</span>
+                <!-- Center image - scales to fill -->
+                <div class="collage-item collage-center">
+                    <img src="assets/medleys-nest-03.png" alt="Building exterior">
+                </div>
+                <!-- Right image -->
+                <div class="collage-item collage-right">
+                    <img src="assets/medleys-nest-04.png" alt="Elegant hallway">
+                </div>
+                <!-- Bottom left image -->
+                <div class="collage-item collage-bottom-left">
+                    <img src="assets/medleys-nest-05.png" alt="Entertainment room">
+                </div>
+                <!-- Bottom right image -->
+                <div class="collage-item collage-bottom-right">
+                    <img src="assets/medleys-nest-06.png" alt="Living space">
                 </div>
             </div>
             
-            <!-- Bottom Section -->
-            <div class="elevating-bottom">
-                <h3 class="elevating-headline">Elevating<br>Modern Living</h3>
-                <p class="elevating-description">
-                    Medley's Nest project offers four thoughtfully designed apartment
-                    variants, each blending contemporary architecture, functional layouts and
-                    premium finishes to suit diverse lifestyles while ensuring comfort,
-                    elegance and long-term value
-                </p>
+            <!-- Elevating content - fades in on scroll -->
+            <div class="scroll-collage-elevating" id="medleys">
+                <!-- Top Section -->
+                <div class="elevating-top-content">
+                    <h2 class="elevating-title-scroll">Medley's Nest</h2>
+                    
+                    <!-- Stats Row -->
+                    <div class="elevating-stats-scroll">
+                        <div class="stat-item-scroll">
+                            <div class="stat-number-scroll">141</div>
+                            <div class="stat-label-scroll">Exclusive<br>Apartments</div>
+                        </div>
+                        <div class="stat-item-scroll">
+                            <div class="stat-number-scroll">2<span>&</span>3</div>
+                            <div class="stat-label-scroll">BHK<br>Homes</div>
+                        </div>
+                        <div class="stat-item-scroll">
+                            <div class="stat-number-scroll">40+</div>
+                            <div class="stat-label-scroll">World Class<br>Amenities</div>
+                        </div>
+                        <div class="stat-item-scroll">
+                            <div class="stat-number-scroll">4+</div>
+                            <div class="stat-label-scroll">Signature<br>Floors</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Location -->
+                    <div class="elevating-location-scroll">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        <span>Pallavaram</span>
+                    </div>
+                </div>
                 
-                <!-- CTA Buttons -->
-                <div class="elevating-buttons">
-                    <a href="#contact" class="btn-primary">Book a Site Visit</a>
-                    <a href="#about" class="btn-secondary">See More Details</a>
+                <!-- Bottom Section -->
+                <div class="elevating-bottom-content">
+                    <h3 class="elevating-headline-scroll">Elevating<br>Modern Living</h3>
+                    <p class="elevating-description-scroll">
+                        Medley's Nest project offers four thoughtfully designed apartment
+                        variants, each blending contemporary architecture, functional layouts and
+                        premium finishes to suit diverse lifestyles while ensuring comfort,
+                        elegance and long-term value
+                    </p>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="elevating-buttons-scroll">
+                        <a href="#contact" class="btn-primary-scroll">Book a Site Visit</a>
+                        <a href="#about" class="btn-secondary-scroll">See More Details</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -943,9 +942,13 @@
     </footer>
     
     <!-- JavaScript -->
+    <!-- GSAP and ScrollTrigger -->
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/vanilla-slider.js"></script>
     <script src="js/navbar.js"></script>
     <script src="js/sliders.js"></script>
+    <script src="js/scroll-animation.js"></script>
 </body>
 </html>

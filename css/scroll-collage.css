@@ -1,0 +1,568 @@
+/* ============================================
+   Scroll Collage Section
+   - Scroll-triggered animation with GSAP
+   - Center image scales, others translate outward
+   ============================================ */
+
+#scroll-collage {
+    position: relative;
+    width: 100%;
+    height: 200vh; /* Creates scroll space for animation */
+    background: linear-gradient(
+        135deg,
+        #1a4a3d 0%,
+        #2d5a4a 30%,
+        #1f5545 50%,
+        #234d3f 70%,
+        #1a4a3d 100%
+    );
+    overflow: hidden;
+    z-index: 10;
+}
+
+/* Sticky container that holds all images */
+.scroll-collage-sticky {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Header content - fades out on scroll */
+.scroll-collage-header {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 0 40px;
+    z-index: 20;
+    max-width: 1200px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scroll-collage-label {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #c9b896;
+    margin-bottom: 10px;
+}
+
+.scroll-collage-title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.scroll-collage-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: #c9b896;
+    margin: 0;
+}
+
+.scroll-collage-location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #1a3a4a;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.scroll-collage-location svg {
+    width: 20px;
+    height: 20px;
+    fill: #1a3a4a;
+}
+
+.scroll-collage-description {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #a8c4b8;
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+/* Image Gallery Container */
+.scroll-collage-gallery {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    width: 100%;
+    max-width: 1000px;
+    height: 580px;
+}
+
+/* Individual collage images */
+.collage-item {
+    position: absolute;
+    overflow: hidden;
+    background: #2d5a4a;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    will-change: transform, opacity;
+}
+
+.collage-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Top wide image */
+.collage-top {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 560px;
+    height: 140px;
+    z-index: 1;
+}
+
+/* Left image */
+.collage-left {
+    top: 160px;
+    left: 0;
+    width: 240px;
+    height: 200px;
+    z-index: 1;
+}
+
+/* Center image - scales to fill */
+.collage-center {
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 380px;
+    height: 260px;
+    z-index: 5;
+    transform-origin: center center;
+}
+
+/* Right image */
+.collage-right {
+    top: 160px;
+    right: 0;
+    width: 240px;
+    height: 200px;
+    z-index: 1;
+}
+
+/* Bottom left image */
+.collage-bottom-left {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(calc(-100% - 5px));
+    width: 220px;
+    height: 160px;
+    z-index: 1;
+}
+
+/* Bottom right image */
+.collage-bottom-right {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(5px);
+    width: 220px;
+    height: 160px;
+    z-index: 1;
+}
+
+/* Elevating content overlay - fades in on scroll */
+.scroll-collage-elevating {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 40px 80px;
+    z-index: 15;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.scroll-collage-elevating.visible {
+    pointer-events: auto;
+}
+
+/* Gradient overlays for elevating state */
+.scroll-collage-elevating::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(
+        to bottom,
+        rgba(135, 190, 220, 0.3) 0%,
+        transparent 100%
+    );
+    z-index: -1;
+    pointer-events: none;
+}
+
+.scroll-collage-elevating::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(
+        to top,
+        rgba(0, 40, 30, 0.7) 0%,
+        rgba(0, 40, 30, 0.4) 40%,
+        transparent 100%
+    );
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Elevating top section */
+.elevating-top-content {
+    text-align: center;
+}
+
+.elevating-title-scroll {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: #1a3a4a;
+    margin: 0 0 40px;
+}
+
+/* Stats row */
+.elevating-stats-scroll {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 30px;
+}
+
+.stat-item-scroll {
+    text-align: center;
+    padding: 0 30px;
+    border-right: 1px solid rgba(26, 58, 74, 0.3);
+}
+
+.stat-item-scroll:last-child {
+    border-right: none;
+}
+
+.stat-number-scroll {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #1a3a4a;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.stat-number-scroll span {
+    font-size: 1.5rem;
+}
+
+.stat-label-scroll {
+    font-family: Arial, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #1a3a4a;
+    line-height: 1.4;
+}
+
+/* Location badge */
+.elevating-location-scroll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #1a3a4a;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.elevating-location-scroll svg {
+    width: 24px;
+    height: 24px;
+    fill: #1a3a4a;
+}
+
+/* Bottom section */
+.elevating-bottom-content {
+    text-align: center;
+    max-width: 800px;
+}
+
+.elevating-headline-scroll {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0.05em;
+    color: #f5f0e8;
+    text-transform: uppercase;
+    margin: 0 0 25px;
+}
+
+.elevating-description-scroll {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: rgba(245, 240, 232, 0.9);
+    margin-bottom: 35px;
+}
+
+/* CTA Buttons */
+.elevating-buttons-scroll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-primary-scroll,
+.btn-secondary-scroll {
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 16px 35px;
+    border: 1px solid #c9b896;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    color: #c9b896;
+    text-decoration: none;
+}
+
+.btn-primary-scroll:hover,
+.btn-secondary-scroll:hover {
+    background-color: #c9b896;
+    color: #1a3a4a;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 1200px) {
+    .scroll-collage-title {
+        font-size: 3rem;
+    }
+    
+    .scroll-collage-gallery {
+        height: 500px;
+        max-width: 900px;
+    }
+    
+    .collage-top {
+        width: 480px;
+        height: 120px;
+    }
+    
+    .collage-left,
+    .collage-right {
+        width: 200px;
+        height: 170px;
+    }
+    
+    .collage-center {
+        width: 320px;
+        height: 220px;
+    }
+    
+    .collage-bottom-left,
+    .collage-bottom-right {
+        width: 180px;
+        height: 140px;
+    }
+    
+    .elevating-title-scroll {
+        font-size: 2.5rem;
+    }
+    
+    .elevating-headline-scroll {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 968px) {
+    #scroll-collage {
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .scroll-collage-sticky {
+        position: relative;
+        height: auto;
+        min-height: 100vh;
+        padding: 60px 0 80px;
+    }
+    
+    .scroll-collage-header {
+        position: relative;
+        top: auto;
+        transform: none;
+        left: 0;
+        padding: 0 30px;
+        margin-bottom: 40px;
+    }
+    
+    .scroll-collage-title-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .scroll-collage-title {
+        font-size: 2.5rem;
+    }
+    
+    .scroll-collage-location {
+        font-size: 1.25rem;
+    }
+    
+    .scroll-collage-gallery {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .collage-item {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        height: 200px !important;
+    }
+    
+    .scroll-collage-elevating {
+        display: none;
+    }
+    
+    .elevating-stats-scroll {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .stat-item-scroll {
+        padding: 0 20px;
+        border-right: none;
+    }
+    
+    .stat-number-scroll {
+        font-size: 2rem;
+    }
+    
+    .elevating-title-scroll {
+        font-size: 2rem;
+    }
+    
+    .elevating-headline-scroll {
+        font-size: 2.5rem;
+    }
+    
+    .elevating-buttons-scroll {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .btn-primary-scroll,
+    .btn-secondary-scroll {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .scroll-collage-header {
+        padding: 0 20px;
+    }
+    
+    .scroll-collage-title {
+        font-size: 2rem;
+    }
+    
+    .scroll-collage-description {
+        font-size: 0.85rem;
+    }
+    
+    .elevating-title-scroll {
+        font-size: 1.75rem;
+    }
+    
+    .elevating-headline-scroll {
+        font-size: 2rem;
+    }
+    
+    .elevating-description-scroll {
+        font-size: 0.875rem;
+    }
+    
+    .stat-number-scroll {
+        font-size: 1.75rem;
+    }
+    
+    .stat-label-scroll {
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .scroll-collage-title {
+        font-size: 1.75rem;
+    }
+    
+    .scroll-collage-location {
+        font-size: 1rem;
+    }
+    
+    .elevating-title-scroll {
+        font-size: 1.5rem;
+    }
+    
+    .elevating-headline-scroll {
+        font-size: 1.75rem;
+    }
+    
+    .elevating-location-scroll {
+        font-size: 1.25rem;
+    }
+}
