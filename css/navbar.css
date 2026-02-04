@@ -207,15 +207,14 @@
 /* Mega Menu Styles */
 .mega-menu {
     position: fixed;
-    top: 80px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 900px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
     background-color: var(--color-navbar-solid);
-    border-radius: 12px;
-    padding: 2rem;
-    z-index: 998;
+    border-radius: 0 0 12px 12px;
+    padding: 7rem 2rem 2rem 2rem;
+    z-index: 999;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -231,6 +230,8 @@
     display: flex;
     align-items: stretch;
     gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .mega-menu-links {
