@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/scroll-collage.css">
     <link rel="stylesheet" href="css/scroll-sections.css">
     <link rel="stylesheet" href="css/new-sections.css">
     <link rel="stylesheet" href="css/slider-sections.css">
@@ -132,6 +133,43 @@
             <div class="hero-text-right">
                 <h2 class="hero-subheadline">At<br>Medley's<br>Nest</h2>
                 <p class="hero-location">Pallavaram</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Scroll Collage Section - Reusable ScrollTrigger Animation -->
+    <section id="scroll-collage">
+        <div class="scroll-collage-container">
+            <div class="collage-grid">
+                <!-- Top center - wide image -->
+                <div class="collage-item collage-item-1">
+                    <img src="assets/images/gallery/gallery-1.jpg" alt="Luxury outdoor terrace">
+                </div>
+                
+                <!-- Middle left -->
+                <div class="collage-item collage-item-2">
+                    <img src="assets/images/gallery/gallery-2.jpg" alt="Sunset poolside lounge">
+                </div>
+                
+                <!-- Center - main image (scales on scroll) -->
+                <div class="collage-item collage-item-3">
+                    <img src="assets/images/gallery/gallery-3.jpg" alt="Relaxation deck">
+                </div>
+                
+                <!-- Middle right -->
+                <div class="collage-item collage-item-4">
+                    <img src="assets/images/gallery/gallery-4.jpg" alt="Infinity pool">
+                </div>
+                
+                <!-- Bottom left -->
+                <div class="collage-item collage-item-5">
+                    <img src="assets/images/gallery/gallery-5.jpg" alt="Modern balcony">
+                </div>
+                
+                <!-- Bottom right -->
+                <div class="collage-item collage-item-6">
+                    <img src="assets/images/gallery/gallery-6.jpg" alt="Luxury villa exterior">
+                </div>
             </div>
         </div>
     </section>
@@ -943,9 +981,12 @@
     </footer>
     
     <!-- JavaScript -->
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/vanilla-slider.js"></script>
     <script src="js/navbar.js"></script>
     <script src="js/sliders.js"></script>
+    <script src="js/scroll-animation.js"></script>
 </body>
 </html>
