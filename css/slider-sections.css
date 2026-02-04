@@ -358,7 +358,7 @@
 /* Content Grid - Image takes left ~55%, content takes right ~45% */
 .why-choose-content-grid {
     display: grid;
-    grid-template-columns: 55% 45%;
+    grid-template-columns: 11fr 9fr;
     gap: 0;
     align-items: start;
 }
