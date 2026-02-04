@@ -89,20 +89,21 @@
 
 .experience-slider-new {
     width: 100%;
-    height: 100%;
+    height: 700px;
     position: relative;
     overflow: hidden;
 }
 
 .experience-slider-new .swiper-wrapper {
     position: relative;
-    height: 700px;
+    width: 100%;
+    height: 100%;
 }
 
 /* 
  * Fade effect CSS for vanilla slider fallback only
  * When Swiper.js is loaded, it handles fade transitions natively
- * The vanilla slider uses swiper-slide-active class for visibility
+ * All slides are positioned absolutely within the wrapper for smooth fade transitions
  */
 
 /* Base styles for slides */
@@ -111,21 +112,23 @@
     height: 100%;
 }
 
-/* Vanilla slider fallback: hide non-active slides when Swiper is NOT initialized */
+/* Vanilla slider fallback: ALL slides positioned absolutely for fade effect */
 .experience-slider-new:not(.swiper-initialized) .swiper-slide {
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
+    position: absolute !important;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
     transition: opacity 0.8s ease, visibility 0.8s ease;
+    z-index: 0;
 }
 
 /* Vanilla slider fallback: show active slide */
 .experience-slider-new:not(.swiper-initialized) .swiper-slide-active {
     opacity: 1;
     visibility: visible;
-    position: relative;
     z-index: 1;
 }
 
@@ -382,16 +385,19 @@
     width: 100%;
     overflow: hidden;
     position: relative;
+    height: 580px;
 }
 
 .why-choose-slider-new .swiper-wrapper {
     position: relative;
-    height: 580px;
+    width: 100%;
+    height: 100%;
 }
 
 /* 
  * Fade effect CSS for vanilla slider fallback only
  * When Swiper.js is loaded, it handles fade transitions natively
+ * All slides are positioned absolutely within the wrapper for smooth fade transitions
  */
 
 /* Base styles for slides */
@@ -400,21 +406,23 @@
     height: 100%;
 }
 
-/* Vanilla slider fallback: hide non-active slides when Swiper is NOT initialized */
+/* Vanilla slider fallback: ALL slides positioned absolutely for fade effect */
 .why-choose-slider-new:not(.swiper-initialized) .swiper-slide {
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
+    position: absolute !important;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
     transition: opacity 0.6s ease, visibility 0.6s ease;
+    z-index: 0;
 }
 
 /* Vanilla slider fallback: show active slide */
 .why-choose-slider-new:not(.swiper-initialized) .swiper-slide-active {
     opacity: 1;
     visibility: visible;
-    position: relative;
     z-index: 1;
 }
 
@@ -476,37 +484,44 @@
     margin-bottom: 50px;
     position: relative;
     min-height: 280px;
+    height: 280px;
 }
 
 .why-choose-text-slider .swiper-wrapper {
     position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 /* 
  * Fade effect CSS for vanilla slider fallback only
  * When Swiper.js is loaded, it handles fade transitions natively
+ * All slides are positioned absolutely within the wrapper for smooth fade transitions
  */
 
 /* Base styles for slides */
 .why-choose-text-slider .swiper-slide {
     width: 100%;
+    height: 100%;
 }
 
-/* Vanilla slider fallback: hide non-active slides when Swiper is NOT initialized */
+/* Vanilla slider fallback: ALL slides positioned absolutely for fade effect */
 .why-choose-text-slider:not(.swiper-initialized) .swiper-slide {
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
+    position: absolute !important;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
     transition: opacity 0.6s ease, visibility 0.6s ease;
+    z-index: 0;
 }
 
 /* Vanilla slider fallback: show active slide */
 .why-choose-text-slider:not(.swiper-initialized) .swiper-slide-active {
     opacity: 1;
     visibility: visible;
-    position: relative;
     z-index: 1;
 }
 

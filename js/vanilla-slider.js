@@ -54,10 +54,13 @@
                 }
                 
                 if (isFade) {
-                    slide.style.position = index === 0 ? 'relative' : 'absolute';
+                    // For fade effect: ALL slides stay position: absolute
+                    // Only opacity/visibility changes - no position switching
+                    slide.style.position = 'absolute';
                     slide.style.top = '0';
                     slide.style.left = '0';
                     slide.style.width = '100%';
+                    slide.style.height = '100%';
                     slide.style.opacity = index === 0 ? '1' : '0';
                     slide.style.visibility = index === 0 ? 'visible' : 'hidden';
                     slide.style.transition = `opacity ${this.options.speed}ms ease, visibility ${this.options.speed}ms ease`;
@@ -67,6 +70,8 @@
             
             if (isFade) {
                 this.wrapper.style.position = 'relative';
+                this.wrapper.style.width = '100%';
+                this.wrapper.style.height = '100%';
             }
             
             this.container.style.overflow = 'hidden';
@@ -115,11 +120,10 @@
                         slide.classList.remove('swiper-slide-active');
                     }
                     
-                    // Update inline styles
+                    // Update inline styles - NO position change, all slides stay absolute
                     slide.style.opacity = isActive ? '1' : '0';
                     slide.style.visibility = isActive ? 'visible' : 'hidden';
                     slide.style.zIndex = isActive ? '1' : '0';
-                    slide.style.position = isActive ? 'relative' : 'absolute';
                 });
             } else {
                 // Slide effect - also update active class
