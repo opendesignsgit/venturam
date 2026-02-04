@@ -82,7 +82,7 @@
             scrollTrigger: {
                 trigger: projectSection,
                 start: 'top top',
-                end: '+=100%', // Animation takes 100% of viewport height
+                end: '+=100%', // Animation extends 100% of the trigger element's height
                 scrub: 0.5, // Smooth scrubbing (lower = more responsive)
                 pin: true, // Pin the section during animation
                 anticipatePin: 1,

@@ -24,6 +24,7 @@
         #1a4a3d 100%
     );
     padding: 80px 0 100px;
+    /* overflow visible required for GSAP ScrollTrigger pin-spacer */
     overflow: visible;
     z-index: 10;
     display: flex;
@@ -135,7 +136,8 @@
     background: #2d5a4a;
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
     will-change: transform, opacity;
-    transition: none; /* Disable CSS transitions - GSAP handles animation */
+    /* Disable CSS transitions for GSAP animation control */
+    transition: transform 0s, opacity 0s !important;
 }
 
 .gallery-item img {
