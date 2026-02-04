@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 80px 0 40px;
+    padding: 60px 0 40px;
     overflow: hidden;
 }
 
@@ -31,7 +31,7 @@
     background-image: url('../assets/images/crafting-bg-right.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.3;
+    opacity: 0.25;
     pointer-events: none;
     z-index: 1;
 }
@@ -45,8 +45,8 @@
     height: 100%;
     background: linear-gradient(
         to right,
-        #1a4a3d 0%,
-        rgba(26, 74, 61, 0.85) 30%,
+        rgba(26, 74, 61, 1) 0%,
+        rgba(26, 74, 61, 0.9) 20%,
         rgba(26, 74, 61, 0.7) 100%
     );
     pointer-events: none;
@@ -59,9 +59,10 @@
     margin: 0 auto;
     padding: 0 60px;
     display: grid;
-    grid-template-columns: 55% 45%;
-    gap: 40px;
+    grid-template-columns: 50% 50%;
+    gap: 60px;
     z-index: 5;
+    flex-grow: 1;
 }
 
 /* Left Column */
@@ -106,12 +107,23 @@
 .crafting-bottom-stats {
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     max-width: 1400px;
-    margin: 40px auto 0;
-    padding: 30px 60px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 60px 20px;
     z-index: 5;
+}
+
+.crafting-bottom-stats .crafting-stat {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+}
+
+.crafting-bottom-stats .crafting-stat-number {
+    font-size: 3rem;
 }
 
 .crafting-stat {
