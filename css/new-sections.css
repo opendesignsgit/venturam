@@ -1,0 +1,974 @@
+/* ============================================
+   Hero Section Continuation: Crafting Spaces with Purpose
+   ============================================ */
+.crafting-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #1a4a3d 0%,
+        #2d5a4a 30%,
+        #1f5545 50%,
+        #234d3f 70%,
+        #1a4a3d 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 0 40px;
+    overflow: hidden;
+}
+
+/* Right side background image overlay */
+.crafting-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-image: url('../assets/images/crafting-bg-right.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.crafting-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        #1a4a3d 0%,
+        rgba(26, 74, 61, 0.85) 30%,
+        rgba(26, 74, 61, 0.7) 100%
+    );
+    pointer-events: none;
+    z-index: 2;
+}
+
+.crafting-container {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px;
+    display: grid;
+    grid-template-columns: 55% 45%;
+    gap: 40px;
+    z-index: 5;
+}
+
+/* Left Column */
+.crafting-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.crafting-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    color: #c9b896;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.crafting-image-container {
+    position: relative;
+    width: 100%;
+    flex-grow: 1;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.crafting-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.crafting-left-stats {
+    display: flex;
+    gap: 60px;
+    padding: 30px 0;
+    margin-top: auto;
+}
+
+/* Bottom Stats Row - Full Width */
+.crafting-bottom-stats {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 40px auto 0;
+    padding: 30px 60px;
+    z-index: 5;
+}
+
+.crafting-stat {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.crafting-stat-number {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: #c9b896;
+    line-height: 1;
+}
+
+.crafting-stat-number sup {
+    font-size: 1rem;
+    color: #c9b896;
+    vertical-align: super;
+}
+
+.crafting-stat-label {
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c9b896;
+    line-height: 1.4;
+}
+
+/* Right Column */
+.crafting-right {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.crafting-tagline {
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c9b896;
+    line-height: 1.8;
+    margin-bottom: 50px;
+}
+
+.crafting-tagline-highlight {
+    display: block;
+    letter-spacing: 0.15em;
+    color: rgba(201, 184, 150, 0.8);
+}
+
+/* 40+ Years of Legacy */
+.legacy-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.legacy-number {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 5rem;
+    font-weight: 400;
+    color: #c9b896;
+    line-height: 1;
+}
+
+.legacy-number sup {
+    font-size: 1.5rem;
+    vertical-align: super;
+}
+
+.legacy-label {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c9b896;
+    line-height: 1.4;
+}
+
+.legacy-description {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(201, 184, 150, 0.8);
+    margin-left: auto;
+    max-width: 200px;
+}
+
+/* Venturam Description */
+.crafting-description {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: rgba(201, 184, 150, 0.9);
+    margin-bottom: 40px;
+    max-width: 400px;
+}
+
+/* Discover More Button */
+.discover-more-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0;
+    margin-top: auto;
+}
+
+.discover-more-btn {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 1px solid rgba(201, 184, 150, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.discover-more-btn:hover {
+    border-color: #c9b896;
+    transform: scale(1.05);
+}
+
+.discover-more-btn svg {
+    width: 24px;
+    height: 24px;
+    fill: #c9b896;
+}
+
+.discover-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotateText 15s linear infinite;
+}
+
+@keyframes rotateText {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Right Column Stats */
+.crafting-right-stats {
+    display: flex;
+    gap: 60px;
+    margin-top: auto;
+    padding-top: 30px;
+}
+
+/* ============================================
+   Voices of Partners Section
+   ============================================ */
+.voices-section {
+    position: relative;
+    width: 100%;
+    min-height: 80vh;
+    background: linear-gradient(
+        135deg,
+        #1a4a3d 0%,
+        #2d5a4a 30%,
+        #1f5545 50%,
+        #234d3f 70%,
+        #1a4a3d 100%
+    );
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+.voices-container {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px;
+    display: grid;
+    grid-template-columns: 55% 45%;
+    gap: 60px;
+    z-index: 2;
+}
+
+/* Joint Ventures Left Side */
+.joint-ventures-card {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+.joint-ventures-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.joint-ventures-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.3) 50%,
+        rgba(0, 0, 0, 0.1) 100%
+    );
+}
+
+.joint-ventures-content {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    right: 40px;
+}
+
+.joint-ventures-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+/* Enquire Now Button */
+.enquire-now-btn {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #2d5a4a;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.enquire-now-btn:hover {
+    transform: scale(1.05);
+    background: #3d6a5a;
+}
+
+.enquire-now-btn svg {
+    width: 30px;
+    height: 30px;
+    stroke: #ffffff;
+    stroke-width: 2;
+    fill: none;
+}
+
+.enquire-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotateText 15s linear infinite;
+}
+
+/* Voices of Partners Right Side */
+.voices-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+.voices-title {
+    font-family: Arial, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #4a9a7a;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.voices-testimonial {
+    position: relative;
+    padding: 0;
+}
+
+.quote-mark-open {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 6rem;
+    color: rgba(74, 154, 122, 0.4);
+    line-height: 0.5;
+    margin-bottom: 10px;
+}
+
+.testimonial-text {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #d4e4dc;
+    margin-bottom: 20px;
+    max-width: 320px;
+}
+
+.quote-mark-close {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 6rem;
+    color: rgba(74, 154, 122, 0.4);
+    line-height: 0.5;
+    text-align: right;
+    margin-top: 0;
+    max-width: 320px;
+}
+
+/* Author info */
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.author-designation {
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #2d6a5a;
+}
+
+/* Navigation arrows */
+.testimonial-nav {
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-arrow {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid rgba(74, 154, 122, 0.5);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-arrow:hover {
+    border-color: #4a9a7a;
+    background: rgba(74, 154, 122, 0.1);
+}
+
+.nav-arrow svg {
+    width: 16px;
+    height: 16px;
+    stroke: #4a9a7a;
+    stroke-width: 2;
+    fill: none;
+}
+
+/* ============================================
+   Call to Action Section
+   ============================================ */
+.cta-section {
+    position: relative;
+    width: 100%;
+    min-height: 70vh;
+    overflow: hidden;
+}
+
+.cta-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/images/cta-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.cta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(26, 74, 61, 0.4) 0%,
+        rgba(26, 74, 61, 0.6) 100%
+    );
+    z-index: 2;
+}
+
+.cta-content {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 100px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 3;
+}
+
+.cta-text {
+    max-width: 550px;
+}
+
+.cta-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    color: #c9b896;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.cta-description {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 350px;
+}
+
+/* Enquire Now CTA Button */
+.cta-button-container {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 60px;
+}
+
+.cta-enquire-btn {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #2d5a4a;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta-enquire-btn:hover {
+    transform: scale(1.05);
+    background: #3d6a5a;
+}
+
+.cta-enquire-btn svg {
+    width: 30px;
+    height: 30px;
+    stroke: #ffffff;
+    stroke-width: 2;
+    fill: none;
+}
+
+/* ============================================
+   Footer Section
+   ============================================ */
+.footer {
+    background: linear-gradient(
+        135deg,
+        #1a4a3d 0%,
+        #1f5545 50%,
+        #1a4a3d 100%
+    );
+    padding: 60px 0 40px;
+    color: #ffffff;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+/* Footer Top - Logo and Contact */
+.footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.footer-logo-icon {
+    width: 50px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.footer-logo-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: #c9b896;
+}
+
+.footer-logo-text {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #c9b896;
+}
+
+.footer-address {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 15px;
+}
+
+.footer-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-contact a {
+    color: rgba(255, 255, 255, 0.9);
+    transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+    color: #c9b896;
+}
+
+/* Social Links */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    border-color: #c9b896;
+    background: rgba(201, 184, 150, 0.1);
+}
+
+.social-link svg {
+    width: 18px;
+    height: 18px;
+    fill: rgba(255, 255, 255, 0.9);
+}
+
+.social-link:hover svg {
+    fill: #c9b896;
+}
+
+/* Useful Links */
+.footer-useful {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.footer-useful-title {
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+.footer-link {
+    font-family: Arial, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #c9b896;
+}
+
+.footer-link-separator {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Copyright */
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-copyright {
+    font-family: Arial, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 15px;
+}
+
+.footer-copyright a {
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 0.3s ease;
+}
+
+.footer-copyright a:hover {
+    color: #c9b896;
+}
+
+.footer-design {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-design-logo {
+    width: 20px;
+    height: 20px;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 1200px) {
+    .crafting-title {
+        font-size: 3.5rem;
+    }
+    
+    .crafting-stat-number {
+        font-size: 3rem;
+    }
+    
+    .legacy-number {
+        font-size: 4rem;
+    }
+    
+    .cta-title {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 968px) {
+    .crafting-container,
+    .voices-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 0 30px;
+    }
+    
+    .crafting-title {
+        font-size: 3rem;
+    }
+    
+    .crafting-image-container {
+        min-height: 300px;
+    }
+    
+    .crafting-left-stats,
+    .crafting-right-stats {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    
+    .joint-ventures-card {
+        height: 400px;
+    }
+    
+    .cta-content {
+        flex-direction: column;
+        gap: 40px;
+        padding: 60px 30px;
+    }
+    
+    .cta-title {
+        font-size: 2.5rem;
+    }
+    
+    .footer-container {
+        padding: 0 30px;
+    }
+    
+    .footer-links {
+        gap: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .crafting-section,
+    .voices-section {
+        padding: 60px 0;
+    }
+    
+    .crafting-container,
+    .voices-container {
+        padding: 0 20px;
+    }
+    
+    .crafting-title {
+        font-size: 2.5rem;
+    }
+    
+    .crafting-stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .legacy-number {
+        font-size: 3rem;
+    }
+    
+    .joint-ventures-card {
+        height: 350px;
+    }
+    
+    .joint-ventures-title {
+        font-size: 2rem;
+    }
+    
+    .cta-title {
+        font-size: 2rem;
+    }
+    
+    .footer-container {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .crafting-title {
+        font-size: 2rem;
+    }
+    
+    .crafting-stat-number {
+        font-size: 2rem;
+    }
+    
+    .crafting-left-stats,
+    .crafting-right-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .legacy-number {
+        font-size: 2.5rem;
+    }
+    
+    .legacy-row {
+        flex-wrap: wrap;
+    }
+    
+    .joint-ventures-title {
+        font-size: 1.75rem;
+    }
+    
+    .enquire-now-btn,
+    .cta-enquire-btn {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .voices-title {
+        font-size: 1.25rem;
+    }
+    
+    .cta-title {
+        font-size: 1.75rem;
+    }
+}
