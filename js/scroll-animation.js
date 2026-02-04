@@ -162,17 +162,49 @@
             }, 0);
         }
 
+        // Function to rebuild timeline with new values
+        function rebuildTimeline() {
+            // Kill existing timeline
+            tl.kill();
+            
+            // Recalculate values
+            scaleFactor = getScaleFactor();
+            distances = getTranslationDistances();
+            
+            // Clear inline styles set by GSAP
+            gsap.set([centerImage, topImage, leftImage, rightImage, bottomLeftImage, bottomRightImage], {
+                clearProps: 'all'
+            });
+            
+            // Create new timeline
+            const newTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '#scroll-collage',
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: true,
+                    pin: false,
+                    anticipatePin: 0
+                }
+            });
+            
+            // Re-add all animations
+            newTl.to(centerImage, { scale: scaleFactor, ease: 'none', duration: 1 }, 0);
+            if (topImage) newTl.to(topImage, { y: distances.top, opacity: 0, ease: 'none', duration: 1 }, 0);
+            if (leftImage) newTl.to(leftImage, { x: distances.left, opacity: 0, ease: 'none', duration: 1 }, 0);
+            if (rightImage) newTl.to(rightImage, { x: distances.right, opacity: 0, ease: 'none', duration: 1 }, 0);
+            if (bottomLeftImage) newTl.to(bottomLeftImage, { x: distances.bottomLeft.x, y: distances.bottomLeft.y, opacity: 0, ease: 'none', duration: 1 }, 0);
+            if (bottomRightImage) newTl.to(bottomRightImage, { x: distances.bottomRight.x, y: distances.bottomRight.y, opacity: 0, ease: 'none', duration: 1 }, 0);
+            
+            ScrollTrigger.refresh();
+        }
+
         // Handle window resize
         let resizeTimeout;
         window.addEventListener('resize', function() {
             clearTimeout(resizeTimeout);
             resizeTimeout = setTimeout(function() {
-                // Recalculate values
-                scaleFactor = getScaleFactor();
-                distances = getTranslationDistances();
-                
-                // Update timeline end values (GSAP will recalculate)
-                ScrollTrigger.refresh();
+                rebuildTimeline();
             }, 250);
         });
 
