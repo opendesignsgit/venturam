@@ -18,12 +18,14 @@
     --scroll-collage-text-primary: #c9b896;
     --scroll-collage-text-secondary: #1a3a4a;
     --scroll-collage-text-muted: #a8c4b8;
+    --scroll-collage-scroll-space: 100vh; /* Extra scroll space for animation */
 }
 
 .scroll-collage-section {
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    /* Total height = viewport + scroll space for animation */
+    min-height: calc(100vh + var(--scroll-collage-scroll-space));
     background: var(--scroll-collage-bg);
     overflow: hidden;
     z-index: 10;

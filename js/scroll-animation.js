@@ -24,6 +24,10 @@ document.addEventListener('DOMContentLoaded', function() {
         initScrollCollage(scrollSection);
     });
     
+    // Refresh ScrollTrigger after all animations are set up
+    // This ensures proper calculation regardless of section position
+    ScrollTrigger.refresh();
+    
     /**
      * Initialize scroll animation for a single collage section
      * @param {HTMLElement} scrollSection - The scroll collage section element
@@ -46,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Create the main timeline with ScrollTrigger
-        // Uses relative positions that adapt to the element's actual size
+        // invalidateOnRefresh: true ensures animation recalculates when position changes
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: scrollSection,
@@ -54,7 +58,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 end: 'bottom bottom',
                 scrub: true,
                 pin: stickyContainer,
-                anticipatePin: 1
+                anticipatePin: 1,
+                invalidateOnRefresh: true  // Recalculate on refresh/resize
             }
         });
         
