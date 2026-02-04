@@ -2,13 +2,12 @@
    Scroll Collage Section
    - Scroll-triggered animation with GSAP
    - Center image scales, others translate outward
+   - Reusable: Use class .scroll-collage-section
    ============================================ */
 
-#scroll-collage {
-    position: relative;
-    width: 100%;
-    height: 200vh; /* Creates scroll space for animation */
-    background: linear-gradient(
+/* CSS Custom Properties for configuration - can be overridden per instance */
+.scroll-collage-section {
+    --scroll-collage-bg: linear-gradient(
         135deg,
         #1a4a3d 0%,
         #2d5a4a 30%,
@@ -16,16 +15,32 @@
         #234d3f 70%,
         #1a4a3d 100%
     );
+    --scroll-collage-text-primary: #c9b896;
+    --scroll-collage-text-secondary: #1a3a4a;
+    --scroll-collage-text-muted: #a8c4b8;
+}
+
+.scroll-collage-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: var(--scroll-collage-bg);
     overflow: hidden;
     z-index: 10;
+    box-sizing: border-box;
+}
+
+.scroll-collage-section *,
+.scroll-collage-section *::before,
+.scroll-collage-section *::after {
+    box-sizing: border-box;
 }
 
 /* Sticky container that holds all images */
 .scroll-collage-sticky {
-    position: sticky;
-    top: 0;
+    position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
 }
 
@@ -33,13 +48,12 @@
 .scroll-collage-header {
     position: absolute;
     top: 60px;
-    left: 0;
-    width: 100%;
-    padding: 0 40px;
-    z-index: 20;
-    max-width: 1200px;
     left: 50%;
     transform: translateX(-50%);
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 40px;
+    z-index: 20;
 }
 
 .scroll-collage-label {
@@ -48,7 +62,7 @@
     font-weight: 400;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: #c9b896;
+    color: var(--scroll-collage-text-primary);
     margin-bottom: 10px;
 }
 
@@ -64,7 +78,7 @@
     font-size: 3.5rem;
     font-weight: 400;
     letter-spacing: 0.05em;
-    color: #c9b896;
+    color: var(--scroll-collage-text-primary);
     margin: 0;
 }
 
@@ -72,7 +86,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #1a3a4a;
+    color: var(--scroll-collage-text-secondary);
     font-family: Georgia, 'Times New Roman', serif;
     font-size: 1.5rem;
     font-weight: 400;
@@ -83,7 +97,7 @@
 .scroll-collage-location svg {
     width: 20px;
     height: 20px;
-    fill: #1a3a4a;
+    fill: var(--scroll-collage-text-secondary);
 }
 
 .scroll-collage-description {
@@ -91,7 +105,7 @@
     font-size: 0.9rem;
     font-weight: 400;
     line-height: 1.8;
-    color: #a8c4b8;
+    color: var(--scroll-collage-text-muted);
     max-width: 500px;
     margin-top: 20px;
 }
@@ -414,14 +428,12 @@
 }
 
 @media (max-width: 968px) {
-    #scroll-collage {
-        height: auto;
+    .scroll-collage-section {
         min-height: 100vh;
     }
     
     .scroll-collage-sticky {
         position: relative;
-        height: auto;
         min-height: 100vh;
         padding: 60px 0 80px;
     }
