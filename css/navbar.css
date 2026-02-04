@@ -210,7 +210,6 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
     background-color: var(--color-navbar-solid);
     border-radius: 0 0 12px 12px;
     padding: 7rem 2rem 2rem 2rem;
