@@ -18,7 +18,8 @@
     transition: opacity 0.6s ease;
 }
 
-.voices-slider .swiper-slide-active {
+.voices-slider .swiper-slide-active,
+.voices-slider .swiper-slide:first-child {
     opacity: 1 !important;
 }
 
@@ -40,366 +41,673 @@
 }
 
 /* ============================================
-   Venturam Experience Section
+   Rotating Badge Animation
    ============================================ */
-.experience-section {
+@keyframes rotateText {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotating-badge {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.rotating-badge .badge-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotateText 15s linear infinite;
+}
+
+.rotating-badge .badge-arrow,
+.rotating-badge .badge-play {
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+}
+
+/* ============================================
+   Venturam Experience Section - NEW PIXEL PERFECT
+   ============================================ */
+.experience-section-new {
     position: relative;
     width: 100%;
-    padding: 100px 0;
-    background: linear-gradient(
-        135deg,
-        #1a4a3d 0%,
-        #2d5a4a 30%,
-        #1f5545 50%,
-        #234d3f 70%,
-        #1a4a3d 100%
-    );
+    min-height: 700px;
     overflow: hidden;
 }
 
-.experience-container {
+.experience-slider-new {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-slider-new .swiper-wrapper {
+    position: relative;
+    height: 700px;
+}
+
+/* Ensure only one slide visible at a time - Hide all by default */
+.experience-slider-new .swiper-slide {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+    z-index: 0;
+}
+
+/* Show only first slide or active slide */
+.experience-slider-new .swiper-slide:first-child {
+    position: relative !important;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+
+.experience-slider-new .swiper-slide-active {
+    position: relative !important;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+
+.experience-slide-item {
+    position: relative;
+    width: 100%;
+    min-height: 700px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-start;
+    padding: 80px 100px;
+}
+
+.experience-slide-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
+    pointer-events: none;
+}
+
+.experience-main-title {
+    position: relative;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 4.5rem;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: 0.02em;
+    color: #8B7355;
+    text-transform: uppercase;
+    margin: 0;
+    z-index: 2;
+}
+
+/* Decorative Shapes */
+.experience-shape {
+    position: absolute;
+    z-index: 1;
+}
+
+.experience-shape-1 {
+    top: 60px;
+    right: 280px;
+    width: 140px;
+    height: 90px;
+    background: #E8D5B7;
+    border-radius: 0 0 70px 70px;
+    opacity: 0.8;
+}
+
+.experience-shape-2 {
+    top: 100px;
+    right: 150px;
+    width: 120px;
+    height: 80px;
+    background: #E8D5B7;
+    border-radius: 0 0 60px 60px;
+    opacity: 0.6;
+}
+
+/* Click Here Badge */
+.experience-badge {
+    position: absolute;
+    top: 220px;
+    left: 520px;
+    width: 110px;
+    height: 110px;
+    z-index: 5;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+}
+
+.experience-badge .badge-text {
+    animation: rotateText 12s linear infinite;
+}
+
+.experience-badge .badge-arrow {
+    width: 24px;
+    height: 24px;
+}
+
+/* Content Card */
+.experience-content-card {
+    position: absolute;
+    bottom: 80px;
+    left: 80px;
+    width: 380px;
+    background: linear-gradient(135deg, #9B7B5B 0%, #7D6248 100%);
+    border-radius: 0 80px 0 0;
+    padding: 40px 35px;
+    z-index: 3;
+}
+
+.experience-content-card .experience-card-text {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.experience-author-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.experience-author-name {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #E8D5B7;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+.youtube-btn {
+    width: 45px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.youtube-btn svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Experience Nav Arrows */
+.experience-nav-arrows {
+    display: flex;
+    gap: 10px;
+}
+
+.exp-nav-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid rgba(232, 213, 183, 0.5);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #E8D5B7;
+}
+
+.exp-nav-btn:hover {
+    border-color: #E8D5B7;
+    background: rgba(232, 213, 183, 0.15);
+}
+
+.exp-nav-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* ============================================
+   Why Clients Choose Us Section - NEW PIXEL PERFECT
+   ============================================ */
+.why-choose-section-new {
+    position: relative;
+    width: 100%;
+    padding: 80px 0 100px;
+    background: #F5F0E8;
+    overflow: hidden;
+}
+
+.why-choose-container-new {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 60px;
+    padding: 0 80px;
 }
 
-.experience-content {
-    text-align: center;
-    margin-bottom: 60px;
+/* Header Row */
+.why-choose-header-new {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 50px;
 }
 
-.experience-title {
+.why-choose-title-block {
+    max-width: 600px;
+}
+
+.why-choose-title-new {
     font-family: Georgia, 'Times New Roman', serif;
-    font-size: 3.5rem;
+    font-size: 3.8rem;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: 0.02em;
+    color: #1a4a3d;
+    text-transform: uppercase;
+    font-style: italic;
+    margin: 0 0 20px 0;
+}
+
+.why-choose-subtitle-new {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+
+/* Play Walkthrough Badge */
+.play-walkthrough-badge {
+    width: 95px;
+    height: 95px;
+    background: transparent;
+    border: 1px solid rgba(26, 74, 61, 0.2);
+    border-radius: 50%;
+}
+
+.play-walkthrough-badge .badge-text {
+    animation: rotateText 12s linear infinite;
+}
+
+.play-walkthrough-badge .badge-play {
+    width: 16px;
+    height: 16px;
+}
+
+/* Content Grid */
+.why-choose-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* Image Wrapper */
+.why-choose-image-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.why-choose-slider-new {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.why-choose-slider-new .swiper-wrapper {
+    position: relative;
+    height: 500px;
+}
+
+/* Ensure only one slide visible at a time - Hide all by default */
+.why-choose-slider-new .swiper-slide {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+    z-index: 0;
+}
+
+.why-choose-slider-new .swiper-slide:first-child {
+    position: relative !important;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+
+.why-choose-slider-new .swiper-slide-active {
+    position: relative !important;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+
+.why-choose-image-slide {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.why-choose-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Slide Counter */
+.why-choose-counter {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    display: flex;
+    align-items: baseline;
+    z-index: 5;
+}
+
+.counter-current {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 4rem;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1;
+}
+
+.counter-separator {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 5px;
+}
+
+.counter-total {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Text Content */
+.why-choose-text-content {
+    padding-top: 80px;
+}
+
+.why-choose-text-slider {
+    overflow: hidden;
+    margin-bottom: 40px;
+    position: relative;
+    min-height: 250px;
+}
+
+.why-choose-text-slider .swiper-wrapper {
+    position: relative;
+}
+
+/* Ensure only one text slide visible at a time - Hide all by default */
+.why-choose-text-slider .swiper-slide {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+    z-index: 0;
+}
+
+.why-choose-text-slider .swiper-slide:first-child {
+    position: relative !important;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+
+.why-choose-text-slider .swiper-slide-active {
+    position: relative !important;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+
+.why-choose-text-slide {
+    padding-right: 40px;
+}
+
+.content-number {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #1a4a3d;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.content-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 3.2rem;
     font-weight: 400;
     line-height: 1.1;
-    letter-spacing: 0.02em;
-    color: #c9b896;
+    color: #1a4a3d;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin: 0 0 25px 0;
 }
 
-.experience-description {
+.content-description {
     font-family: Georgia, 'Times New Roman', serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.8;
-    color: rgba(255, 255, 255, 0.8);
-    max-width: 600px;
-    margin: 0 auto;
+    color: #666;
+    margin: 0;
 }
 
-.experience-slider-wrapper {
+/* Why Choose Nav */
+.why-choose-nav-new {
+    display: flex;
+    gap: 10px;
+}
+
+.why-nav-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid rgba(26, 74, 61, 0.3);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #1a4a3d;
+}
+
+.why-nav-btn:hover {
+    border-color: #1a4a3d;
+    background: rgba(26, 74, 61, 0.08);
+}
+
+.why-nav-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* ============================================
+   Excellence Awards Section - NEW PIXEL PERFECT
+   ============================================ */
+.awards-section-new {
     position: relative;
-    padding: 0 50px;
+    width: 100%;
+    padding: 80px 0 60px;
+    background: #F5F0E8;
+    overflow: hidden;
 }
 
-.experience-slider {
+.awards-container-new {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 80px;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* Left Side */
+.awards-left-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.awards-title-vertical {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: 0.02em;
+    color: #1a4a3d;
+    text-transform: uppercase;
+    font-style: italic;
+    margin: 0;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    white-space: nowrap;
+}
+
+/* View Awards Badge */
+.view-awards-badge {
+    width: 95px;
+    height: 95px;
+    background: transparent;
+    border: 1px solid rgba(26, 74, 61, 0.2);
+    border-radius: 50%;
+}
+
+.view-awards-badge .badge-text {
+    animation: rotateText 12s linear infinite;
+}
+
+.view-awards-badge .badge-arrow {
+    width: 20px;
+    height: 20px;
+}
+
+/* Awards Slider Area */
+.awards-slider-area {
+    width: 100%;
+    overflow: hidden;
+}
+
+.awards-slider-new {
     overflow: visible;
 }
 
-.experience-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(201, 184, 150, 0.2);
-    padding: 40px 30px;
-    text-align: center;
-    transition: all 0.3s ease;
-    height: 100%;
-    min-height: 280px;
+.awards-slider-new .swiper-wrapper {
+    align-items: stretch;
+}
+
+.awards-slider-new .swiper-slide {
+    height: auto;
+}
+
+/* Award Card */
+.award-card-new {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.experience-card:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(201, 184, 150, 0.4);
-    transform: translateY(-5px);
-}
-
-.experience-icon {
-    width: 64px;
-    height: 64px;
-    margin-bottom: 25px;
-}
-
-.experience-icon svg {
-    width: 100%;
+    background: transparent;
     height: 100%;
 }
 
-.experience-card-title {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 1.25rem;
-    font-weight: 400;
-    color: #c9b896;
-    margin-bottom: 15px;
-}
-
-.experience-card-text {
+.award-card-title {
     font-family: Arial, sans-serif;
-    font-size: 0.875rem;
-    font-weight: 400;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.experience-nav {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
-    pointer-events: none;
-    z-index: 10;
-}
-
-/* ============================================
-   Why Clients Choose Us Section
-   ============================================ */
-.why-choose-section {
-    position: relative;
-    width: 100%;
-    padding: 100px 0;
-    background: #f5f0e8;
-    overflow: hidden;
-}
-
-.why-choose-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 60px;
-}
-
-.why-choose-header {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.why-choose-title {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 3.5rem;
-    font-weight: 400;
-    line-height: 1.1;
-    letter-spacing: 0.02em;
-    color: #1a4a3d;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-}
-
-.why-choose-subtitle {
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    color: #666;
-    letter-spacing: 0.1em;
-}
-
-.why-choose-slider-wrapper {
-    position: relative;
-    padding: 0 50px;
-}
-
-.why-choose-card {
-    background: #ffffff;
-    border: 1px solid rgba(26, 74, 61, 0.1);
-    padding: 50px 40px;
-    text-align: center;
-    transition: all 0.3s ease;
-    height: 100%;
-    min-height: 280px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
-
-.why-choose-card:hover {
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
-    transform: translateY(-5px);
-}
-
-.why-choose-number {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 3rem;
-    font-weight: 400;
-    color: rgba(26, 74, 61, 0.15);
-    margin-bottom: 20px;
-}
-
-.why-choose-card-title {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 1.25rem;
-    font-weight: 400;
-    color: #1a4a3d;
-    margin-bottom: 15px;
-}
-
-.why-choose-card-text {
-    font-family: Arial, sans-serif;
-    font-size: 0.875rem;
-    font-weight: 400;
-    line-height: 1.6;
-    color: #666;
-}
-
-.why-choose-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 40px;
-}
-
-.slider-pagination {
-    display: flex;
-    gap: 8px;
-}
-
-.slider-pagination .swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
-    background: rgba(26, 74, 61, 0.3);
-    opacity: 1;
-    transition: all 0.3s ease;
-}
-
-.slider-pagination .swiper-pagination-bullet-active {
-    background: #1a4a3d;
-    width: 30px;
-    border-radius: 5px;
-}
-
-/* ============================================
-   Excellence Awards Section
-   ============================================ */
-.awards-section {
-    position: relative;
-    width: 100%;
-    padding: 100px 0;
-    background: linear-gradient(
-        135deg,
-        #1a4a3d 0%,
-        #2d5a4a 30%,
-        #1f5545 50%,
-        #234d3f 70%,
-        #1a4a3d 100%
-    );
-    overflow: hidden;
-}
-
-.awards-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 60px;
-}
-
-.awards-header {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.awards-label {
-    font-family: Arial, sans-serif;
-    font-size: 0.875rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    letter-spacing: 0.3em;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    color: #1a4a3d;
     text-transform: uppercase;
-    color: #4a9a7a;
-    display: block;
-    margin-bottom: 15px;
+    margin: 0 0 20px 0;
+    min-height: 45px;
 }
 
-.awards-title {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 3.5rem;
-    font-weight: 400;
-    line-height: 1.1;
-    letter-spacing: 0.02em;
-    color: #c9b896;
-    text-transform: uppercase;
+.award-image-wrapper {
+    width: 100%;
+    height: 380px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
-.awards-slider-wrapper {
-    position: relative;
-    padding: 0 50px;
-}
-
-.award-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(201, 184, 150, 0.2);
-    padding: 40px 30px;
-    text-align: center;
-    transition: all 0.3s ease;
-    height: 100%;
-    min-height: 320px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.award-card:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(201, 184, 150, 0.4);
-    transform: translateY(-5px);
-}
-
-.award-year {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 1rem;
-    font-weight: 400;
-    color: #4a9a7a;
-    letter-spacing: 0.2em;
-    margin-bottom: 20px;
-}
-
-.award-icon {
-    width: 64px;
-    height: 64px;
-    margin-bottom: 25px;
-}
-
-.award-icon svg {
+.award-img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
 }
 
-.award-title {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 1.125rem;
-    font-weight: 400;
-    color: #c9b896;
-    margin-bottom: 10px;
+.award-card-new:hover .award-img {
+    transform: scale(1.03);
 }
 
-.award-org {
-    font-family: Arial, sans-serif;
-    font-size: 0.75rem;
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.5);
-}
-
-.awards-nav {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
+/* Bottom Navigation */
+.awards-nav-bottom {
     display: flex;
-    justify-content: space-between;
-    pointer-events: none;
-    z-index: 10;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 50px;
+}
+
+.awards-nav-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid rgba(26, 74, 61, 0.3);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #1a4a3d;
+}
+
+.awards-nav-btn:hover {
+    border-color: #1a4a3d;
+    background: rgba(26, 74, 61, 0.08);
+}
+
+.awards-nav-btn svg {
+    width: 20px;
+    height: 20px;
 }
 
 /* ============================================
-   Slider Navigation Buttons
+   OLD Slider Navigation Buttons (keeping for backwards compatibility)
    ============================================ */
 .slider-nav-btn {
     width: 50px;
@@ -428,102 +736,161 @@
     fill: none;
 }
 
-/* Light section nav buttons */
-.why-choose-section .slider-nav-btn {
-    border-color: rgba(26, 74, 61, 0.3);
-}
-
-.why-choose-section .slider-nav-btn:hover {
-    border-color: #1a4a3d;
-    background: rgba(26, 74, 61, 0.1);
-}
-
-.why-choose-section .slider-nav-btn svg {
-    stroke: #1a4a3d;
-}
-
 /* ============================================
-   Responsive Design for Sliders
+   Responsive Design for New Sliders
    ============================================ */
 @media (max-width: 1200px) {
-    .experience-title,
-    .why-choose-title,
-    .awards-title {
+    .experience-main-title {
+        font-size: 3.5rem;
+    }
+    
+    .why-choose-title-new {
         font-size: 3rem;
+    }
+    
+    .awards-title-vertical {
+        font-size: 3rem;
+    }
+    
+    .content-title {
+        font-size: 2.5rem;
+    }
+    
+    .awards-container-new {
+        grid-template-columns: 200px 1fr;
+        gap: 40px;
     }
 }
 
 @media (max-width: 968px) {
-    .experience-section,
-    .why-choose-section,
-    .awards-section {
-        padding: 80px 0;
+    .experience-slide-item {
+        padding: 60px 50px;
+        min-height: 600px;
     }
     
-    .experience-container,
-    .why-choose-container,
-    .awards-container {
-        padding: 0 30px;
+    .experience-main-title {
+        font-size: 2.8rem;
     }
     
-    .experience-slider-wrapper,
-    .why-choose-slider-wrapper,
-    .awards-slider-wrapper {
+    .experience-content-card {
+        width: 320px;
+        left: 50px;
+        bottom: 60px;
+        padding: 30px 25px;
+    }
+    
+    .experience-badge {
+        top: 180px;
+        left: 350px;
+        width: 90px;
+        height: 90px;
+    }
+    
+    .experience-shape-1,
+    .experience-shape-2 {
+        display: none;
+    }
+    
+    .why-choose-container-new {
         padding: 0 40px;
     }
     
-    .experience-title,
-    .why-choose-title,
-    .awards-title {
+    .why-choose-header-new {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .why-choose-content-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .why-choose-image-slide {
+        height: 400px;
+    }
+    
+    .why-choose-text-content {
+        padding-top: 0;
+    }
+    
+    .awards-container-new {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 0 40px;
+    }
+    
+    .awards-left-side {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .awards-title-vertical {
+        writing-mode: horizontal-tb;
+        transform: none;
         font-size: 2.5rem;
     }
     
     .voices-slider-wrapper .testimonial-nav {
         right: -50px;
     }
-    
-    .slider-nav-btn {
-        width: 40px;
-        height: 40px;
-    }
 }
 
 @media (max-width: 768px) {
-    .experience-section,
-    .why-choose-section,
-    .awards-section {
-        padding: 60px 0;
+    .experience-slide-item {
+        padding: 40px 30px;
+        min-height: 550px;
+        flex-direction: column;
     }
     
-    .experience-container,
-    .why-choose-container,
-    .awards-container {
+    .experience-main-title {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+    }
+    
+    .experience-content-card {
+        position: relative;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        margin-top: auto;
+        border-radius: 0 40px 0 0;
+    }
+    
+    .experience-badge {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 20px 0;
+    }
+    
+    .why-choose-container-new,
+    .awards-container-new {
         padding: 0 20px;
     }
     
-    .experience-slider-wrapper,
-    .why-choose-slider-wrapper,
-    .awards-slider-wrapper {
-        padding: 0 30px;
+    .why-choose-title-new {
+        font-size: 2.2rem;
     }
     
-    .experience-title,
-    .why-choose-title,
-    .awards-title {
+    .content-title {
         font-size: 2rem;
     }
     
-    .experience-content,
-    .why-choose-header,
-    .awards-header {
-        margin-bottom: 40px;
+    .why-choose-image-slide {
+        height: 300px;
     }
     
-    .experience-card,
-    .why-choose-card,
-    .award-card {
-        min-height: 250px;
-        padding: 30px 20px;
+    .counter-current {
+        font-size: 3rem;
+    }
+    
+    .award-image-wrapper {
+        height: 280px;
+    }
+    
+    .awards-title-vertical {
+        font-size: 2rem;
     }
     
     .voices-slider-wrapper .testimonial-nav {
@@ -542,22 +909,60 @@
 }
 
 @media (max-width: 480px) {
-    .experience-title,
-    .why-choose-title,
-    .awards-title {
-        font-size: 1.75rem;
+    .experience-main-title {
+        font-size: 1.8rem;
     }
     
-    .experience-card-title,
-    .why-choose-card-title,
-    .award-title {
+    .experience-content-card {
+        padding: 25px 20px;
+    }
+    
+    .experience-author-name {
         font-size: 1.1rem;
     }
     
-    .experience-slider-wrapper,
-    .why-choose-slider-wrapper,
-    .awards-slider-wrapper {
-        padding: 0 20px;
+    .why-choose-title-new {
+        font-size: 1.8rem;
+    }
+    
+    .content-title {
+        font-size: 1.6rem;
+    }
+    
+    .play-walkthrough-badge,
+    .view-awards-badge {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .exp-nav-btn,
+    .why-nav-btn,
+    .awards-nav-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .exp-nav-btn svg,
+    .why-nav-btn svg,
+    .awards-nav-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .why-choose-image-slide {
+        height: 250px;
+    }
+    
+    .counter-current {
+        font-size: 2.5rem;
+    }
+    
+    .award-image-wrapper {
+        height: 220px;
+    }
+    
+    .awards-title-vertical {
+        font-size: 1.6rem;
     }
     
     .slider-nav-btn {
