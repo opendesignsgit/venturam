@@ -173,7 +173,6 @@
     width: 460px;
     height: 300px;
     z-index: 10; /* Higher z-index for hero takeover */
-    transform-origin: center center; /* Scale from center */
 }
 
 /* Right image (extends to right edge) */

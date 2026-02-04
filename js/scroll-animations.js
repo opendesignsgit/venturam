@@ -46,12 +46,15 @@
         }
 
         // Set up the hero takeover scroll animation
-        setupHeroTakeoverAnimation(projectSection, elevatingSection, item1, item2, item3, item4, item5, item6);
+        setupHeroTakeoverAnimation(projectSection, item1, item2, item3, item4, item5, item6);
     }
 
-    function setupHeroTakeoverAnimation(projectSection, elevatingSection, item1, item2, item3, item4, item5, item6) {
+    function setupHeroTakeoverAnimation(projectSection, item1, item2, item3, item4, item5, item6) {
         // Set initial z-index for center image to be on top
-        gsap.set(item3, { zIndex: 10 });
+        gsap.set(item3, { 
+            zIndex: 10,
+            transformOrigin: 'center center' // Set transform origin for proper scaling
+        });
         
         // Create a timeline for the scroll animation with pinning
         const tl = gsap.timeline({
