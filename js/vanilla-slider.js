@@ -46,13 +46,21 @@
             const isFade = this.options.effect === 'fade';
             
             this.slides.forEach((slide, index) => {
+                // Add/remove swiper-slide-active class for CSS compatibility
+                if (index === 0) {
+                    slide.classList.add('swiper-slide-active');
+                } else {
+                    slide.classList.remove('swiper-slide-active');
+                }
+                
                 if (isFade) {
                     slide.style.position = index === 0 ? 'relative' : 'absolute';
                     slide.style.top = '0';
                     slide.style.left = '0';
                     slide.style.width = '100%';
                     slide.style.opacity = index === 0 ? '1' : '0';
-                    slide.style.transition = `opacity ${this.options.speed}ms ease`;
+                    slide.style.visibility = index === 0 ? 'visible' : 'hidden';
+                    slide.style.transition = `opacity ${this.options.speed}ms ease, visibility ${this.options.speed}ms ease`;
                     slide.style.zIndex = index === 0 ? '1' : '0';
                 }
             });
@@ -98,12 +106,31 @@
             
             if (isFade) {
                 this.slides.forEach((slide, i) => {
-                    slide.style.opacity = i === index ? '1' : '0';
-                    slide.style.zIndex = i === index ? '1' : '0';
-                    slide.style.position = i === index ? 'relative' : 'absolute';
+                    const isActive = i === index;
+                    
+                    // Update swiper-slide-active class for CSS compatibility
+                    if (isActive) {
+                        slide.classList.add('swiper-slide-active');
+                    } else {
+                        slide.classList.remove('swiper-slide-active');
+                    }
+                    
+                    // Update inline styles
+                    slide.style.opacity = isActive ? '1' : '0';
+                    slide.style.visibility = isActive ? 'visible' : 'hidden';
+                    slide.style.zIndex = isActive ? '1' : '0';
+                    slide.style.position = isActive ? 'relative' : 'absolute';
                 });
             } else {
-                // Slide effect
+                // Slide effect - also update active class
+                this.slides.forEach((slide, i) => {
+                    if (i === index) {
+                        slide.classList.add('swiper-slide-active');
+                    } else {
+                        slide.classList.remove('swiper-slide-active');
+                    }
+                });
+                
                 const slideWidth = this.slides[0].offsetWidth + this.options.spaceBetween;
                 this.wrapper.style.transform = `translateX(-${index * slideWidth}px)`;
                 this.wrapper.style.transition = `transform ${this.options.speed}ms ease`;
