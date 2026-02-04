@@ -24,8 +24,8 @@
         #1a4a3d 100%
     );
     padding: 80px 0 100px;
-    /* overflow visible required for GSAP ScrollTrigger pin-spacer */
-    overflow: visible;
+    /* overflow hidden to clip exiting images during hero takeover */
+    overflow: hidden;
     z-index: 10;
     display: flex;
     flex-direction: column;
@@ -165,14 +165,15 @@
     height: 220px;
 }
 
-/* Center image (larger, overlapping) */
+/* Center image (HERO IMAGE - scales up during animation) */
 .gallery-item-3 {
     top: 150px;
     left: 50%;
     transform: translateX(-50%);
     width: 460px;
     height: 300px;
-    z-index: 5;
+    z-index: 10; /* Higher z-index for hero takeover */
+    transform-origin: center center; /* Scale from center */
 }
 
 /* Right image (extends to right edge) */
