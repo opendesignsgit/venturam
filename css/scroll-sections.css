@@ -208,6 +208,8 @@
     background-position: center;
     background-repeat: no-repeat;
     z-index: 1;
+    /* Performance optimization for scroll animation */
+    will-change: transform;
 }
 
 /* Gradient overlays */
