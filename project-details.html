@@ -6,6 +6,9 @@
     <meta name="description" content="Venturam - Project Details">
     <title>Venturam - Project Details</title>
 
+    <meta name="description" content="Venturam - Medley's Nest Project Details">
+    <title>Medley's Nest - Venturam</title>
+    
     <!-- CSS -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/navbar.css">
@@ -149,6 +152,232 @@
     </section>
 
     <!-- JS -->
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Left navigation -->
+            <ul class="navbar-nav navbar-left">
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li class="has-megamenu">
+                    <a href="#medleys" class="nav-link nav-link-megamenu" id="medleys-trigger">Medley's</a>
+                </li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+            </ul>
+            
+            <!-- Center logo -->
+            <a href="index.html" class="navbar-logo">
+                <img src="assets/logo.png" alt="Venturam" class="logo-image">
+            </a>
+            
+            <!-- Right navigation -->
+            <ul class="navbar-nav navbar-right">
+                <li><a href="#career" class="nav-link">Career</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li><a href="#contact" class="nav-link">Contact Us</a></li>
+            </ul>
+            
+            <!-- Secondary Menu Button -->
+            <button class="secondary-menu-btn" id="secondary-menu-toggle" aria-label="Open menu">
+                <span class="hamburger-lines">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+                <span class="menu-text">Menu</span>
+            </button>
+            
+            <!-- Mobile menu toggle -->
+            <button class="navbar-toggle" aria-label="Toggle navigation">
+                <div class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mega Menu Dropdown -->
+    <div class="mega-menu" id="mega-menu">
+        <div class="mega-menu-container">
+            <!-- Left side - Menu Links -->
+            <div class="mega-menu-links">
+                <a href="#overview" class="mega-menu-link">Overview</a>
+                <a href="#location" class="mega-menu-link">Location Highlights</a>
+                <a href="#floorplans" class="mega-menu-link">Floor Plans</a>
+                <a href="#amenities" class="mega-menu-link">Amenities</a>
+                <a href="#specifications" class="mega-menu-link">Specifications</a>
+                <a href="#gallery" class="mega-menu-link">Gallery</a>
+                <a href="#construction" class="mega-menu-link">Construction Status</a>
+            </div>
+            <!-- Right side - Property Image -->
+            <div class="mega-menu-image">
+                <img src="assets/elevation.png" alt="Medley's Nest Property">
+                <a href="#contact" class="mega-menu-cta">Enquire Now</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Secondary Offcanvas Menu -->
+    <div class="offcanvas-menu" id="offcanvas-menu">
+        <div class="offcanvas-header">
+            <button class="offcanvas-close" id="offcanvas-close" aria-label="Close menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="offcanvas-content">
+            <a href="#about" class="offcanvas-link">About Us</a>
+            <a href="#medleys" class="offcanvas-link">Medley's</a>
+            <a href="#projects" class="offcanvas-link">Projects</a>
+            <a href="#career" class="offcanvas-link">Career</a>
+            <a href="#testimonials" class="offcanvas-link">Testimonials</a>
+            <a href="#contact" class="offcanvas-link">Contact Us</a>
+        </div>
+    </div>
+    
+    <!-- Offcanvas Overlay -->
+    <div class="offcanvas-overlay" id="offcanvas-overlay"></div>
+    
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu">
+        <a href="#about" class="nav-link">About Us</a>
+        <a href="#medleys" class="nav-link">Medley's</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#career" class="nav-link">Career</a>
+        <a href="#testimonials" class="nav-link">Testimonials</a>
+        <a href="#contact" class="nav-link">Contact Us</a>
+    </div>
+
+    <!-- Section 1: Project Detail Intro -->
+    <section class="project-intro">
+        <div class="project-intro-bg"></div>
+        <div class="project-intro-overlay"></div>
+        
+        <div class="project-intro-content">
+            <h1 class="project-title">MEDLEY'S<br>NEST</h1>
+            
+            <div class="walkthrough-btn">
+                <svg class="walkthrough-text" viewBox="0 0 120 120">
+                    <defs>
+                        <path id="walkthroughCircle" d="M 60, 60 m -50, 0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0"/>
+                    </defs>
+                    <text fill="#ffffff" font-size="10" font-family="Arial, sans-serif" letter-spacing="3">
+                        <textPath href="#walkthroughCircle">WALKTHROUGH - PLAY NOW - WALKTHROUGH - PLAY NOW - </textPath>
+                    </text>
+                </svg>
+                <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="10,8 16,12 10,16" fill="#ffffff"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="project-intro-bottom">
+            <div class="project-location">
+                <svg class="location-icon" width="24" height="32" viewBox="0 0 24 32" fill="none">
+                    <path d="M12 0C5.37 0 0 5.37 0 12C0 21 12 32 12 32C12 32 24 21 24 12C24 5.37 18.63 0 12 0ZM12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8C14.21 8 16 9.79 16 12C16 14.21 14.21 16 12 16Z" fill="currentColor"/>
+                </svg>
+                <span class="location-text">PALLAVARAM</span>
+            </div>
+
+            <div class="project-stats">
+                <div class="stat-item">
+                    <div class="stat-value" data-target="1.22">0</div>
+                    <div class="stat-label">ACRES OF<br>LAND</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" data-target="141">0</div>
+                    <div class="stat-label">EXCLUSIVE<br>APARTMENTS</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value stat-value-text">2 & 3</div>
+                    <div class="stat-label">BHK<br>HOMES</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value stat-value-text">4+</div>
+                    <div class="stat-label">SIGNATURE<br>FLOORS</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Project Types Tabs -->
+    <section class="project-types">
+        <!-- LAYER 1: Static Orchestra Background (Never Changes) -->
+        <div class="orchestra-background"></div>
+        
+        <!-- LAYER 2: Green Overlay (Constant for all tabs) -->
+        <div class="green-overlay"></div>
+        
+        <!-- LAYER 3: Foreground Content (Tab Controlled) -->
+        <div class="foreground-content">
+            <!-- Top Header Section -->
+            <div class="project-types-header">
+                <h2 class="section-main-title">YOU CREATE DUMMY TEXT FOR ALL</h2>
+                <p class="section-subtitle">Lorem Ipsum is simply dummy text of the printing and</p>
+            </div>
+
+            <!-- Tabs Navigation -->
+            <div class="project-tabs">
+                <button class="project-tab active" data-tab="symphony">
+                    <span class="tab-name">SYMPHONY</span>
+                    <span class="tab-range">2800 TO 2500 SQ.FT RANGE</span>
+                </button>
+                <button class="project-tab" data-tab="sonata">
+                    <span class="tab-name">SONATA</span>
+                    <span class="tab-range">2500 TO 1500 SQ.FT RANGE</span>
+                </button>
+                <button class="project-tab" data-tab="opera">
+                    <span class="tab-name">OPERA</span>
+                    <span class="tab-range">1500 TO 1200 SQ.FT RANGE</span>
+                </button>
+                <button class="project-tab" data-tab="aria">
+                    <span class="tab-name">ARIA</span>
+                    <span class="tab-range">1100 TO 850 SQ.FT RANGE</span>
+                </button>
+            </div>
+
+            <!-- Tab Content Area -->
+            <div class="project-types-content">
+                <div class="content-wrapper">
+                    <!-- Left Content -->
+                    <div class="content-left">
+                        <div class="content-text">
+                            <p class="project-label">MEDLEY'SNEST</p>
+                            <h3 class="apartment-title">
+                                <span class="tab-content-title">SYMPHONY</span> APARTMENT
+                            </h3>
+                            <div class="apartment-description">
+                                <p>Lorem Ipsum is simply dummy Ipsum is simply dummy text of the printingtext of the printing and typesetting industry. Lorem Ipsum has been the ndustry's  standard dummy Lorem Ipsum is <strong>2800 TO 2500 SQ.FT RANGE</strong> is simply ummy text of the printingtext of he printing and typesetting industry. Lorem Ipsum has been the ndustry's standard dummy Lorem Ipsum has been the ndustry's</p>
+                                <p>Lorem Ipsum has been the ndustry's</p>
+                            </div>
+                        </div>
+
+                        <!-- Bottom CTA -->
+                        <div class="content-cta">
+                            <h3 class="cta-title">YOU CREATE<br>DUMMY TEXT<br>FOR ALL</h3>
+                            <button class="explore-btn">EXPLORE FLOOR PLANS</button>
+                        </div>
+                    </div>
+
+                    <!-- Right Image (Section 2.1 - This will overlap into next section) -->
+                    <div class="content-right">
+                        <img src="project-detail-page/asset/intro-img-1.jpg" alt="Interior" class="apartment-image" id="apartmentImage">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placeholder section to demonstrate overlap (Section 2.1) -->
+    <section class="next-section">
+        <div class="next-section-content">
+            <!-- This section shows the overlap effect from Section 2.1 -->
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="js/navbar.js"></script>
     <script src="js/project-details.js"></script>
 </body>
 </html>

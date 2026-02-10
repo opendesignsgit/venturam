@@ -14,6 +14,37 @@
 
 .section-2-project-types::before {
     content: '';
+/* ===================================
+   SECTION 1: Project Detail Intro
+   =================================== */
+
+.project-intro {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Background Image */
+.project-intro-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../project-detail-page/asset/Banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+/* Overlay */
+.project-intro-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -264,6 +295,536 @@
     .section-2-bottom-right {
         flex: 1;
         width: 100%;
+    background: linear-gradient(180deg, 
+        rgba(0, 50, 50, 0.4) 0%, 
+        rgba(0, 60, 55, 0.5) 50%, 
+        rgba(0, 40, 40, 0.7) 100%);
+    z-index: 2;
+}
+
+/* Content Container */
+.project-intro-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    margin-top: -20px;
+}
+
+/* Project Title */
+.project-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 120px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 0;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Walkthrough Button */
+.walkthrough-btn {
+    position: absolute;
+    top: 50%;
+    right: 120px;
+    transform: translateY(-50%);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.walkthrough-btn:hover {
+    border-color: #ffffff;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.walkthrough-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotateText 15s linear infinite;
+}
+
+@keyframes rotateText {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.walkthrough-btn .play-icon {
+    width: 24px;
+    height: 24px;
+    fill: #ffffff;
+    position: relative;
+    z-index: 2;
+}
+
+/* Bottom Section */
+.project-intro-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 60px 60px 60px;
+}
+
+/* Location */
+.project-location {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.location-icon {
+    width: 30px;
+    height: 40px;
+    color: #ffffff;
+}
+
+.location-text {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 48px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+/* Statistics */
+.project-stats {
+    display: flex;
+    gap: 80px;
+    align-items: flex-end;
+}
+
+.stat-item {
+    text-align: center;
+    min-width: 120px;
+}
+
+.stat-value {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 1;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    line-height: 1.3;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .project-title {
+        font-size: 100px;
+    }
+    
+    .walkthrough-btn {
+        right: 80px;
+        width: 100px;
+        height: 100px;
+    }
+    
+    .walkthrough-btn .play-icon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .location-text {
+        font-size: 40px;
+    }
+    
+    .stat-value {
+        font-size: 60px;
+    }
+    
+    .project-stats {
+        gap: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-title {
+        font-size: 60px;
+    }
+    
+    .walkthrough-btn {
+        position: static;
+        transform: none;
+        margin-top: 40px;
+    }
+    
+    .walkthrough-btn:hover {
+        transform: scale(1.05);
+    }
+    
+    .project-intro-content {
+        margin-top: 0;
+    }
+    
+    .project-intro-bottom {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        gap: 40px;
+    }
+    
+    .project-location {
+        justify-content: center;
+    }
+    
+    .location-text {
+        font-size: 32px;
+    }
+    
+    .project-stats {
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+    }
+    
+    .stat-item {
+        min-width: 100px;
+    }
+    
+    .stat-value {
+        font-size: 48px;
+    }
+    
+    .stat-label {
+        font-size: 11px;
+    }
+}
+
+/* ===================================
+   SECTION 2: Project Types Tabs
+   THREE-LAYER STRUCTURE
+   =================================== */
+
+.project-types {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 80px 0 0;
+    overflow: visible;
+}
+
+/* LAYER 1: Static Orchestra Background (Never Changes) */
+.orchestra-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background-image: url('../project-detail-page/asset/building-bg.png');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* LAYER 2: Green Overlay (Constant for all tabs) */
+.green-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(26, 74, 61, 0.95) 0%, 
+        rgba(45, 90, 74, 0.92) 30%, 
+        rgba(31, 85, 69, 0.90) 50%, 
+        rgba(35, 77, 63, 0.88) 70%, 
+        rgba(26, 74, 61, 0.85) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* LAYER 3: Foreground Content (Tab Controlled) */
+.foreground-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+}
+
+/* Header Section */
+.project-types-header {
+    text-align: center;
+    padding: 60px 20px 40px;
+}
+
+.section-main-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    color: #c9b896;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+}
+
+.section-subtitle {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+/* Tabs Navigation */
+.project-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    max-width: 1400px;
+    margin: 40px auto 0;
+    padding: 0 60px;
+}
+
+.project-tab {
+    flex: 1;
+    background: transparent;
+    border: 1px solid rgba(201, 184, 150, 0.3);
+    border-right: none;
+    padding: 20px 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.project-tab:last-child {
+    border-right: 1px solid rgba(201, 184, 150, 0.3);
+}
+
+.project-tab:hover {
+    background: rgba(201, 184, 150, 0.1);
+}
+
+.project-tab.active {
+    background: rgba(201, 184, 150, 0.15);
+    border-color: rgba(201, 184, 150, 0.5);
+}
+
+.tab-name {
+    display: block;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: #c9b896;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.tab-range {
+    display: block;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+}
+
+/* Tab Content */
+.project-types-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 60px 0;
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* Left Content */
+.content-left {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.content-text {
+    padding-top: 20px;
+}
+
+.project-label {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    margin: 0 0 15px;
+}
+
+.apartment-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    color: #c9b896;
+    text-transform: uppercase;
+    margin: 0 0 30px;
+}
+
+.tab-content-title {
+    color: #c9b896;
+}
+
+.apartment-description {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.apartment-description p {
+    margin: 0 0 15px;
+}
+
+.apartment-description strong {
+    color: #ffffff;
+    font-weight: 400;
+}
+
+/* CTA Section */
+.content-cta {
+    margin-top: auto;
+}
+
+.cta-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: 0.05em;
+    color: #c9b896;
+    text-transform: uppercase;
+    margin: 0 0 30px;
+}
+
+.explore-btn {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: #1a4a3d;
+    background: #c9b896;
+    border: none;
+    padding: 16px 40px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.explore-btn:hover {
+    background: #d4c3a7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Right Image - Section 2.1 Overlap */
+.content-right {
+    position: relative;
+    margin-bottom: -300px; /* Creates overlap into next section */
+    z-index: 3;
+}
+
+.apartment-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Placeholder Next Section (to demonstrate overlap) */
+.next-section {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    background: linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%);
+    padding-top: 350px; /* Space for overlapping image */
+}
+
+.next-section-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px;
+}
+
+/* Responsive Design for Section 2 */
+@media (max-width: 1200px) {
+    .section-main-title {
+        font-size: 40px;
+    }
+    
+    .apartment-title {
+        font-size: 36px;
+    }
+    
+    .cta-title {
+        font-size: 30px;
+    }
+    
+    .content-wrapper {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 968px) {
+    .project-tabs {
+        flex-wrap: wrap;
+        padding: 0 30px;
+    }
+    
+    .project-tab {
+        flex: 1 1 45%;
+        border-right: 1px solid rgba(201, 184, 150, 0.3);
+    }
+    
+    .content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .content-right {
+        margin-bottom: -200px;
+    }
+    
+    .next-section {
+        padding-top: 250px;
     }
 }
 
@@ -313,5 +874,52 @@
     .section-2-overlap-image {
         height: 350px;
         margin-bottom: -120px;
+    .project-types {
+        padding: 60px 0 0;
+    }
+    
+    .project-types-header {
+        padding: 40px 20px 30px;
+    }
+    
+    .section-main-title {
+        font-size: 32px;
+    }
+    
+    .section-subtitle {
+        font-size: 14px;
+    }
+    
+    .project-tabs {
+        padding: 0 20px;
+    }
+    
+    .project-tab {
+        flex: 1 1 100%;
+        padding: 15px 20px;
+    }
+    
+    .tab-name {
+        font-size: 20px;
+    }
+    
+    .project-types-content {
+        padding: 60px 20px 0;
+    }
+    
+    .apartment-title {
+        font-size: 28px;
+    }
+    
+    .cta-title {
+        font-size: 24px;
+    }
+    
+    .content-right {
+        margin-bottom: -150px;
+    }
+    
+    .next-section {
+        padding-top: 200px;
     }
 }
