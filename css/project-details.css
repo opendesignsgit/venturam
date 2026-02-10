@@ -1,0 +1,317 @@
+/* =============================================
+   SECTION 2 — Project Types Tabs
+   ============================================= */
+
+.section-2-project-types {
+    background-color: #0e3520;
+    background-image: url('../project-detail-page/asset/building-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 0 0 0;
+    position: relative;
+}
+
+.section-2-project-types::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(14, 53, 32, 0.88);
+    z-index: 0;
+}
+
+.section-2-inner {
+    position: relative;
+    z-index: 1;
+}
+
+.section-2-header {
+    text-align: center;
+    padding: 0 20px 50px;
+}
+
+.section-2-header h2 {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 52px;
+    font-weight: 400;
+    color: #c9a96e;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 16px;
+    line-height: 1.15;
+}
+
+.section-2-header p {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 16px;
+    color: #d4c8a8;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+/* Tabs Container */
+.section-2-tabs {
+    display: flex;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid rgba(201, 169, 110, 0.4);
+    border-bottom: none;
+}
+
+.section-2-tab {
+    flex: 1;
+    text-align: center;
+    padding: 22px 20px;
+    cursor: pointer;
+    border-right: 1px solid rgba(201, 169, 110, 0.4);
+    transition: background 0.3s ease;
+    position: relative;
+}
+
+.section-2-tab:last-child {
+    border-right: none;
+}
+
+.section-2-tab.active {
+    background: rgba(201, 169, 110, 0.12);
+}
+
+.section-2-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 10px solid rgba(201, 169, 110, 0.25);
+}
+
+.section-2-tab h3 {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #c9a96e;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+}
+
+.section-2-tab .tab-range {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    color: #d4c8a8;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.section-2-tab .tab-range strong {
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Tab Content Area */
+.section-2-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 60px 40px 0;
+}
+
+.section-2-tab-content {
+    display: none;
+}
+
+.section-2-tab-content.active {
+    display: block;
+}
+
+.section-2-content-label {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #c9a96e;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.section-2-content-title {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 40px;
+    font-weight: 400;
+    color: #c9a96e;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.section-2-content-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 15px;
+    color: #d4c8a8;
+    line-height: 1.7;
+    max-width: 750px;
+}
+
+.section-2-content-text strong {
+    color: #fff;
+    font-weight: 700;
+}
+
+/* =============================================
+   SECTION 2.1 — Overlap Extension
+   ============================================= */
+
+.section-2-bottom {
+    position: relative;
+    z-index: 1;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 40px 40px 0;
+    display: flex;
+    align-items: flex-end;
+}
+
+.section-2-bottom-left {
+    flex: 0 0 45%;
+    padding-bottom: 80px;
+}
+
+.section-2-bottom-left h2 {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 58px;
+    font-weight: 400;
+    color: #c9a96e;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 1.1;
+    margin-bottom: 40px;
+}
+
+.section-2-explore-btn {
+    display: inline-block;
+    padding: 16px 40px;
+    border: 1px solid #c9a96e;
+    color: #c9a96e;
+    font-family: 'Arial', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: transparent;
+}
+
+.section-2-explore-btn:hover {
+    background: rgba(201, 169, 110, 0.15);
+}
+
+.section-2-bottom-right {
+    flex: 0 0 55%;
+    position: relative;
+}
+
+.section-2-overlap-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    z-index: 2;
+    margin-bottom: -120px;
+}
+
+/* =============================================
+   RESPONSIVE — Section 2 + 2.1
+   ============================================= */
+
+@media (max-width: 1024px) {
+    .section-2-header h2 {
+        font-size: 38px;
+    }
+
+    .section-2-tab h3 {
+        font-size: 18px;
+    }
+
+    .section-2-content-title {
+        font-size: 32px;
+    }
+
+    .section-2-bottom-left h2 {
+        font-size: 42px;
+    }
+
+    .section-2-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .section-2-bottom-left {
+        flex: 1;
+        padding-bottom: 40px;
+    }
+
+    .section-2-bottom-right {
+        flex: 1;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-2-project-types {
+        padding: 50px 0 0 0;
+    }
+
+    .section-2-header h2 {
+        font-size: 28px;
+        letter-spacing: 2px;
+    }
+
+    .section-2-tabs {
+        flex-wrap: wrap;
+    }
+
+    .section-2-tab {
+        flex: 0 0 50%;
+        border-bottom: 1px solid rgba(201, 169, 110, 0.4);
+    }
+
+    .section-2-tab:nth-child(2) {
+        border-right: none;
+    }
+
+    .section-2-tab h3 {
+        font-size: 16px;
+    }
+
+    .section-2-content {
+        padding: 40px 20px 0;
+    }
+
+    .section-2-content-title {
+        font-size: 26px;
+    }
+
+    .section-2-bottom {
+        padding: 30px 20px 0;
+    }
+
+    .section-2-bottom-left h2 {
+        font-size: 32px;
+    }
+
+    .section-2-overlap-image {
+        height: 280px;
+        margin-bottom: -80px;
+    }
+}
