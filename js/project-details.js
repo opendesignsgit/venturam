@@ -132,4 +132,79 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize tab switching
     initTabSwitching();
+
+    /* ===================================
+       SECTION 3: Amenities Slider
+       =================================== */
+
+    // Amenities slider functionality
+    function initAmenitiesSlider() {
+        const prevBtn = document.querySelector('.amenities-nav-prev');
+        const nextBtn = document.querySelector('.amenities-nav-next');
+        const gridContainer = document.querySelector('.amenities-grid-container');
+        const grid = document.querySelector('.amenities-grid');
+
+        if (!prevBtn || !nextBtn || !gridContainer || !grid) return;
+
+        let currentPosition = 0;
+        const scrollAmount = 400; // pixels to scroll
+
+        // Initially disable prev button
+        prevBtn.style.opacity = '0.5';
+        prevBtn.style.cursor = 'not-allowed';
+
+        function updateButtons() {
+            const maxScroll = grid.scrollWidth - gridContainer.clientWidth;
+            
+            // Update prev button
+            if (currentPosition <= 0) {
+                prevBtn.style.opacity = '0.5';
+                prevBtn.style.cursor = 'not-allowed';
+            } else {
+                prevBtn.style.opacity = '1';
+                prevBtn.style.cursor = 'pointer';
+            }
+
+            // Update next button
+            if (currentPosition >= maxScroll) {
+                nextBtn.style.opacity = '0.5';
+                nextBtn.style.cursor = 'not-allowed';
+            } else {
+                nextBtn.style.opacity = '1';
+                nextBtn.style.cursor = 'pointer';
+            }
+        }
+
+        prevBtn.addEventListener('click', function() {
+            if (currentPosition > 0) {
+                currentPosition = Math.max(0, currentPosition - scrollAmount);
+                gridContainer.scrollTo({
+                    left: currentPosition,
+                    behavior: 'smooth'
+                });
+                setTimeout(updateButtons, 300);
+            }
+        });
+
+        nextBtn.addEventListener('click', function() {
+            const maxScroll = grid.scrollWidth - gridContainer.clientWidth;
+            if (currentPosition < maxScroll) {
+                currentPosition = Math.min(maxScroll, currentPosition + scrollAmount);
+                gridContainer.scrollTo({
+                    left: currentPosition,
+                    behavior: 'smooth'
+                });
+                setTimeout(updateButtons, 300);
+            }
+        });
+
+        // Update buttons on window resize
+        window.addEventListener('resize', updateButtons);
+        
+        // Initial button state
+        updateButtons();
+    }
+
+    // Initialize amenities slider
+    initAmenitiesSlider();
 });
