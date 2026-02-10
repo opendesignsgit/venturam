@@ -3,18 +3,17 @@
    =================================== */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Counter Animation
+    // Constants
+    const ANIMATION_START_DELAY = 500; // Delay before starting counter animations (ms)
+    
+    // Counter Animation using requestAnimationFrame for smoother performance
     function animateCounter(element, target, duration = 2000) {
-        const start = 0;
-        const increment = target / (duration / 16); // 60fps
-        let current = start;
+        const startTime = performance.now();
         
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                current = target;
-                clearInterval(timer);
-            }
+        function updateCounter(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1); // Ensure we don't exceed 1
+            const current = progress * target;
             
             // Format the number
             if (target < 10) {
@@ -24,7 +23,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 // For whole numbers like 141
                 element.textContent = Math.floor(current);
             }
-        }, 16);
+            
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            } else {
+                // Ensure final value is exact
+                element.textContent = target < 10 ? target.toFixed(2) : Math.floor(target);
+            }
+        }
+        
+        requestAnimationFrame(updateCounter);
     }
     
     // Initialize counters
@@ -37,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Start animation after a short delay
             setTimeout(() => {
                 animateCounter(counter, target);
-            }, 500);
+            }, ANIMATION_START_DELAY);
         });
     }
     
