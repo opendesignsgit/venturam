@@ -260,37 +260,58 @@
 
 /* ===================================
    SECTION 2: Project Types Tabs
+   THREE-LAYER STRUCTURE
    =================================== */
 
 .project-types {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(135deg, #1a4a3d 0%, #2d5a4a 30%, #1f5545 50%, #234d3f 70%, #1a4a3d 100%);
     padding: 80px 0 0;
     overflow: visible;
 }
 
-/* Background Pattern */
-.project-types-bg {
+/* LAYER 1: Static Orchestra Background (Never Changes) */
+.orchestra-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background-image: url('../project-detail-page/asset/building-bg.png');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* LAYER 2: Green Overlay (Constant for all tabs) */
+.green-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../project-detail-page/asset/building-bg.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.15;
-    z-index: 1;
+    background: linear-gradient(135deg, 
+        rgba(26, 74, 61, 0.95) 0%, 
+        rgba(45, 90, 74, 0.92) 30%, 
+        rgba(31, 85, 69, 0.90) 50%, 
+        rgba(35, 77, 63, 0.88) 70%, 
+        rgba(26, 74, 61, 0.85) 100%);
+    z-index: 2;
     pointer-events: none;
+}
+
+/* LAYER 3: Foreground Content (Tab Controlled) */
+.foreground-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
 }
 
 /* Header Section */
 .project-types-header {
-    position: relative;
-    z-index: 2;
     text-align: center;
     padding: 60px 20px 40px;
 }
@@ -316,8 +337,6 @@
 
 /* Tabs Navigation */
 .project-tabs {
-    position: relative;
-    z-index: 2;
     display: flex;
     justify-content: center;
     gap: 0;
@@ -373,8 +392,6 @@
 
 /* Tab Content */
 .project-types-content {
-    position: relative;
-    z-index: 2;
     max-width: 1400px;
     margin: 0 auto;
     padding: 80px 60px 0;
