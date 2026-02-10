@@ -4,6 +4,12 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     
+    // Constants
+    const FRAME_DURATION_MS = 16; // 60fps
+    const COUNT_ANIMATION_DURATION = 2000; // 2 seconds
+    const VISIBILITY_THRESHOLD = 0.3;
+    const PARALLAX_SPEED = 0.5;
+    
     // ===================================
     // COUNT UP ANIMATION FOR STATISTICS
     // ===================================
@@ -12,8 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         statNumbers.forEach(stat => {
             const target = parseFloat(stat.getAttribute('data-target'));
-            const duration = 2000; // 2 seconds
-            const increment = target / (duration / 16); // 60fps
+            const increment = target / (COUNT_ANIMATION_DURATION / FRAME_DURATION_MS);
             let current = 0;
             
             const updateCount = () => {
@@ -50,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.3 });
+        }, { threshold: VISIBILITY_THRESHOLD });
         
         observer.observe(projectIntroSection);
     }
@@ -213,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (scrolled > sectionTop - window.innerHeight && scrolled < sectionTop + sectionHeight) {
                     const background = section.querySelector('.project-intro-background img, .amenities-background img');
                     if (background) {
-                        const yPos = (scrolled - sectionTop) * 0.5;
+                        const yPos = (scrolled - sectionTop) * PARALLAX_SPEED;
                         background.style.transform = `translateY(${yPos}px)`;
                     }
                 }
