@@ -81,13 +81,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // ===================================
-    // ACCORDION FUNCTIONALITY (Mobile)
+    // ACCORDION FUNCTIONALITY (Mobile) - Section 2
     // ===================================
-    function createAccordion() {
-        const projectDetailsSection = document.querySelector('.project-details-section');
-        const tabsContent = document.querySelector('.tabs-content');
+    function createProjectAccordion() {
+        const projectTabsNav = document.querySelector('.tabs-navigation');
+        const projectTabsContent = document.querySelector('.tabs-content');
         
-        if (!projectDetailsSection || !tabsContent) return;
+        if (!projectTabsNav || !projectTabsContent) return;
         
         // Check if accordion already exists
         if (document.querySelector('.project-accordion')) return;
@@ -150,11 +150,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         // Insert accordion after tabs content
-        tabsContent.parentNode.insertBefore(accordion, tabsContent.nextSibling);
+        projectTabsContent.parentNode.insertBefore(accordion, projectTabsContent.nextSibling);
     }
     
     // Create accordion on page load
-    createAccordion();
+    createProjectAccordion();
     
     // ===================================
     // AMENITIES SWIPER SLIDER
