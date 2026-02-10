@@ -61,4 +61,75 @@ document.addEventListener('DOMContentLoaded', function() {
             // You can add a lightbox or video modal here
         });
     }
+
+    /* ===================================
+       SECTION 2: Tab Switching
+       =================================== */
+
+    // Tab switching functionality
+    function initTabSwitching() {
+        const tabs = document.querySelectorAll('.project-tab');
+        const images = document.querySelectorAll('.content-image');
+        const contentTitle = document.querySelector('.content-title');
+
+        // Tab data
+        const tabData = {
+            symphony: {
+                title: 'SYMPHONY APARTMENT',
+                range: '2800 TO 2500'
+            },
+            sonata: {
+                title: 'SONATA APARTMENT',
+                range: '2500 TO 1500'
+            },
+            opera: {
+                title: 'OPERA APARTMENT',
+                range: '1500 TO 1200'
+            },
+            aria: {
+                title: 'ARIA APARTMENT',
+                range: '1100 TO 850'
+            }
+        };
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+
+                // Remove active class from all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+
+                // Add active class to clicked tab
+                this.classList.add('active');
+
+                // Hide all images
+                images.forEach(img => img.classList.remove('active'));
+
+                // Show corresponding image
+                const activeImage = document.querySelector(`.content-image[data-content="${tabName}"]`);
+                if (activeImage) {
+                    activeImage.classList.add('active');
+                }
+
+                // Update content title and range
+                if (contentTitle && tabData[tabName]) {
+                    contentTitle.textContent = tabData[tabName].title;
+                    
+                    // Update the range in the text content
+                    const contentText = document.querySelector('.content-text');
+                    if (contentText) {
+                        const currentText = contentText.innerHTML;
+                        const updatedText = currentText.replace(
+                            /<strong>\d+ TO \d+<\/strong>/,
+                            `<strong>${tabData[tabName].range}</strong>`
+                        );
+                        contentText.innerHTML = updatedText;
+                    }
+                }
+            });
+        });
+    }
+
+    // Initialize tab switching
+    initTabSwitching();
 });
