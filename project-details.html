@@ -17,9 +17,11 @@
         <div class="navbar-container">
             <!-- Left navigation -->
             <ul class="navbar-nav navbar-left">
-                <li><a href="#about" class="nav-link">ABOUT US</a></li>
-                <li><a href="#medleys" class="nav-link">MEDLEYS</a></li>
-                <li><a href="#projects" class="nav-link">PROJECTS</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li class="has-megamenu">
+                    <a href="#medleys" class="nav-link nav-link-megamenu" id="medleys-trigger">Medley's</a>
+                </li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
             </ul>
             
             <!-- Center logo -->
@@ -29,12 +31,83 @@
             
             <!-- Right navigation -->
             <ul class="navbar-nav navbar-right">
-                <li><a href="#career" class="nav-link">CAREER</a></li>
-                <li><a href="#testimonials" class="nav-link">TESTIMONIALS</a></li>
-                <li><a href="#contact" class="nav-link">CONTACT US</a></li>
+                <li><a href="#career" class="nav-link">Career</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li><a href="#contact" class="nav-link">Contact Us</a></li>
             </ul>
+            
+            <!-- Secondary Menu Button -->
+            <button class="secondary-menu-btn" id="secondary-menu-toggle" aria-label="Open menu">
+                <span class="hamburger-lines">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+                <span class="menu-text">Menu</span>
+            </button>
+            
+            <!-- Mobile menu toggle -->
+            <button class="navbar-toggle" aria-label="Toggle navigation">
+                <div class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
         </div>
     </nav>
+    
+    <!-- Mega Menu Dropdown -->
+    <div class="mega-menu" id="mega-menu">
+        <div class="mega-menu-container">
+            <!-- Left side - Menu Links -->
+            <div class="mega-menu-links">
+                <a href="#overview" class="mega-menu-link">Overview</a>
+                <a href="#location" class="mega-menu-link">Location Highlights</a>
+                <a href="#floorplans" class="mega-menu-link">Floor Plans</a>
+                <a href="#amenities" class="mega-menu-link">Amenities</a>
+                <a href="#specifications" class="mega-menu-link">Specifications</a>
+                <a href="#gallery" class="mega-menu-link">Gallery</a>
+                <a href="#construction" class="mega-menu-link">Construction Status</a>
+            </div>
+            <!-- Right side - Property Image -->
+            <div class="mega-menu-image">
+                <img src="assets/elevation.png" alt="Medley's Nest Property">
+                <a href="#contact" class="mega-menu-cta">Enquire Now</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Secondary Offcanvas Menu -->
+    <div class="offcanvas-menu" id="offcanvas-menu">
+        <div class="offcanvas-header">
+            <button class="offcanvas-close" id="offcanvas-close" aria-label="Close menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="offcanvas-content">
+            <a href="#about" class="offcanvas-link">About Us</a>
+            <a href="#medleys" class="offcanvas-link">Medley's</a>
+            <a href="#projects" class="offcanvas-link">Projects</a>
+            <a href="#career" class="offcanvas-link">Career</a>
+            <a href="#testimonials" class="offcanvas-link">Testimonials</a>
+            <a href="#contact" class="offcanvas-link">Contact Us</a>
+        </div>
+    </div>
+    
+    <!-- Offcanvas Overlay -->
+    <div class="offcanvas-overlay" id="offcanvas-overlay"></div>
+    
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu">
+        <a href="#about" class="nav-link">About Us</a>
+        <a href="#medleys" class="nav-link">Medley's</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#career" class="nav-link">Career</a>
+        <a href="#testimonials" class="nav-link">Testimonials</a>
+        <a href="#contact" class="nav-link">Contact Us</a>
+    </div>
 
     <!-- Section 1: Project Detail Intro -->
     <section class="project-intro">
@@ -45,12 +118,17 @@
             <h1 class="project-title">MEDLEY'S<br>NEST</h1>
             
             <div class="walkthrough-btn">
-                <div class="walkthrough-circle">
-                    <svg class="play-icon" width="20" height="24" viewBox="0 0 20 24" fill="none">
-                        <path d="M0 0L20 12L0 24V0Z" fill="currentColor"/>
-                    </svg>
-                </div>
-                <div class="walkthrough-text">WALKTHROUGH<br>PLAY NOW</div>
+                <svg class="walkthrough-text" viewBox="0 0 120 120">
+                    <defs>
+                        <path id="walkthroughCircle" d="M 60, 60 m -50, 0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0"/>
+                    </defs>
+                    <text fill="#ffffff" font-size="10" font-family="Arial, sans-serif" letter-spacing="3">
+                        <textPath href="#walkthroughCircle">WALKTHROUGH - PLAY NOW - WALKTHROUGH - PLAY NOW - </textPath>
+                    </text>
+                </svg>
+                <svg class="play-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="10,8 16,12 10,16" fill="#ffffff"/>
+                </svg>
             </div>
         </div>
 
@@ -84,6 +162,7 @@
     </section>
 
     <!-- JavaScript -->
+    <script src="js/navbar.js"></script>
     <script src="js/project-details.js"></script>
 </body>
 </html>

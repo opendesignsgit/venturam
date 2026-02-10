@@ -20,7 +20,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../project-detail-page/asset/intro-bg.jpg');
+    background-image: url('../project-detail-page/asset/Banner.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -68,46 +68,45 @@
     top: 50%;
     right: 120px;
     transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.walkthrough-btn:hover .walkthrough-circle {
-    transform: scale(1.1);
-    background: rgba(255, 255, 255, 0.25);
-}
-
-.walkthrough-circle {
     width: 120px;
     height: 120px;
-    border: 2px solid rgba(255, 255, 255, 0.8);
     border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(5px);
+    cursor: pointer;
     transition: all 0.3s ease;
-    position: relative;
+    background: transparent;
 }
 
-.play-icon {
-    color: #ffffff;
-    margin-left: 4px;
+.walkthrough-btn:hover {
+    border-color: #ffffff;
+    transform: translateY(-50%) scale(1.05);
 }
 
 .walkthrough-text {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    color: #ffffff;
-    text-align: left;
-    line-height: 1.4;
-    text-transform: uppercase;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotateText 15s linear infinite;
+}
+
+@keyframes rotateText {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.walkthrough-btn .play-icon {
+    width: 24px;
+    height: 24px;
+    fill: #ffffff;
+    position: relative;
+    z-index: 2;
 }
 
 /* Bottom Section */
@@ -184,11 +183,13 @@
     
     .walkthrough-btn {
         right: 80px;
-    }
-    
-    .walkthrough-circle {
         width: 100px;
         height: 100px;
+    }
+    
+    .walkthrough-btn .play-icon {
+        width: 20px;
+        height: 20px;
     }
     
     .location-text {
@@ -213,7 +214,10 @@
         position: static;
         transform: none;
         margin-top: 40px;
-        justify-content: center;
+    }
+    
+    .walkthrough-btn:hover {
+        transform: scale(1.05);
     }
     
     .project-intro-content {
