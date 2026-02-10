@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Venturam - Project Details">
+    <title>Project Details - Venturam</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/project-details.css">
+    
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+    <!-- GSAP for animations -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Left navigation -->
+            <ul class="navbar-nav navbar-left">
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li class="has-megamenu">
+                    <a href="#medleys" class="nav-link nav-link-megamenu" id="medleys-trigger">Medley's</a>
+                </li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+            </ul>
+            
+            <!-- Center logo -->
+            <a href="#home" class="navbar-logo">
+                <img src="assets/logo.png" alt="Venturam" class="logo-image">
+            </a>
+            
+            <!-- Right navigation -->
+            <ul class="navbar-nav navbar-right">
+                <li><a href="#career" class="nav-link">Career</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li><a href="#contact" class="nav-link">Contact Us</a></li>
+            </ul>
+            
+            <!-- Secondary Menu Button -->
+            <button class="secondary-menu-btn" id="secondary-menu-toggle" aria-label="Open menu">
+                <span class="hamburger-lines">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+                <span class="menu-text">Menu</span>
+            </button>
+            
+            <!-- Mobile menu toggle -->
+            <button class="navbar-toggle" aria-label="Toggle navigation">
+                <div class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mega Menu Dropdown -->
+    <div class="mega-menu" id="mega-menu">
+        <div class="mega-menu-container">
+            <!-- Left side - Menu Links -->
+            <div class="mega-menu-links">
+                <a href="#overview" class="mega-menu-link">Overview</a>
+                <a href="#location" class="mega-menu-link">Location Highlights</a>
+                <a href="#floorplans" class="mega-menu-link">Floor Plans</a>
+                <a href="#amenities" class="mega-menu-link">Amenities</a>
+                <a href="#specifications" class="mega-menu-link">Specifications</a>
+                <a href="#gallery" class="mega-menu-link">Gallery</a>
+                <a href="#construction" class="mega-menu-link">Construction Status</a>
+            </div>
+            <!-- Right side - Property Image -->
+            <div class="mega-menu-image">
+                <img src="assets/elevation.png" alt="Medley's Nest Property">
+                <a href="#contact" class="mega-menu-cta">Enquire Now</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Secondary Offcanvas Menu -->
+    <div class="offcanvas-menu" id="offcanvas-menu">
+        <div class="offcanvas-header">
+            <button class="offcanvas-close" id="offcanvas-close" aria-label="Close menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="offcanvas-content">
+            <a href="#about" class="offcanvas-link">About Us</a>
+            <a href="#medleys" class="offcanvas-link">Medley's</a>
+            <a href="#projects" class="offcanvas-link">Projects</a>
+            <a href="#career" class="offcanvas-link">Career</a>
+            <a href="#testimonials" class="offcanvas-link">Testimonials</a>
+            <a href="#contact" class="offcanvas-link">Contact Us</a>
+        </div>
+    </div>
+
+    <!-- Section 1: Project Detail Intro -->
+    <section class="project-intro-section">
+        <div class="project-intro-background">
+            <img src="project-detail-page/asset/intro-bg.jpg" alt="Project Background" class="intro-bg-img">
+        </div>
+        <div class="project-intro-overlay"></div>
+        
+        <div class="project-intro-content">
+            <div class="project-intro-header">
+                <h1 class="project-intro-title">MEDLEY'S NEST</h1>
+                <p class="project-intro-subtitle">WHERE COMFORT MEETS ELEGANCE</p>
+            </div>
+            
+            <div class="project-intro-stats">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="2.5">0</div>
+                    <div class="stat-label">ACRES</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="168">0</div>
+                    <div class="stat-label">APARTMENTS</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="3">0</div>
+                    <div class="stat-label">TOWERS</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="95">0</div>
+                    <div class="stat-label">% SOLD</div>
+                </div>
+            </div>
+            
+            <div class="project-intro-images">
+                <div class="intro-image-card">
+                    <img src="project-detail-page/asset/intro-img-1.jpg" alt="Project Image 1">
+                </div>
+                <div class="intro-image-card">
+                    <img src="project-detail-page/asset/intro-img-2.jpg" alt="Project Image 2">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Project Tabs/Details -->
+    <section class="project-details-section">
+        <div class="project-details-fade-overlay"></div>
+        
+        <div class="project-details-container">
+            <h2 class="project-details-title">PROJECT OVERVIEW</h2>
+            
+            <div class="project-tabs">
+                <div class="tabs-navigation">
+                    <button class="tab-btn active" data-tab="overview">OVERVIEW</button>
+                    <button class="tab-btn" data-tab="location">LOCATION</button>
+                    <button class="tab-btn" data-tab="features">FEATURES</button>
+                    <button class="tab-btn" data-tab="connectivity">CONNECTIVITY</button>
+                </div>
+                
+                <div class="tabs-content">
+                    <div class="tab-pane active" id="overview">
+                        <div class="tab-content-wrapper">
+                            <div class="tab-text">
+                                <h3>ABOUT THE PROJECT</h3>
+                                <p>Medley's Nest is a premium residential project that redefines modern living. Spread across 2.5 acres in a prime location, this development offers 168 thoughtfully designed apartments across 3 elegant towers.</p>
+                                <p>Experience a perfect blend of luxury, comfort, and convenience with world-class amenities and impeccable design.</p>
+                            </div>
+                            <div class="tab-image">
+                                <img src="project-detail-page/asset/intro-img-1.jpg" alt="Overview">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="location">
+                        <div class="tab-content-wrapper">
+                            <div class="tab-text">
+                                <h3>PRIME LOCATION</h3>
+                                <p>Strategically located in the heart of the city with excellent connectivity to major IT hubs, educational institutions, and healthcare facilities.</p>
+                                <p>Enjoy the convenience of being close to everything that matters while residing in a peaceful, green environment.</p>
+                            </div>
+                            <div class="tab-image">
+                                <img src="project-detail-page/asset/location-advantage.jpg" alt="Location">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="features">
+                        <div class="tab-content-wrapper">
+                            <div class="tab-text">
+                                <h3>PREMIUM FEATURES</h3>
+                                <p>Each apartment is designed with meticulous attention to detail, featuring spacious layouts, premium fittings, and modern amenities.</p>
+                                <p>From smart home features to energy-efficient systems, every aspect is crafted for your comfort and convenience.</p>
+                            </div>
+                            <div class="tab-image">
+                                <img src="project-detail-page/asset/specification.jpg" alt="Features">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="connectivity">
+                        <div class="tab-content-wrapper">
+                            <div class="tab-text">
+                                <h3>EXCELLENT CONNECTIVITY</h3>
+                                <p>Well-connected to major highways, metro stations, and public transport, making your daily commute effortless.</p>
+                                <p>Close proximity to shopping centers, restaurants, and entertainment zones ensures you're never far from urban conveniences.</p>
+                            </div>
+                            <div class="tab-image">
+                                <img src="project-detail-page/asset/intro-img-2.jpg" alt="Connectivity">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2.1: Building Image with Overlap -->
+    <section class="building-section">
+        <div class="building-container">
+            <div class="building-image-wrapper">
+                <img src="project-detail-page/asset/building-bg.png" alt="Building Elevation" class="building-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Amenities -->
+    <section class="amenities-section" id="amenities">
+        <div class="amenities-background">
+            <img src="project-detail-page/asset/amenities-bg.jpg" alt="Amenities Background">
+        </div>
+        <div class="amenities-overlay"></div>
+        
+        <div class="amenities-container">
+            <h2 class="amenities-title">WORLD-CLASS AMENITIES</h2>
+            <p class="amenities-subtitle">EXPERIENCE LUXURY AT EVERY CORNER</p>
+            
+            <div class="amenities-slider-wrapper">
+                <div class="swiper amenities-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <div class="amenities-grid">
+                                <div class="amenity-item large">
+                                    <img src="project-detail-page/asset/Swimming-Pool.jpg" alt="Swimming Pool">
+                                    <div class="amenity-label">SWIMMING POOL</div>
+                                </div>
+                                <div class="amenity-item">
+                                    <img src="project-detail-page/asset/Gym.jpg" alt="Gym">
+                                    <div class="amenity-label">GYM</div>
+                                </div>
+                                <div class="amenity-item">
+                                    <img src="project-detail-page/asset/Kids-Play-Area.jpg" alt="Kids Play Area">
+                                    <div class="amenity-label">KIDS PLAY AREA</div>
+                                </div>
+                                <div class="amenity-item tall">
+                                    <img src="project-detail-page/asset/Multi-Purpose--Hall.jpg" alt="Multi Purpose Hall">
+                                    <div class="amenity-label">MULTI PURPOSE HALL</div>
+                                </div>
+                                <div class="amenity-item">
+                                    <img src="project-detail-page/asset/Yoga-Room.jpg" alt="Yoga Room">
+                                    <div class="amenity-label">YOGA ROOM</div>
+                                </div>
+                                <div class="amenity-item">
+                                    <img src="project-detail-page/asset/Indoor-Play-Area.jpg" alt="Indoor Play Area">
+                                    <div class="amenity-label">INDOOR PLAY AREA</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="amenities-grid">
+                                <div class="amenity-item">
+                                    <img src="project-detail-page/asset/EV-Charging--Point.jpg" alt="EV Charging Point">
+                                    <div class="amenity-label">EV CHARGING POINT</div>
+                                </div>
+                                <div class="amenity-item large">
+                                    <img src="project-detail-page/asset/CCTV--Surveillance.jpg" alt="CCTV Surveillance">
+                                    <div class="amenity-label">CCTV SURVEILLANCE</div>
+                                </div>
+                                <div class="amenity-item tall">
+                                    <img src="project-detail-page/asset/Lift.jpg" alt="Lift">
+                                    <div class="amenity-label">LIFT</div>
+                                </div>
+                                <div class="amenity-item">
+                                    <img src="project-detail-page/asset/Access-Control-Door.jpg" alt="Access Control Door">
+                                    <div class="amenity-label">ACCESS CONTROL</div>
+                                </div>
+                                <div class="amenity-item">
+                                    <img src="project-detail-page/asset/Video-Phone-Door.jpg" alt="Video Phone Door">
+                                    <div class="amenity-label">VIDEO DOOR PHONE</div>
+                                </div>
+                                <div class="amenity-item">
+                                    <img src="project-detail-page/asset/Solar-Powered--LED.jpg" alt="Solar Powered LED">
+                                    <div class="amenity-label">SOLAR LED</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation -->
+                    <div class="amenities-nav">
+                        <button class="amenities-prev">
+                            <svg viewBox="0 0 24 24">
+                                <polyline points="15,18 9,12 15,6" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        </button>
+                        <button class="amenities-next">
+                            <svg viewBox="0 0 24 24">
+                                <polyline points="9,6 15,12 9,18" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Top: Logo and Contact -->
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="assets/logo.png" alt="Venturam" class="footer-logo-img">
+                </div>
+                
+                <p class="footer-address">Door No. 2, Second Floor, Griffith Street, Pallavaram, Chennai-600043</p>
+                
+                <div class="footer-contact">
+                    <span>+91 6384 609 609</span>
+                    <span>|</span>
+                    <a href="mailto:sales@venturam.in">sales@venturam.in</a>
+                </div>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="footer-social">
+                <a href="#" class="social-link" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="X (Twitter)">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <!-- Useful Links -->
+            <div class="footer-useful">
+                <p class="footer-useful-title">Useful Links</p>
+                <div class="footer-links">
+                    <a href="#about" class="footer-link">About Us</a>
+                    <span class="footer-link-separator">|</span>
+                    <a href="#testimonials" class="footer-link">Testimonials</a>
+                    <span class="footer-link-separator">|</span>
+                    <a href="#" class="footer-link">News Room</a>
+                    <span class="footer-link-separator">|</span>
+                    <a href="#" class="footer-link">NRI</a>
+                    <span class="footer-link-separator">|</span>
+                    <a href="#career" class="footer-link">Careers</a>
+                    <span class="footer-link-separator">|</span>
+                    <a href="#" class="footer-link">Joint Venture</a>
+                    <span class="footer-link-separator">|</span>
+                    <a href="#" class="footer-link">Channel Partner</a>
+                    <span class="footer-link-separator">|</span>
+                    <a href="#" class="footer-link">Blogs</a>
+                    <span class="footer-link-separator">|</span>
+                    <a href="#" class="footer-link">News</a>
+                    <span class="footer-link-separator">|</span>
+                    <a href="#contact" class="footer-link">Contact Us</a>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    COPYRIGHT © 2025 VENTURAM | <a href="#">TERMS OF USE</a> | <a href="#">PRIVACY POLICY</a>
+                </p>
+                <div class="footer-design">
+                    <span>DESIGN BY</span>
+                    <div class="footer-design-logo">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="2" width="20" height="20" rx="2" fill="#e74c3c"/>
+                            <text x="12" y="16" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="bold">D</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/project-details.js"></script>
+</body>
+</html>

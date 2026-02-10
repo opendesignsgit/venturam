@@ -1,0 +1,1572 @@
+/* ===================================
+   PROJECT DETAILS PAGE STYLES
+   =================================== */
+
+/* ===================================
+   SECTION 1: PROJECT INTRO
+   =================================== */
+.project-intro-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 120px 40px 80px;
+}
+
+.project-intro-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.project-intro-background .intro-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-intro-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(26, 58, 74, 0.7) 0%, rgba(26, 58, 74, 0.85) 100%);
+    z-index: 1;
+}
+
+.project-intro-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    width: 100%;
+    color: #fff;
+}
+
+.project-intro-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.project-intro-title {
+    font-family: Georgia, serif;
+    font-size: 5rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+    color: #E8D5B7;
+}
+
+.project-intro-subtitle {
+    font-size: 1.25rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #c9b896;
+    font-weight: 300;
+}
+
+/* Statistics Counter */
+.project-intro-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
+    margin-bottom: 100px;
+    padding: 0 40px;
+}
+
+.stat-item {
+    text-align: center;
+    border-right: 1px solid rgba(201, 184, 150, 0.3);
+}
+
+.stat-item:last-child {
+    border-right: none;
+}
+
+.stat-number {
+    font-family: Georgia, serif;
+    font-size: 4.5rem;
+    font-weight: 400;
+    color: #E8D5B7;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.stat-number-extra {
+    font-family: Georgia, serif;
+    font-size: 2rem;
+    color: #E8D5B7;
+    margin-top: 5px;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c9b896;
+    font-weight: 300;
+}
+
+/* Intro Images */
+.project-intro-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.intro-image-card {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16/10;
+    border: 1px solid rgba(201, 184, 150, 0.3);
+}
+
+.intro-image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.intro-image-card:hover img {
+    transform: scale(1.05);
+}
+
+/* ===================================
+   SECTION 2: PROJECT TYPES TABS
+   =================================== */
+.project-details-section {
+    position: relative;
+    padding: 120px 40px;
+    background: #0d1f2a;
+    overflow: hidden;
+}
+
+.project-details-bg-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.project-details-fade-overlay {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(180deg, rgba(26, 58, 74, 0.8) 0%, transparent 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.project-details-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.project-details-title {
+    font-family: Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-align: center;
+    color: #E8D5B7;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+}
+
+/* Tabs Navigation */
+.tabs-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: transparent;
+    border: 1px solid #c9b896;
+    color: #c9b896;
+    font-size: 0.875rem;
+    letter-spacing: 0.15em;
+    padding: 15px 40px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    font-weight: 400;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+    background: #c9b896;
+    color: #1a3a4a;
+}
+
+/* Tabs Content */
+.tabs-content {
+    position: relative;
+    min-height: 500px;
+}
+
+.tab-pane {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tab-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.tab-text h3 {
+    font-family: Georgia, serif;
+    font-size: 2.5rem;
+    color: #E8D5B7;
+    margin-bottom: 30px;
+    letter-spacing: 0.1em;
+}
+
+.tab-text p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #c9b896;
+    margin-bottom: 20px;
+}
+
+.tab-image {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(201, 184, 150, 0.3);
+}
+
+.tab-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Accordion for Mobile */
+.project-accordion {
+    display: none;
+}
+
+.accordion-item {
+    border-bottom: 1px solid rgba(201, 184, 150, 0.3);
+    margin-bottom: 20px;
+}
+
+.accordion-header {
+    background: transparent;
+    border: 1px solid #c9b896;
+    color: #c9b896;
+    width: 100%;
+    text-align: left;
+    padding: 20px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-header:hover,
+.accordion-header.active {
+    background: #c9b896;
+    color: #1a3a4a;
+}
+
+.accordion-header::after {
+    content: '+';
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.accordion-header.active::after {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.accordion-content.active {
+    max-height: 2000px;
+}
+
+.accordion-content-inner {
+    padding: 30px 20px;
+}
+
+/* ===================================
+   SECTION 2.1: BUILDING IMAGE
+   =================================== */
+.building-section {
+    position: relative;
+    padding: 0;
+    background: #0d1f2a;
+    overflow: visible;
+}
+
+.building-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.building-image-wrapper {
+    position: relative;
+    margin-top: -150px;
+    z-index: 10;
+}
+
+.building-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===================================
+   SECTION 3: AMENITIES
+   =================================== */
+.amenities-section {
+    position: relative;
+    min-height: 100vh;
+    padding: 200px 40px 120px;
+    background: #0d1f2a;
+    overflow: hidden;
+}
+
+.amenities-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.amenities-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+}
+
+.amenities-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(13, 31, 42, 0.8) 0%, rgba(13, 31, 42, 0.95) 100%);
+    z-index: 1;
+}
+
+.amenities-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.amenities-title {
+    font-family: Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-align: center;
+    color: #E8D5B7;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.amenities-subtitle {
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+    text-align: center;
+    color: #c9b896;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+}
+
+/* Amenities Slider */
+.amenities-slider-wrapper {
+    position: relative;
+}
+
+.amenities-swiper {
+    padding-bottom: 60px;
+}
+
+/* Masonry Grid */
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 200px;
+    gap: 20px;
+}
+
+.amenity-item {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(201, 184, 150, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.amenity-item:hover {
+    transform: translateY(-5px);
+}
+
+.amenity-item.large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.amenity-item.tall {
+    grid-row: span 2;
+}
+
+.amenity-item.wide {
+    grid-column: span 2;
+}
+
+.amenity-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.amenity-item:hover img {
+    transform: scale(1.1);
+}
+
+.amenity-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(26, 58, 74, 0.95) 100%);
+    color: #E8D5B7;
+    padding: 30px 20px 20px;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Amenities Navigation */
+.amenities-nav {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.amenities-prev,
+.amenities-next {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #c9b896;
+    background: transparent;
+    color: #c9b896;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.amenities-prev:hover,
+.amenities-next:hover {
+    background: #c9b896;
+    color: #1a3a4a;
+}
+
+.amenities-prev svg,
+.amenities-next svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Swiper Pagination */
+.amenities-swiper .swiper-pagination {
+    bottom: 20px;
+}
+
+.amenities-swiper .swiper-pagination-bullet {
+    background: #c9b896;
+    opacity: 0.5;
+    width: 10px;
+    height: 10px;
+}
+
+.amenities-swiper .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #E8D5B7;
+}
+
+/* ===================================
+   RESPONSIVE STYLES
+   =================================== */
+
+/* Tablet */
+@media (max-width: 968px) {
+    .project-intro-title {
+        font-size: 3.5rem;
+    }
+    
+    .project-intro-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+    
+    .stat-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(201, 184, 150, 0.3);
+        padding-bottom: 40px;
+    }
+    
+    .stat-item:nth-child(3),
+    .stat-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    
+    .project-intro-images {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-details-title,
+    .amenities-title {
+        font-size: 2.5rem;
+    }
+    
+    .tab-content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .amenities-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 150px;
+    }
+    
+    .building-image-wrapper {
+        margin-top: -100px;
+    }
+    
+    /* Show accordion, hide tabs on mobile */
+    .tabs-navigation,
+    .tabs-content {
+        display: none;
+    }
+    
+    .project-accordion {
+        display: block;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .project-intro-section {
+        padding: 100px 20px 60px;
+    }
+    
+    .project-intro-title {
+        font-size: 2.5rem;
+        letter-spacing: 0.1em;
+    }
+    
+    .project-intro-subtitle {
+        font-size: 1rem;
+        letter-spacing: 0.2em;
+    }
+    
+    .project-intro-stats {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0;
+    }
+    
+    .stat-item {
+        border-bottom: 1px solid rgba(201, 184, 150, 0.3);
+        padding-bottom: 30px;
+    }
+    
+    .stat-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    
+    .stat-number {
+        font-size: 3rem;
+    }
+    
+    .project-details-section,
+    .amenities-section {
+        padding: 80px 20px;
+    }
+    
+    .project-details-title,
+    .amenities-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    
+    .tab-text h3 {
+        font-size: 1.75rem;
+    }
+    
+    .tab-text p {
+        font-size: 1rem;
+    }
+    
+    .amenities-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 120px;
+    }
+    
+    .amenity-item.large,
+    .amenity-item.tall,
+    .amenity-item.wide {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    
+    .building-image-wrapper {
+        margin-top: -50px;
+    }
+}
+
+/* ===================================
+   SECTION 4: LOCATION HIGHLIGHTS
+   =================================== */
+.location-highlights-section {
+    position: relative;
+    padding: 120px 40px;
+    background: #f5f5f5;
+    overflow: hidden;
+}
+
+.location-bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(201, 184, 150, 0.05) 10px,
+        rgba(201, 184, 150, 0.05) 20px
+    );
+    z-index: 0;
+}
+
+.location-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.location-title {
+    font-family: Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-align: center;
+    color: #1a3a4a;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.location-subtitle {
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+    text-align: center;
+    color: #1a4a3d;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+}
+
+.location-tabs-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.location-tab-btn {
+    background: transparent;
+    border: 1px solid #1a4a3d;
+    color: #1a4a3d;
+    font-size: 0.875rem;
+    letter-spacing: 0.15em;
+    padding: 15px 35px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.location-tab-btn:hover,
+.location-tab-btn.active {
+    background: #1a4a3d;
+    color: #fff;
+}
+
+.location-tabs-content {
+    position: relative;
+    min-height: 600px;
+}
+
+.location-tab-pane {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.location-tab-pane.active {
+    display: block;
+}
+
+.location-map-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.location-map {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid rgba(26, 74, 61, 0.3);
+}
+
+.location-markers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.location-marker {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.marker-dot {
+    width: 20px;
+    height: 20px;
+    background: #c9b896;
+    border: 3px solid #1a4a3d;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.marker-dot:hover {
+    transform: scale(1.3);
+}
+
+.marker-info {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(26, 58, 74, 0.95);
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 0.875rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.marker-dot:hover + .marker-info,
+.location-marker:hover .marker-info {
+    opacity: 1;
+}
+
+/* ===================================
+   SECTION 5: SPECIFICATIONS
+   =================================== */
+.specifications-section {
+    padding: 120px 40px;
+    background: #fff;
+}
+
+.specifications-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.specifications-title {
+    font-family: Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-align: center;
+    color: #1a3a4a;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+}
+
+.specifications-content {
+    display: flex;
+    gap: 60px;
+}
+
+.specifications-tabs-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 250px;
+}
+
+.spec-tab-btn {
+    background: transparent;
+    border: 1px solid #c9b896;
+    color: #1a3a4a;
+    font-size: 0.875rem;
+    letter-spacing: 0.15em;
+    padding: 20px 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.spec-tab-btn:hover,
+.spec-tab-btn.active {
+    background: #1a4a3d;
+    border-color: #1a4a3d;
+    color: #fff;
+}
+
+.specifications-details {
+    flex: 1;
+}
+
+.spec-pane {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.spec-pane.active {
+    display: block;
+}
+
+.spec-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.spec-text h3 {
+    font-family: Georgia, serif;
+    font-size: 2.5rem;
+    color: #1a3a4a;
+    margin-bottom: 30px;
+    letter-spacing: 0.1em;
+}
+
+.spec-list {
+    list-style: none;
+    padding: 0;
+}
+
+.spec-list li {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.spec-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #1a4a3d;
+    font-weight: bold;
+}
+
+.spec-image {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(201, 184, 150, 0.3);
+}
+
+.spec-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===================================
+   SECTION 6: FLOOR PLAN
+   =================================== */
+.floorplan-section {
+    padding: 120px 40px;
+    background: #f5f5f5;
+}
+
+.floorplan-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.floorplan-title {
+    font-family: Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-align: center;
+    color: #1a3a4a;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.floorplan-subtitle {
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+    text-align: center;
+    color: #1a4a3d;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+}
+
+.floorplan-content {
+    display: flex;
+    gap: 60px;
+}
+
+.floorplan-tabs-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 250px;
+}
+
+.floorplan-tab-btn {
+    background: transparent;
+    border: 1px solid #c9b896;
+    color: #1a3a4a;
+    font-size: 0.875rem;
+    letter-spacing: 0.15em;
+    padding: 20px 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.floorplan-tab-btn:hover,
+.floorplan-tab-btn.active {
+    background: #1a4a3d;
+    border-color: #1a4a3d;
+    color: #fff;
+}
+
+.floorplan-display {
+    flex: 1;
+}
+
+.floorplan-pane {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.floorplan-pane.active {
+    display: block;
+}
+
+.floorplan-image-wrapper {
+    position: relative;
+    border: 1px solid rgba(201, 184, 150, 0.3);
+}
+
+.floorplan-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.floorplan-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(26, 58, 74, 0.95) 100%);
+    color: #fff;
+    padding: 40px 30px 30px;
+}
+
+.floorplan-info h3 {
+    font-family: Georgia, serif;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    letter-spacing: 0.1em;
+}
+
+.floorplan-info p {
+    font-size: 1.125rem;
+    color: #c9b896;
+}
+
+/* ===================================
+   RESPONSIVE - SECTIONS 4, 5, 6
+   =================================== */
+@media (max-width: 968px) {
+    .location-title,
+    .specifications-title,
+    .floorplan-title {
+        font-size: 2.5rem;
+    }
+    
+    .specifications-content,
+    .floorplan-content {
+        flex-direction: column;
+    }
+    
+    .specifications-tabs-vertical,
+    .floorplan-tabs-vertical {
+        flex-direction: row;
+        min-width: 100%;
+        overflow-x: auto;
+    }
+    
+    .spec-content-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .location-title,
+    .specifications-title,
+    .floorplan-title {
+        font-size: 2rem;
+    }
+    
+    .location-tabs-nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .location-tab-btn,
+    .spec-tab-btn,
+    .floorplan-tab-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ===================================
+   SECTION 7: GALLERY
+   =================================== */
+.gallery-section {
+    padding: 120px 40px;
+    background: #fff;
+    position: relative;
+}
+
+.gallery-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.gallery-title {
+    font-family: Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-align: center;
+    color: #1a3a4a;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.gallery-subtitle {
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+    text-align: center;
+    color: #1a4a3d;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 200px;
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid rgba(201, 184, 150, 0.3);
+}
+
+.gallery-item.gallery-large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.gallery-item.gallery-tall {
+    grid-row: span 2;
+}
+
+.gallery-item.gallery-wide {
+    grid-column: span 2;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 58, 74, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-icon {
+    font-size: 4rem;
+    color: #fff;
+    font-weight: 300;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.lightbox-close {
+    top: 20px;
+    right: 20px;
+}
+
+.lightbox-prev {
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lightbox-next {
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* ===================================
+   SECTION 7.1: CONSTRUCTION UPDATES
+   =================================== */
+.construction-section {
+    position: relative;
+    padding: 150px 40px 120px;
+    background: #f5f5f5;
+}
+
+.construction-overlap {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(180deg, #fff 0%, #f5f5f5 100%);
+    z-index: 0;
+}
+
+.construction-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.construction-title {
+    font-family: Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-align: center;
+    color: #1a3a4a;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.construction-subtitle {
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+    text-align: center;
+    color: #1a4a3d;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+}
+
+.construction-tabs-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.construction-tab-btn {
+    background: transparent;
+    border: 1px solid #1a4a3d;
+    color: #1a4a3d;
+    font-size: 0.875rem;
+    letter-spacing: 0.15em;
+    padding: 15px 35px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.construction-tab-btn:hover,
+.construction-tab-btn.active {
+    background: #1a4a3d;
+    color: #fff;
+}
+
+.construction-tabs-content {
+    position: relative;
+}
+
+.construction-tab-pane {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.construction-tab-pane.active {
+    display: block;
+}
+
+.construction-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.construction-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    border: 1px solid rgba(201, 184, 150, 0.3);
+}
+
+.construction-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===================================
+   SECTION 9: CALL TO ACTION
+   =================================== */
+.cta-section-project {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 40px;
+    overflow: hidden;
+}
+
+.cta-project-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.cta-project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(26, 58, 74, 0.85) 0%, rgba(26, 58, 74, 0.9) 100%);
+    z-index: 1;
+}
+
+.cta-project-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.cta-project-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.cta-project-title {
+    font-family: Georgia, serif;
+    font-size: 4rem;
+    font-weight: 400;
+    color: #E8D5B7;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.cta-project-description {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #c9b896;
+}
+
+.cta-project-form-wrapper {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 50px;
+    border: 1px solid rgba(201, 184, 150, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.cta-project-form .form-group {
+    margin-bottom: 25px;
+}
+
+.cta-project-form input,
+.cta-project-form textarea {
+    width: 100%;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(201, 184, 150, 0.3);
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.cta-project-form input::placeholder,
+.cta-project-form textarea::placeholder {
+    color: rgba(201, 184, 150, 0.7);
+}
+
+.cta-project-form input:focus,
+.cta-project-form textarea:focus {
+    outline: none;
+    border-color: #c9b896;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.cta-project-submit {
+    width: 100%;
+    padding: 18px;
+    background: transparent;
+    border: 2px solid #c9b896;
+    color: #c9b896;
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta-project-submit:hover {
+    background: #c9b896;
+    color: #1a3a4a;
+}
+
+.cta-footer-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+    z-index: 2;
+}
+
+/* ===================================
+   RESPONSIVE - SECTIONS 7, 7.1, 9
+   =================================== */
+@media (max-width: 968px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .gallery-item.gallery-large,
+    .gallery-item.gallery-tall,
+    .gallery-item.gallery-wide {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    
+    .construction-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .cta-project-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-title,
+    .construction-title {
+        font-size: 2rem;
+    }
+    
+    .construction-tabs-nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .construction-tab-btn {
+        width: 100%;
+    }
+    
+    .cta-project-title {
+        font-size: 2.5rem;
+    }
+    
+    .cta-project-form-wrapper {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid,
+    .construction-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-intro-title {
+        font-size: 2rem;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .project-details-title,
+    .amenities-title {
+        font-size: 1.5rem;
+        letter-spacing: 0.1em;
+    }
+    
+    .amenities-grid {
+        grid-template-columns: 1fr;
+    }
+}
