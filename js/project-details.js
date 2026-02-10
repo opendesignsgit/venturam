@@ -227,4 +227,58 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     parallaxEffect();
+    
+    // ===================================
+    // LOCATION HIGHLIGHTS TABS
+    // ===================================
+    const locationTabBtns = document.querySelectorAll('.location-tab-btn');
+    const locationTabPanes = document.querySelectorAll('.location-tab-pane');
+    
+    locationTabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetTab = btn.getAttribute('data-tab');
+            
+            locationTabBtns.forEach(b => b.classList.remove('active'));
+            locationTabPanes.forEach(pane => pane.classList.remove('active'));
+            
+            btn.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+    
+    // ===================================
+    // SPECIFICATIONS VERTICAL TABS
+    // ===================================
+    const specTabBtns = document.querySelectorAll('.spec-tab-btn');
+    const specPanes = document.querySelectorAll('.spec-pane');
+    
+    specTabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetSpec = btn.getAttribute('data-spec');
+            
+            specTabBtns.forEach(b => b.classList.remove('active'));
+            specPanes.forEach(pane => pane.classList.remove('active'));
+            
+            btn.classList.add('active');
+            document.getElementById(targetSpec).classList.add('active');
+        });
+    });
+    
+    // ===================================
+    // FLOOR PLAN VERTICAL TABS
+    // ===================================
+    const floorplanTabBtns = document.querySelectorAll('.floorplan-tab-btn');
+    const floorplanPanes = document.querySelectorAll('.floorplan-pane');
+    
+    floorplanTabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetPlan = btn.getAttribute('data-plan');
+            
+            floorplanTabBtns.forEach(b => b.classList.remove('active'));
+            floorplanPanes.forEach(pane => pane.classList.remove('active'));
+            
+            btn.classList.add('active');
+            document.getElementById(targetPlan + '-plan').classList.add('active');
+        });
+    });
 });

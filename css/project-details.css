@@ -679,6 +679,436 @@
     }
 }
 
+/* ===================================
+   SECTION 4: LOCATION HIGHLIGHTS
+   =================================== */
+.location-highlights-section {
+    position: relative;
+    padding: 120px 40px;
+    background: #f5f5f5;
+    overflow: hidden;
+}
+
+.location-bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(201, 184, 150, 0.05) 10px,
+        rgba(201, 184, 150, 0.05) 20px
+    );
+    z-index: 0;
+}
+
+.location-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.location-title {
+    font-family: Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-align: center;
+    color: #1a3a4a;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.location-subtitle {
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+    text-align: center;
+    color: #1a4a3d;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+}
+
+.location-tabs-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.location-tab-btn {
+    background: transparent;
+    border: 1px solid #1a4a3d;
+    color: #1a4a3d;
+    font-size: 0.875rem;
+    letter-spacing: 0.15em;
+    padding: 15px 35px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.location-tab-btn:hover,
+.location-tab-btn.active {
+    background: #1a4a3d;
+    color: #fff;
+}
+
+.location-tabs-content {
+    position: relative;
+    min-height: 600px;
+}
+
+.location-tab-pane {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.location-tab-pane.active {
+    display: block;
+}
+
+.location-map-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.location-map {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid rgba(26, 74, 61, 0.3);
+}
+
+.location-markers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.location-marker {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.marker-dot {
+    width: 20px;
+    height: 20px;
+    background: #c9b896;
+    border: 3px solid #1a4a3d;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.marker-dot:hover {
+    transform: scale(1.3);
+}
+
+.marker-info {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(26, 58, 74, 0.95);
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 0.875rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.marker-dot:hover + .marker-info,
+.location-marker:hover .marker-info {
+    opacity: 1;
+}
+
+/* ===================================
+   SECTION 5: SPECIFICATIONS
+   =================================== */
+.specifications-section {
+    padding: 120px 40px;
+    background: #fff;
+}
+
+.specifications-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.specifications-title {
+    font-family: Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-align: center;
+    color: #1a3a4a;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+}
+
+.specifications-content {
+    display: flex;
+    gap: 60px;
+}
+
+.specifications-tabs-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 250px;
+}
+
+.spec-tab-btn {
+    background: transparent;
+    border: 1px solid #c9b896;
+    color: #1a3a4a;
+    font-size: 0.875rem;
+    letter-spacing: 0.15em;
+    padding: 20px 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.spec-tab-btn:hover,
+.spec-tab-btn.active {
+    background: #1a4a3d;
+    border-color: #1a4a3d;
+    color: #fff;
+}
+
+.specifications-details {
+    flex: 1;
+}
+
+.spec-pane {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.spec-pane.active {
+    display: block;
+}
+
+.spec-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.spec-text h3 {
+    font-family: Georgia, serif;
+    font-size: 2.5rem;
+    color: #1a3a4a;
+    margin-bottom: 30px;
+    letter-spacing: 0.1em;
+}
+
+.spec-list {
+    list-style: none;
+    padding: 0;
+}
+
+.spec-list li {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.spec-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #1a4a3d;
+    font-weight: bold;
+}
+
+.spec-image {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(201, 184, 150, 0.3);
+}
+
+.spec-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===================================
+   SECTION 6: FLOOR PLAN
+   =================================== */
+.floorplan-section {
+    padding: 120px 40px;
+    background: #f5f5f5;
+}
+
+.floorplan-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.floorplan-title {
+    font-family: Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-align: center;
+    color: #1a3a4a;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.floorplan-subtitle {
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+    text-align: center;
+    color: #1a4a3d;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+}
+
+.floorplan-content {
+    display: flex;
+    gap: 60px;
+}
+
+.floorplan-tabs-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 250px;
+}
+
+.floorplan-tab-btn {
+    background: transparent;
+    border: 1px solid #c9b896;
+    color: #1a3a4a;
+    font-size: 0.875rem;
+    letter-spacing: 0.15em;
+    padding: 20px 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.floorplan-tab-btn:hover,
+.floorplan-tab-btn.active {
+    background: #1a4a3d;
+    border-color: #1a4a3d;
+    color: #fff;
+}
+
+.floorplan-display {
+    flex: 1;
+}
+
+.floorplan-pane {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.floorplan-pane.active {
+    display: block;
+}
+
+.floorplan-image-wrapper {
+    position: relative;
+    border: 1px solid rgba(201, 184, 150, 0.3);
+}
+
+.floorplan-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.floorplan-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(26, 58, 74, 0.95) 100%);
+    color: #fff;
+    padding: 40px 30px 30px;
+}
+
+.floorplan-info h3 {
+    font-family: Georgia, serif;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    letter-spacing: 0.1em;
+}
+
+.floorplan-info p {
+    font-size: 1.125rem;
+    color: #c9b896;
+}
+
+/* ===================================
+   RESPONSIVE - SECTIONS 4, 5, 6
+   =================================== */
+@media (max-width: 968px) {
+    .location-title,
+    .specifications-title,
+    .floorplan-title {
+        font-size: 2.5rem;
+    }
+    
+    .specifications-content,
+    .floorplan-content {
+        flex-direction: column;
+    }
+    
+    .specifications-tabs-vertical,
+    .floorplan-tabs-vertical {
+        flex-direction: row;
+        min-width: 100%;
+        overflow-x: auto;
+    }
+    
+    .spec-content-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .location-title,
+    .specifications-title,
+    .floorplan-title {
+        font-size: 2rem;
+    }
+    
+    .location-tabs-nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .location-tab-btn,
+    .spec-tab-btn,
+    .floorplan-tab-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 @media (max-width: 480px) {
     .project-intro-title {
         font-size: 2rem;
