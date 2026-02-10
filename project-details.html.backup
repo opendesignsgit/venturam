@@ -118,22 +118,20 @@
             
             <div class="project-intro-stats">
                 <div class="stat-item">
-                    <div class="stat-number" data-target="1.22">0</div>
+                    <div class="stat-number" data-target="2.5">0</div>
                     <div class="stat-label">ACRES</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number" data-target="141">0</div>
+                    <div class="stat-number" data-target="168">0</div>
                     <div class="stat-label">APARTMENTS</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number" data-target="2">0</div>
+                    <div class="stat-number" data-target="3">0</div>
                     <div class="stat-label">TOWERS</div>
-                    <div class="stat-number-extra">& 3 BHK</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number" data-target="4">0</div>
-                    <div class="stat-label">FLOORS</div>
-                    <div class="stat-number-extra">+</div>
+                    <div class="stat-number" data-target="95">0</div>
+                    <div class="stat-label">% SOLD</div>
                 </div>
             </div>
             
@@ -148,71 +146,70 @@
         </div>
     </section>
 
-    <!-- Section 2: Project Types -->
+    <!-- Section 2: Project Tabs/Details -->
     <section class="project-details-section">
         <div class="project-details-fade-overlay"></div>
-        <div class="project-details-bg-fixed" style="background-image: url('project-detail-page/asset/building-bg.png');"></div>
         
         <div class="project-details-container">
-            <h2 class="project-details-title">PROJECT TYPES</h2>
+            <h2 class="project-details-title">PROJECT OVERVIEW</h2>
             
             <div class="project-tabs">
                 <div class="tabs-navigation">
-                    <button class="tab-btn active" data-tab="symphony">SYMPHONY</button>
-                    <button class="tab-btn" data-tab="sonata">SONATA</button>
-                    <button class="tab-btn" data-tab="opera">OPERA</button>
-                    <button class="tab-btn" data-tab="aria">ARIA</button>
+                    <button class="tab-btn active" data-tab="overview">OVERVIEW</button>
+                    <button class="tab-btn" data-tab="location">LOCATION</button>
+                    <button class="tab-btn" data-tab="features">FEATURES</button>
+                    <button class="tab-btn" data-tab="connectivity">CONNECTIVITY</button>
                 </div>
                 
                 <div class="tabs-content">
-                    <div class="tab-pane active" id="symphony">
+                    <div class="tab-pane active" id="overview">
                         <div class="tab-content-wrapper">
                             <div class="tab-text">
-                                <h3>SYMPHONY</h3>
-                                <p>Experience the harmonious blend of space and luxury in our Symphony collection. These thoughtfully designed residences offer expansive living areas perfect for families seeking comfort and elegance.</p>
-                                <p>With premium fittings and modern amenities, Symphony homes create the perfect symphony of style and functionality.</p>
+                                <h3>ABOUT THE PROJECT</h3>
+                                <p>Medley's Nest is a premium residential project that redefines modern living. Spread across 2.5 acres in a prime location, this development offers 168 thoughtfully designed apartments across 3 elegant towers.</p>
+                                <p>Experience a perfect blend of luxury, comfort, and convenience with world-class amenities and impeccable design.</p>
                             </div>
                             <div class="tab-image">
-                                <img src="project-detail-page/asset/intro-img-1.jpg" alt="Symphony">
+                                <img src="project-detail-page/asset/intro-img-1.jpg" alt="Overview">
                             </div>
                         </div>
                     </div>
                     
-                    <div class="tab-pane" id="sonata">
+                    <div class="tab-pane" id="location">
                         <div class="tab-content-wrapper">
                             <div class="tab-text">
-                                <h3>SONATA</h3>
-                                <p>Discover the perfect composition of comfort in our Sonata series. These well-planned apartments provide an ideal balance of space and modern living.</p>
-                                <p>Every Sonata home is crafted to create a melodious living experience for the contemporary family.</p>
+                                <h3>PRIME LOCATION</h3>
+                                <p>Strategically located in the heart of the city with excellent connectivity to major IT hubs, educational institutions, and healthcare facilities.</p>
+                                <p>Enjoy the convenience of being close to everything that matters while residing in a peaceful, green environment.</p>
                             </div>
                             <div class="tab-image">
-                                <img src="project-detail-page/asset/intro-img-2.jpg" alt="Sonata">
+                                <img src="project-detail-page/asset/location-advantage.jpg" alt="Location">
                             </div>
                         </div>
                     </div>
                     
-                    <div class="tab-pane" id="opera">
+                    <div class="tab-pane" id="features">
                         <div class="tab-content-wrapper">
                             <div class="tab-text">
-                                <h3>OPERA</h3>
-                                <p>Experience grandeur with our Opera collection. These premium residences showcase spectacular design and luxurious finishes throughout.</p>
-                                <p>Opera homes are crafted for those who appreciate the finer things in life, offering an elevated living experience.</p>
+                                <h3>PREMIUM FEATURES</h3>
+                                <p>Each apartment is designed with meticulous attention to detail, featuring spacious layouts, premium fittings, and modern amenities.</p>
+                                <p>From smart home features to energy-efficient systems, every aspect is crafted for your comfort and convenience.</p>
                             </div>
                             <div class="tab-image">
-                                <img src="project-detail-page/asset/specification.jpg" alt="Opera">
+                                <img src="project-detail-page/asset/specification.jpg" alt="Features">
                             </div>
                         </div>
                     </div>
                     
-                    <div class="tab-pane" id="aria">
+                    <div class="tab-pane" id="connectivity">
                         <div class="tab-content-wrapper">
                             <div class="tab-text">
-                                <h3>ARIA</h3>
-                                <p>Light, airy, and sophisticated - our Aria collection embodies modern elegance. These residences feature open layouts and contemporary design elements.</p>
-                                <p>Aria homes offer a fresh, vibrant living space for the modern urban dweller.</p>
+                                <h3>EXCELLENT CONNECTIVITY</h3>
+                                <p>Well-connected to major highways, metro stations, and public transport, making your daily commute effortless.</p>
+                                <p>Close proximity to shopping centers, restaurants, and entertainment zones ensures you're never far from urban conveniences.</p>
                             </div>
                             <div class="tab-image">
-                                <img src="project-detail-page/asset/location-advantage.jpg" alt="Aria">
+                                <img src="project-detail-page/asset/intro-img-2.jpg" alt="Connectivity">
                             </div>
                         </div>
                     </div>
