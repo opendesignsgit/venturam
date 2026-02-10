@@ -1109,6 +1109,448 @@
     }
 }
 
+/* ===================================
+   SECTION 7: GALLERY
+   =================================== */
+.gallery-section {
+    padding: 120px 40px;
+    background: #fff;
+    position: relative;
+}
+
+.gallery-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.gallery-title {
+    font-family: Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-align: center;
+    color: #1a3a4a;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.gallery-subtitle {
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+    text-align: center;
+    color: #1a4a3d;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 200px;
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid rgba(201, 184, 150, 0.3);
+}
+
+.gallery-item.gallery-large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.gallery-item.gallery-tall {
+    grid-row: span 2;
+}
+
+.gallery-item.gallery-wide {
+    grid-column: span 2;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 58, 74, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-icon {
+    font-size: 4rem;
+    color: #fff;
+    font-weight: 300;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.lightbox-close {
+    top: 20px;
+    right: 20px;
+}
+
+.lightbox-prev {
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lightbox-next {
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* ===================================
+   SECTION 7.1: CONSTRUCTION UPDATES
+   =================================== */
+.construction-section {
+    position: relative;
+    padding: 150px 40px 120px;
+    background: #f5f5f5;
+}
+
+.construction-overlap {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(180deg, #fff 0%, #f5f5f5 100%);
+    z-index: 0;
+}
+
+.construction-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.construction-title {
+    font-family: Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-align: center;
+    color: #1a3a4a;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.construction-subtitle {
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+    text-align: center;
+    color: #1a4a3d;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+}
+
+.construction-tabs-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.construction-tab-btn {
+    background: transparent;
+    border: 1px solid #1a4a3d;
+    color: #1a4a3d;
+    font-size: 0.875rem;
+    letter-spacing: 0.15em;
+    padding: 15px 35px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.construction-tab-btn:hover,
+.construction-tab-btn.active {
+    background: #1a4a3d;
+    color: #fff;
+}
+
+.construction-tabs-content {
+    position: relative;
+}
+
+.construction-tab-pane {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.construction-tab-pane.active {
+    display: block;
+}
+
+.construction-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.construction-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    border: 1px solid rgba(201, 184, 150, 0.3);
+}
+
+.construction-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===================================
+   SECTION 9: CALL TO ACTION
+   =================================== */
+.cta-section-project {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 40px;
+    overflow: hidden;
+}
+
+.cta-project-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.cta-project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(26, 58, 74, 0.85) 0%, rgba(26, 58, 74, 0.9) 100%);
+    z-index: 1;
+}
+
+.cta-project-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.cta-project-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.cta-project-title {
+    font-family: Georgia, serif;
+    font-size: 4rem;
+    font-weight: 400;
+    color: #E8D5B7;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.cta-project-description {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #c9b896;
+}
+
+.cta-project-form-wrapper {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 50px;
+    border: 1px solid rgba(201, 184, 150, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.cta-project-form .form-group {
+    margin-bottom: 25px;
+}
+
+.cta-project-form input,
+.cta-project-form textarea {
+    width: 100%;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(201, 184, 150, 0.3);
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.cta-project-form input::placeholder,
+.cta-project-form textarea::placeholder {
+    color: rgba(201, 184, 150, 0.7);
+}
+
+.cta-project-form input:focus,
+.cta-project-form textarea:focus {
+    outline: none;
+    border-color: #c9b896;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.cta-project-submit {
+    width: 100%;
+    padding: 18px;
+    background: transparent;
+    border: 2px solid #c9b896;
+    color: #c9b896;
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta-project-submit:hover {
+    background: #c9b896;
+    color: #1a3a4a;
+}
+
+.cta-footer-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+    z-index: 2;
+}
+
+/* ===================================
+   RESPONSIVE - SECTIONS 7, 7.1, 9
+   =================================== */
+@media (max-width: 968px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .gallery-item.gallery-large,
+    .gallery-item.gallery-tall,
+    .gallery-item.gallery-wide {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    
+    .construction-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .cta-project-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-title,
+    .construction-title {
+        font-size: 2rem;
+    }
+    
+    .construction-tabs-nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .construction-tab-btn {
+        width: 100%;
+    }
+    
+    .cta-project-title {
+        font-size: 2.5rem;
+    }
+    
+    .cta-project-form-wrapper {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid,
+    .construction-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 480px) {
     .project-intro-title {
         font-size: 2rem;

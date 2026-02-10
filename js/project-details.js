@@ -281,4 +281,147 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById(targetPlan + '-plan').classList.add('active');
         });
     });
+    
+    // ===================================
+    // GALLERY LIGHTBOX
+    // ===================================
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.querySelector('.lightbox-image');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const lightboxPrev = document.querySelector('.lightbox-prev');
+    const lightboxNext = document.querySelector('.lightbox-next');
+    
+    let currentImageIndex = 0;
+    const galleryImages = [];
+    
+    galleryItems.forEach((item, index) => {
+        const img = item.querySelector('img');
+        galleryImages.push(img.src);
+        
+        item.addEventListener('click', () => {
+            currentImageIndex = index;
+            showLightbox();
+        });
+    });
+    
+    function showLightbox() {
+        if (galleryImages.length > 0) {
+            lightbox.classList.add('active');
+            lightboxImage.src = galleryImages[currentImageIndex];
+            document.body.style.overflow = 'hidden';
+        }
+    }
+    
+    function hideLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    lightboxClose.addEventListener('click', hideLightbox);
+    
+    lightboxPrev.addEventListener('click', () => {
+        currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+        lightboxImage.src = galleryImages[currentImageIndex];
+    });
+    
+    lightboxNext.addEventListener('click', () => {
+        currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+        lightboxImage.src = galleryImages[currentImageIndex];
+    });
+    
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            hideLightbox();
+        }
+    });
+    
+    // Keyboard navigation for lightbox
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        
+        if (e.key === 'Escape') hideLightbox();
+        if (e.key === 'ArrowLeft') lightboxPrev.click();
+        if (e.key === 'ArrowRight') lightboxNext.click();
+    });
+    
+    // ===================================
+    // CONSTRUCTION UPDATES TABS
+    // ===================================
+    const constructionTabBtns = document.querySelectorAll('.construction-tab-btn');
+    const constructionTabPanes = document.querySelectorAll('.construction-tab-pane');
+    
+    constructionTabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetMonth = btn.getAttribute('data-month');
+            
+            constructionTabBtns.forEach(b => b.classList.remove('active'));
+            constructionTabPanes.forEach(pane => pane.classList.remove('active'));
+            
+            btn.classList.add('active');
+            document.getElementById(targetMonth).classList.add('active');
+        });
+    });
+    
+    // ===================================
+    // CONTACT FORM VALIDATION
+    // ===================================
+    const contactForm = document.getElementById('contactForm');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const firstName = document.getElementById('firstName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            // Basic validation
+            if (!firstName || !email || !phone || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address');
+                return;
+            }
+            
+            // Phone validation (basic)
+            const phoneRegex = /^[0-9]{10}$/;
+            if (!phoneRegex.test(phone.replace(/[\s-]/g, ''))) {
+                alert('Please enter a valid 10-digit phone number');
+                return;
+            }
+            
+            // Form is valid
+            alert('Thank you for your inquiry! We will contact you soon.');
+            contactForm.reset();
+        });
+    }
+    
+    // ===================================
+    // VENTURAM EXPERIENCE SLIDER
+    // ===================================
+    if (typeof Swiper !== 'undefined') {
+        const experienceSlider = new Swiper('.experience-slider-new', {
+            slidesPerView: 1,
+            loop: true,
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.experience-next-new',
+                prevEl: '.experience-prev-new',
+            },
+        });
+    }
 });
