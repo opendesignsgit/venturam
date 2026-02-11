@@ -134,94 +134,51 @@ document.addEventListener('DOMContentLoaded', function() {
     initTabSwitching();
 
     /* ===================================
-       SECTION 3: Amenities Swiper Slider
+       SECTION 3: Amenities Masonry Grid Slider
        =================================== */
 
     // Wait for DOM and scripts to be fully loaded
     setTimeout(function() {
         // Check if Swiper is available
         if (typeof Swiper !== 'undefined') {
-            // Initialize amenities slider with Swiper
+            // Initialize amenities masonry grid slider with Swiper
             const amenitiesSlider = new Swiper('.amenities-swiper', {
-                slidesPerView: 1.2,
-                spaceBetween: 20,
-                speed: 600,
+                slidesPerView: 1,
+                spaceBetween: 0,
+                speed: 800,
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
                 loop: true,
                 autoplay: {
-                    delay: 4000,
+                    delay: 5000,
                     disableOnInteraction: false,
                 },
                 navigation: {
                     nextEl: '.amenities-nav-next',
                     prevEl: '.amenities-nav-prev',
-                },
-                breakpoints: {
-                    480: {
-                        slidesPerView: 1.5,
-                        spaceBetween: 20,
-                    },
-                    640: {
-                        slidesPerView: 2,
-                        spaceBetween: 25,
-                    },
-                    768: {
-                        slidesPerView: 2.5,
-                        spaceBetween: 25,
-                    },
-                    1024: {
-                        slidesPerView: 3,
-                        spaceBetween: 30,
-                    },
-                    1200: {
-                        slidesPerView: 3.5,
-                        spaceBetween: 30,
-                    },
-                    1400: {
-                        slidesPerView: 4,
-                        spaceBetween: 30,
-                    }
                 }
             });
-            console.log('Amenities slider initialized with Swiper');
+            console.log('Amenities masonry grid slider initialized with Swiper');
         } else if (typeof VanillaSlider !== 'undefined') {
             // Fallback to vanilla slider
             const amenitiesSlider = new VanillaSlider('.amenities-swiper', {
-                slidesPerView: 4,
-                spaceBetween: 30,
-                speed: 600,
+                slidesPerView: 1,
+                spaceBetween: 0,
+                speed: 800,
+                effect: 'fade',
                 loop: true,
                 autoplay: {
-                    delay: 4000,
+                    delay: 5000,
                     disableOnInteraction: false,
                 },
                 navigation: {
                     nextEl: '.amenities-nav-next',
                     prevEl: '.amenities-nav-prev',
-                },
-                breakpoints: {
-                    480: {
-                        slidesPerView: 1.5,
-                        spaceBetween: 20,
-                    },
-                    640: {
-                        slidesPerView: 2,
-                        spaceBetween: 25,
-                    },
-                    768: {
-                        slidesPerView: 2.5,
-                        spaceBetween: 25,
-                    },
-                    1024: {
-                        slidesPerView: 3,
-                        spaceBetween: 30,
-                    },
-                    1200: {
-                        slidesPerView: 3.5,
-                        spaceBetween: 30,
-                    }
                 }
             });
-            console.log('Amenities slider initialized with VanillaSlider');
+            console.log('Amenities masonry grid slider initialized with VanillaSlider');
         } else {
             console.log('No slider library available for amenities slider');
         }
