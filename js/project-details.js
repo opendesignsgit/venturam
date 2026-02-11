@@ -315,4 +315,136 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize floor plan tabs
     initFloorPlanTabs();
+
+    /* ===================================
+       SECTION 7: Gallery Lightbox
+       =================================== */
+
+    function initGalleryLightbox() {
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const img = this.querySelector('img');
+                if (img) {
+                    // Simple lightbox - in production, use a proper lightbox library
+                    console.log('Open lightbox for:', img.src);
+                    // TODO: Implement lightbox functionality
+                }
+            });
+        });
+    }
+
+    // Initialize gallery lightbox
+    initGalleryLightbox();
+
+    /* ===================================
+       SECTION 7.1: Construction Updates Tab Switching
+       =================================== */
+
+    function initConstructionTabs() {
+        const constructionTabs = document.querySelectorAll('.construction-tab');
+        const constructionImages = document.querySelectorAll('.construction-images');
+
+        constructionTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+
+                // Remove active class from all tabs
+                constructionTabs.forEach(t => t.classList.remove('active'));
+
+                // Add active class to clicked tab
+                this.classList.add('active');
+
+                // In a full implementation, you would show different images based on tab
+                console.log('Construction tab switched to:', tabName);
+            });
+        });
+
+        // Initialize construction image lightbox
+        const constructionImageWrappers = document.querySelectorAll('.construction-image-wrapper');
+        constructionImageWrappers.forEach(wrapper => {
+            wrapper.addEventListener('click', function() {
+                const img = this.querySelector('img');
+                if (img) {
+                    console.log('Open lightbox for construction image:', img.src);
+                    // TODO: Implement lightbox functionality
+                }
+            });
+        });
+    }
+
+    // Initialize construction tabs
+    initConstructionTabs();
+
+    /* ===================================
+       SECTION 8: Experience Slider (Swiper)
+       =================================== */
+
+    // Initialize experience slider if on project details page
+    setTimeout(function() {
+        if (typeof Swiper !== 'undefined' && document.querySelector('.experience-slider-new')) {
+            const experienceSlider = new Swiper('.experience-slider-new', {
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                speed: 800,
+                loop: true,
+                navigation: {
+                    nextEl: '.experience-next-new',
+                    prevEl: '.experience-prev-new',
+                },
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                }
+            });
+            console.log('Experience slider initialized');
+        } else if (typeof VanillaSlider !== 'undefined' && document.querySelector('.experience-slider-new')) {
+            const experienceSlider = new VanillaSlider('.experience-slider-new', {
+                effect: 'fade',
+                speed: 800,
+                loop: true,
+                navigation: {
+                    nextEl: '.experience-next-new',
+                    prevEl: '.experience-prev-new',
+                },
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                }
+            });
+            console.log('Experience slider initialized with VanillaSlider');
+        }
+    }, 200);
+
+    /* ===================================
+       SECTION 9: Call to Action Form
+       =================================== */
+
+    function initCTAForm() {
+        const ctaForm = document.querySelector('.cta-form');
+        
+        if (ctaForm) {
+            ctaForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData);
+                
+                console.log('Form submitted:', data);
+                
+                // Show success message
+                alert('Thank you for your interest! We will contact you soon.');
+                
+                // Reset form
+                this.reset();
+            });
+        }
+    }
+
+    // Initialize CTA form
+    initCTAForm();
 });
