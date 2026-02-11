@@ -877,3 +877,525 @@
         padding: 8px;
     }
 }
+
+/* ===================================
+   SECTION 4: Location Highlights
+   =================================== */
+
+.location-highlights {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 80px 60px 100px;
+    background-color: #1a3d3d;
+    overflow: hidden;
+}
+
+.location-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a4d4d 0%, #2a5d5d 50%, #1a3d3d 100%);
+    opacity: 0.9;
+    z-index: 1;
+}
+
+.location-header {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.location-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 72px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: #d4af7a;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.location-tabs {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.location-tab {
+    padding: 12px 30px;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.location-tab:hover,
+.location-tab.active {
+    color: #ffffff;
+    border-bottom-color: #d4af7a;
+}
+
+.location-view-buttons {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.location-view-btn {
+    padding: 12px 25px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.location-view-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #d4af7a;
+}
+
+.location-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.location-building {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.location-markers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.location-marker {
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.marker-icon {
+    width: 30px;
+    height: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 32' fill='%23d4af7a'%3E%3Cpath d='M12 0C5.37 0 0 5.37 0 12c0 8 12 20 12 20s12-12 12-20c0-6.63-5.37-12-12-12zm0 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+}
+
+.marker-text {
+    color: #ffffff;
+}
+
+.marker-distance {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #d4af7a;
+    margin-bottom: 2px;
+}
+
+.marker-name {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #ffffff;
+}
+
+/* ===================================
+   SECTION 5: Specifications
+   =================================== */
+
+.specifications {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 80px 60px 100px;
+    background-color: #f5f3f0;
+    overflow: hidden;
+}
+
+.specifications-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../project-detail-page/asset/specification.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+.specifications-header {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.specifications-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 72px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: #2d5f5f;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+}
+
+.specifications-subtitle {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #666;
+    margin: 0;
+}
+
+.specifications-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.specifications-tabs {
+    flex-shrink: 0;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.spec-tab {
+    padding: 20px 30px;
+    background: transparent;
+    border: none;
+    border-left: 4px solid transparent;
+    color: #333;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.spec-tab:hover {
+    background: rgba(212, 175, 122, 0.1);
+}
+
+.spec-tab.active {
+    background: #d4af7a;
+    border-left-color: #2d5f5f;
+    color: #333;
+}
+
+.specifications-display {
+    flex: 1;
+    min-height: 500px;
+}
+
+.spec-content {
+    display: none;
+    text-align: left;
+}
+
+.spec-content.active {
+    display: block;
+}
+
+.spec-icon {
+    margin-bottom: 25px;
+}
+
+.spec-heading {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 48px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: #2d5f5f;
+    text-transform: uppercase;
+    margin: 0 0 25px 0;
+}
+
+.spec-text {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #666;
+    max-width: 600px;
+}
+
+/* ===================================
+   SECTION 6: Floor Plan
+   =================================== */
+
+.floor-plan {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 80px 60px 100px;
+    background-color: #f5f3f0;
+    overflow: hidden;
+}
+
+.floor-plan-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f3f0;
+    z-index: 1;
+}
+
+.floor-plan-header {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.floor-plan-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 72px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: #2d5f5f;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+}
+
+.floor-plan-subtitle {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #666;
+    margin: 0;
+}
+
+.floor-plan-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.floor-plan-tabs {
+    flex-shrink: 0;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid rgba(45, 95, 95, 0.2);
+}
+
+.floor-tab {
+    padding: 25px 30px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(45, 95, 95, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.floor-tab:last-child {
+    border-bottom: none;
+}
+
+.floor-tab:hover {
+    background: rgba(45, 95, 95, 0.05);
+}
+
+.floor-tab.active {
+    background: #2d5f5f;
+}
+
+.floor-tab-name {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: #2d5f5f;
+    margin-bottom: 5px;
+}
+
+.floor-tab.active .floor-tab-name {
+    color: #ffffff;
+}
+
+.floor-tab-range {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: #666;
+}
+
+.floor-tab.active .floor-tab-range {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.floor-plan-display {
+    flex: 1;
+    position: relative;
+}
+
+.compass-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.floor-plan-image {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.floor-3d-plan {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.floor-plan-info {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.floor-sqft {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #2d5f5f;
+    margin-bottom: 20px;
+}
+
+.floor-download-btn {
+    padding: 15px 35px;
+    background: #2d5f5f;
+    border: none;
+    border-radius: 30px;
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.floor-download-btn:hover {
+    background: #1a2d2d;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(45, 95, 95, 0.3);
+}
+
+.floor-2d-plan {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    text-align: center;
+}
+
+.floor-2d-plan img {
+    width: 150px;
+    height: auto;
+    border: 2px solid #2d5f5f;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    margin-bottom: 5px;
+}
+
+.floor-2d-label {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #2d5f5f;
+    letter-spacing: 0.1em;
+}
+
+/* Responsive Design for Sections 4, 5, 6 */
+@media (max-width: 1024px) {
+    .specifications-content,
+    .floor-plan-content {
+        flex-direction: column;
+    }
+
+    .specifications-tabs,
+    .floor-plan-tabs {
+        width: 100%;
+    }
+
+    .spec-tab,
+    .floor-tab {
+        border-left: none;
+        border-bottom: 1px solid rgba(45, 95, 95, 0.2);
+    }
+}
+
+@media (max-width: 768px) {
+    .location-title,
+    .specifications-title,
+    .floor-plan-title {
+        font-size: 48px;
+    }
+
+    .location-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .marker-distance {
+        font-size: 18px;
+    }
+
+    .marker-name {
+        font-size: 11px;
+    }
+}

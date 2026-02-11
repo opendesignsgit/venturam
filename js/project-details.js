@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
        SECTION 3: Amenities Masonry Grid Slider
        =================================== */
 
-    // Wait for DOM and scripts to be fully loaded
+    // Initialize amenities slider
     setTimeout(function() {
         // Check if Swiper is available
         if (typeof Swiper !== 'undefined') {
@@ -183,4 +183,136 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('No slider library available for amenities slider');
         }
     }, 100);
+
+    /* ===================================
+       SECTION 4: Location Highlights Tab Switching
+       =================================== */
+
+    function initLocationTabs() {
+        const locationTabs = document.querySelectorAll('.location-tab');
+        const locationMarkers = document.querySelectorAll('.location-markers');
+
+        locationTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+
+                // Remove active class from all tabs
+                locationTabs.forEach(t => t.classList.remove('active'));
+
+                // Add active class to clicked tab
+                this.classList.add('active');
+
+                // Note: In a full implementation, you would show/hide different markers
+                // based on the tab. For now, we're just showing the tab is active.
+                console.log('Location tab switched to:', tabName);
+            });
+        });
+    }
+
+    // Initialize location tabs
+    initLocationTabs();
+
+    /* ===================================
+       SECTION 5: Specifications Tab Switching
+       =================================== */
+
+    function initSpecificationsTabs() {
+        const specTabs = document.querySelectorAll('.spec-tab');
+        const specContents = document.querySelectorAll('.spec-content');
+
+        specTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+
+                // Remove active class from all tabs and contents
+                specTabs.forEach(t => t.classList.remove('active'));
+                specContents.forEach(c => c.classList.remove('active'));
+
+                // Add active class to clicked tab
+                this.classList.add('active');
+
+                // Show corresponding content
+                const activeContent = document.querySelector(`.spec-content[data-content="${tabName}"]`);
+                if (activeContent) {
+                    activeContent.classList.add('active');
+                }
+
+                console.log('Specification tab switched to:', tabName);
+            });
+        });
+    }
+
+    // Initialize specifications tabs
+    initSpecificationsTabs();
+
+    /* ===================================
+       SECTION 6: Floor Plan Tab Switching
+       =================================== */
+
+    function initFloorPlanTabs() {
+        const floorTabs = document.querySelectorAll('.floor-tab');
+
+        // Floor plan data
+        const floorPlans = {
+            'site-plan': {
+                sqft: '2800 - 2500 SQ.FT',
+                image: 'project-detail-page/asset/intro-img-1.jpg',
+                image2d: 'project-detail-page/asset/intro-img-2.jpg'
+            },
+            'symphony': {
+                sqft: '2800 - 2500 SQ.FT',
+                image: 'project-detail-page/asset/intro-img-1.jpg',
+                image2d: 'project-detail-page/asset/intro-img-2.jpg'
+            },
+            'sonata': {
+                sqft: '2500 - 1800 SQ.FT',
+                image: 'project-detail-page/asset/intro-img-2.jpg',
+                image2d: 'project-detail-page/asset/intro-img-1.jpg'
+            },
+            'opera': {
+                sqft: '1500 - 1200 SQ.FT',
+                image: 'project-detail-page/asset/intro-img-1.jpg',
+                image2d: 'project-detail-page/asset/intro-img-2.jpg'
+            },
+            'aria': {
+                sqft: '1100 - 850 SQ.FT',
+                image: 'project-detail-page/asset/intro-img-2.jpg',
+                image2d: 'project-detail-page/asset/intro-img-1.jpg'
+            }
+        };
+
+        floorTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+
+                // Remove active class from all tabs
+                floorTabs.forEach(t => t.classList.remove('active'));
+
+                // Add active class to clicked tab
+                this.classList.add('active');
+
+                // Update floor plan display
+                if (floorPlans[tabName]) {
+                    const sqftElement = document.querySelector('.floor-sqft');
+                    const image3d = document.querySelector('.floor-3d-plan');
+                    const image2d = document.querySelector('.floor-2d-plan img');
+
+                    if (sqftElement) {
+                        sqftElement.textContent = floorPlans[tabName].sqft;
+                    }
+                    if (image3d) {
+                        image3d.src = floorPlans[tabName].image;
+                    }
+                    if (image2d) {
+                        image2d.src = floorPlans[tabName].image2d;
+                    }
+                }
+
+                console.log('Floor plan tab switched to:', tabName);
+            });
+        });
+    }
+
+    // Initialize floor plan tabs
+    initFloorPlanTabs();
 });
