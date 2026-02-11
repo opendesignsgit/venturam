@@ -134,77 +134,96 @@ document.addEventListener('DOMContentLoaded', function() {
     initTabSwitching();
 
     /* ===================================
-       SECTION 3: Amenities Slider
+       SECTION 3: Amenities Swiper Slider
        =================================== */
 
-    // Amenities slider functionality
-    function initAmenitiesSlider() {
-        const prevBtn = document.querySelector('.amenities-nav-prev');
-        const nextBtn = document.querySelector('.amenities-nav-next');
-        const gridContainer = document.querySelector('.amenities-grid-container');
-        const grid = document.querySelector('.amenities-grid');
-
-        if (!prevBtn || !nextBtn || !gridContainer || !grid) return;
-
-        let currentPosition = 0;
-        const scrollAmount = 400; // pixels to scroll
-
-        // Initially disable prev button
-        prevBtn.style.opacity = '0.5';
-        prevBtn.style.cursor = 'not-allowed';
-
-        function updateButtons() {
-            const maxScroll = grid.scrollWidth - gridContainer.clientWidth;
-            
-            // Update prev button
-            if (currentPosition <= 0) {
-                prevBtn.style.opacity = '0.5';
-                prevBtn.style.cursor = 'not-allowed';
-            } else {
-                prevBtn.style.opacity = '1';
-                prevBtn.style.cursor = 'pointer';
-            }
-
-            // Update next button
-            if (currentPosition >= maxScroll) {
-                nextBtn.style.opacity = '0.5';
-                nextBtn.style.cursor = 'not-allowed';
-            } else {
-                nextBtn.style.opacity = '1';
-                nextBtn.style.cursor = 'pointer';
-            }
+    // Wait for DOM and scripts to be fully loaded
+    setTimeout(function() {
+        // Check if Swiper is available
+        if (typeof Swiper !== 'undefined') {
+            // Initialize amenities slider with Swiper
+            const amenitiesSlider = new Swiper('.amenities-swiper', {
+                slidesPerView: 1.2,
+                spaceBetween: 20,
+                speed: 600,
+                loop: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: '.amenities-nav-next',
+                    prevEl: '.amenities-nav-prev',
+                },
+                breakpoints: {
+                    480: {
+                        slidesPerView: 1.5,
+                        spaceBetween: 20,
+                    },
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 25,
+                    },
+                    768: {
+                        slidesPerView: 2.5,
+                        spaceBetween: 25,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                    1200: {
+                        slidesPerView: 3.5,
+                        spaceBetween: 30,
+                    },
+                    1400: {
+                        slidesPerView: 4,
+                        spaceBetween: 30,
+                    }
+                }
+            });
+            console.log('Amenities slider initialized with Swiper');
+        } else if (typeof VanillaSlider !== 'undefined') {
+            // Fallback to vanilla slider
+            const amenitiesSlider = new VanillaSlider('.amenities-swiper', {
+                slidesPerView: 4,
+                spaceBetween: 30,
+                speed: 600,
+                loop: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: '.amenities-nav-next',
+                    prevEl: '.amenities-nav-prev',
+                },
+                breakpoints: {
+                    480: {
+                        slidesPerView: 1.5,
+                        spaceBetween: 20,
+                    },
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 25,
+                    },
+                    768: {
+                        slidesPerView: 2.5,
+                        spaceBetween: 25,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                    1200: {
+                        slidesPerView: 3.5,
+                        spaceBetween: 30,
+                    }
+                }
+            });
+            console.log('Amenities slider initialized with VanillaSlider');
+        } else {
+            console.log('No slider library available for amenities slider');
         }
-
-        prevBtn.addEventListener('click', function() {
-            if (currentPosition > 0) {
-                currentPosition = Math.max(0, currentPosition - scrollAmount);
-                gridContainer.scrollTo({
-                    left: currentPosition,
-                    behavior: 'smooth'
-                });
-                setTimeout(updateButtons, 300);
-            }
-        });
-
-        nextBtn.addEventListener('click', function() {
-            const maxScroll = grid.scrollWidth - gridContainer.clientWidth;
-            if (currentPosition < maxScroll) {
-                currentPosition = Math.min(maxScroll, currentPosition + scrollAmount);
-                gridContainer.scrollTo({
-                    left: currentPosition,
-                    behavior: 'smooth'
-                });
-                setTimeout(updateButtons, 300);
-            }
-        });
-
-        // Update buttons on window resize
-        window.addEventListener('resize', updateButtons);
-        
-        // Initial button state
-        updateButtons();
-    }
-
-    // Initialize amenities slider
-    initAmenitiesSlider();
+    }, 100);
 });
