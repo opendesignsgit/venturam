@@ -61,4 +61,390 @@ document.addEventListener('DOMContentLoaded', function() {
             // You can add a lightbox or video modal here
         });
     }
+
+    /* ===================================
+       SECTION 2: Tab Switching
+       =================================== */
+
+    // Tab switching functionality
+    function initTabSwitching() {
+        const tabs = document.querySelectorAll('.project-tab');
+        const images = document.querySelectorAll('.content-image');
+        const contentTitle = document.querySelector('.content-title');
+
+        // Tab data
+        const tabData = {
+            symphony: {
+                title: 'SYMPHONY APARTMENT',
+                range: '2800 TO 2500'
+            },
+            sonata: {
+                title: 'SONATA APARTMENT',
+                range: '2500 TO 1500'
+            },
+            opera: {
+                title: 'OPERA APARTMENT',
+                range: '1500 TO 1200'
+            },
+            aria: {
+                title: 'ARIA APARTMENT',
+                range: '1100 TO 850'
+            }
+        };
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+
+                // Remove active class from all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+
+                // Add active class to clicked tab
+                this.classList.add('active');
+
+                // Hide all images
+                images.forEach(img => img.classList.remove('active'));
+
+                // Show corresponding image
+                const activeImage = document.querySelector(`.content-image[data-content="${tabName}"]`);
+                if (activeImage) {
+                    activeImage.classList.add('active');
+                }
+
+                // Update content title and range
+                if (contentTitle && tabData[tabName]) {
+                    contentTitle.textContent = tabData[tabName].title;
+                    
+                    // Update the range in the text content
+                    const contentText = document.querySelector('.content-text');
+                    if (contentText) {
+                        const currentText = contentText.innerHTML;
+                        const updatedText = currentText.replace(
+                            /<strong>\d+ TO \d+<\/strong>/,
+                            `<strong>${tabData[tabName].range}</strong>`
+                        );
+                        contentText.innerHTML = updatedText;
+                    }
+                }
+            });
+        });
+    }
+
+    // Initialize tab switching
+    initTabSwitching();
+
+    /* ===================================
+       SECTION 3: Amenities Masonry Grid Slider
+       =================================== */
+
+    // Initialize amenities slider
+    setTimeout(function() {
+        // Check if Swiper is available
+        if (typeof Swiper !== 'undefined') {
+            // Initialize amenities masonry grid slider with Swiper
+            const amenitiesSlider = new Swiper('.amenities-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                speed: 800,
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: '.amenities-nav-next',
+                    prevEl: '.amenities-nav-prev',
+                }
+            });
+            console.log('Amenities masonry grid slider initialized with Swiper');
+        } else if (typeof VanillaSlider !== 'undefined') {
+            // Fallback to vanilla slider
+            const amenitiesSlider = new VanillaSlider('.amenities-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                speed: 800,
+                effect: 'fade',
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: '.amenities-nav-next',
+                    prevEl: '.amenities-nav-prev',
+                }
+            });
+            console.log('Amenities masonry grid slider initialized with VanillaSlider');
+        } else {
+            console.log('No slider library available for amenities slider');
+        }
+    }, 100);
+
+    /* ===================================
+       SECTION 4: Location Highlights Tab Switching
+       =================================== */
+
+    function initLocationTabs() {
+        const locationTabs = document.querySelectorAll('.location-tab');
+        const locationMarkers = document.querySelectorAll('.location-markers');
+
+        locationTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+
+                // Remove active class from all tabs
+                locationTabs.forEach(t => t.classList.remove('active'));
+
+                // Add active class to clicked tab
+                this.classList.add('active');
+
+                // Note: In a full implementation, you would show/hide different markers
+                // based on the tab. For now, we're just showing the tab is active.
+                console.log('Location tab switched to:', tabName);
+            });
+        });
+    }
+
+    // Initialize location tabs
+    initLocationTabs();
+
+    /* ===================================
+       SECTION 5: Specifications Tab Switching
+       =================================== */
+
+    function initSpecificationsTabs() {
+        const specTabs = document.querySelectorAll('.spec-tab');
+        const specContents = document.querySelectorAll('.spec-content');
+
+        specTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+
+                // Remove active class from all tabs and contents
+                specTabs.forEach(t => t.classList.remove('active'));
+                specContents.forEach(c => c.classList.remove('active'));
+
+                // Add active class to clicked tab
+                this.classList.add('active');
+
+                // Show corresponding content
+                const activeContent = document.querySelector(`.spec-content[data-content="${tabName}"]`);
+                if (activeContent) {
+                    activeContent.classList.add('active');
+                }
+
+                console.log('Specification tab switched to:', tabName);
+            });
+        });
+    }
+
+    // Initialize specifications tabs
+    initSpecificationsTabs();
+
+    /* ===================================
+       SECTION 6: Floor Plan Tab Switching
+       =================================== */
+
+    function initFloorPlanTabs() {
+        const floorTabs = document.querySelectorAll('.floor-tab');
+
+        // Floor plan data
+        const floorPlans = {
+            'site-plan': {
+                sqft: '2800 - 2500 SQ.FT',
+                image: 'project-detail-page/asset/intro-img-1.jpg',
+                image2d: 'project-detail-page/asset/intro-img-2.jpg'
+            },
+            'symphony': {
+                sqft: '2800 - 2500 SQ.FT',
+                image: 'project-detail-page/asset/intro-img-1.jpg',
+                image2d: 'project-detail-page/asset/intro-img-2.jpg'
+            },
+            'sonata': {
+                sqft: '2500 - 1800 SQ.FT',
+                image: 'project-detail-page/asset/intro-img-2.jpg',
+                image2d: 'project-detail-page/asset/intro-img-1.jpg'
+            },
+            'opera': {
+                sqft: '1500 - 1200 SQ.FT',
+                image: 'project-detail-page/asset/intro-img-1.jpg',
+                image2d: 'project-detail-page/asset/intro-img-2.jpg'
+            },
+            'aria': {
+                sqft: '1100 - 850 SQ.FT',
+                image: 'project-detail-page/asset/intro-img-2.jpg',
+                image2d: 'project-detail-page/asset/intro-img-1.jpg'
+            }
+        };
+
+        floorTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+
+                // Remove active class from all tabs
+                floorTabs.forEach(t => t.classList.remove('active'));
+
+                // Add active class to clicked tab
+                this.classList.add('active');
+
+                // Update floor plan display
+                if (floorPlans[tabName]) {
+                    const sqftElement = document.querySelector('.floor-sqft');
+                    const image3d = document.querySelector('.floor-3d-plan');
+                    const image2d = document.querySelector('.floor-2d-plan img');
+
+                    if (sqftElement) {
+                        sqftElement.textContent = floorPlans[tabName].sqft;
+                    }
+                    if (image3d) {
+                        image3d.src = floorPlans[tabName].image;
+                    }
+                    if (image2d) {
+                        image2d.src = floorPlans[tabName].image2d;
+                    }
+                }
+
+                console.log('Floor plan tab switched to:', tabName);
+            });
+        });
+    }
+
+    // Initialize floor plan tabs
+    initFloorPlanTabs();
+
+    /* ===================================
+       SECTION 7: Gallery Lightbox
+       =================================== */
+
+    function initGalleryLightbox() {
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const img = this.querySelector('img');
+                if (img) {
+                    // Simple lightbox - in production, use a proper lightbox library
+                    console.log('Open lightbox for:', img.src);
+                    // TODO: Implement lightbox functionality
+                }
+            });
+        });
+    }
+
+    // Initialize gallery lightbox
+    initGalleryLightbox();
+
+    /* ===================================
+       SECTION 7.1: Construction Updates Tab Switching
+       =================================== */
+
+    function initConstructionTabs() {
+        const constructionTabs = document.querySelectorAll('.construction-tab');
+        const constructionImages = document.querySelectorAll('.construction-images');
+
+        constructionTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+
+                // Remove active class from all tabs
+                constructionTabs.forEach(t => t.classList.remove('active'));
+
+                // Add active class to clicked tab
+                this.classList.add('active');
+
+                // In a full implementation, you would show different images based on tab
+                console.log('Construction tab switched to:', tabName);
+            });
+        });
+
+        // Initialize construction image lightbox
+        const constructionImageWrappers = document.querySelectorAll('.construction-image-wrapper');
+        constructionImageWrappers.forEach(wrapper => {
+            wrapper.addEventListener('click', function() {
+                const img = this.querySelector('img');
+                if (img) {
+                    console.log('Open lightbox for construction image:', img.src);
+                    // TODO: Implement lightbox functionality
+                }
+            });
+        });
+    }
+
+    // Initialize construction tabs
+    initConstructionTabs();
+
+    /* ===================================
+       SECTION 8: Experience Slider (Swiper)
+       =================================== */
+
+    // Initialize experience slider if on project details page
+    setTimeout(function() {
+        if (typeof Swiper !== 'undefined' && document.querySelector('.experience-slider-new')) {
+            const experienceSlider = new Swiper('.experience-slider-new', {
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                speed: 800,
+                loop: true,
+                navigation: {
+                    nextEl: '.experience-next-new',
+                    prevEl: '.experience-prev-new',
+                },
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                }
+            });
+            console.log('Experience slider initialized');
+        } else if (typeof VanillaSlider !== 'undefined' && document.querySelector('.experience-slider-new')) {
+            const experienceSlider = new VanillaSlider('.experience-slider-new', {
+                effect: 'fade',
+                speed: 800,
+                loop: true,
+                navigation: {
+                    nextEl: '.experience-next-new',
+                    prevEl: '.experience-prev-new',
+                },
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                }
+            });
+            console.log('Experience slider initialized with VanillaSlider');
+        }
+    }, 200);
+
+    /* ===================================
+       SECTION 9: Call to Action Form
+       =================================== */
+
+    function initCTAForm() {
+        const ctaForm = document.querySelector('.cta-form');
+        
+        if (ctaForm) {
+            ctaForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData);
+                
+                console.log('Form submitted:', data);
+                
+                // Show success message
+                alert('Thank you for your interest! We will contact you soon.');
+                
+                // Reset form
+                this.reset();
+            });
+        }
+    }
+
+    // Initialize CTA form
+    initCTAForm();
 });

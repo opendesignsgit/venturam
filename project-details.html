@@ -9,7 +9,12 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/project-details.css">
+    <link rel="stylesheet" href="css/slider-sections.css">
+    
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 <body>
     <!-- Navbar -->
@@ -161,8 +166,817 @@
         </div>
     </section>
 
+    <!-- Section 2: Project Types Tabs -->
+    <section class="project-types">
+        <div class="project-types-bg"></div>
+        
+        <div class="project-types-header">
+            <h2 class="project-types-title">YOU CREATE DUMMY TEXT FOR ALL</h2>
+            <p class="project-types-subtitle">Lorem Ipsum is simply dummy text of the printing and</p>
+        </div>
+
+        <div class="project-types-tabs">
+            <button class="project-tab active" data-tab="symphony">
+                <span class="tab-name">SYMPHONY</span>
+                <span class="tab-range">2800 TO 2500 SQ.FT RANGE</span>
+            </button>
+            <button class="project-tab" data-tab="sonata">
+                <span class="tab-name">SONATA</span>
+                <span class="tab-range">2500 TO 1500 SQ.FT RANGE</span>
+            </button>
+            <button class="project-tab" data-tab="opera">
+                <span class="tab-name">OPERA</span>
+                <span class="tab-range">1500 TO 1200 SQ.FT RANGE</span>
+            </button>
+            <button class="project-tab" data-tab="aria">
+                <span class="tab-name">ARIA</span>
+                <span class="tab-range">1100 TO 850 SQ.FT RANGE</span>
+            </button>
+        </div>
+
+        <div class="project-types-content">
+            <div class="content-left">
+                <div class="content-label">MEDLEY'SNEST</div>
+                <h3 class="content-title">SYMPHONY APARTMENT</h3>
+                <p class="content-text">
+                    Lorem Ipsum is simply dummy Ipsum is simply dummy text of the printingtext of the printing and typesetting industry. 
+                    Lorem Ipsum has been the ndustry's  standard dummy Lorem Ipsum is <strong>2800 TO 2500</strong> SQ.FT RANGE is simply ummy 
+                    text of the printingtext of he printing and typesetting industry. Lorem Ipsum has been the ndustry's 
+                    standard dummy Lorem Ipsum has been the ndustry's<br>
+                    Lorem Ipsum has been the ndustry's
+                </p>
+
+                <div class="content-cta">
+                    <h4 class="cta-title">YOU CREATE<br>DUMMY TEXT<br>FOR ALL</h4>
+                    <button class="cta-button">EXPLORE FLOOR PLANS</button>
+                </div>
+            </div>
+
+            <div class="content-right">
+                <div class="content-image-wrapper">
+                    <img src="project-detail-page/asset/intro-img-1.jpg" alt="Symphony Apartment Interior" class="content-image active" data-content="symphony">
+                    <img src="project-detail-page/asset/intro-img-2.jpg" alt="Sonata Apartment Interior" class="content-image" data-content="sonata">
+                    <img src="project-detail-page/asset/intro-img-1.jpg" alt="Opera Apartment Interior" class="content-image" data-content="opera">
+                    <img src="project-detail-page/asset/intro-img-2.jpg" alt="Aria Apartment Interior" class="content-image" data-content="aria">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placeholder for Next Section (to show overlap effect) -->
+    <section class="next-section-placeholder">
+        <div class="placeholder-content">
+            <img src="project-detail-page/asset/intro-bg.jpg" alt="Orchestra" class="placeholder-image">
+        </div>
+    </section>
+
+    <!-- Section 3: Amenities -->
+    <section class="amenities">
+        <div class="amenities-bg"></div>
+        
+        <div class="amenities-header">
+            <h2 class="amenities-title">AMENITIES</h2>
+            <p class="amenities-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+
+        <div class="amenities-slider-container">
+            <button class="amenities-nav amenities-nav-prev" aria-label="Previous">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6"/>
+                </svg>
+            </button>
+
+            <div class="swiper amenities-swiper">
+                <div class="swiper-wrapper">
+                    
+                    <!-- Slide 1: Masonry Grid of Amenities -->
+                    <div class="swiper-slide">
+                        <div class="amenities-masonry-grid">
+                            
+                            <!-- Row 1 -->
+                            <div class="amenity-item" style="grid-area: 1 / 1 / 3 / 2;">
+                                <div class="amenity-label">Yoga<br>Room</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/Yoga-Room.jpg" alt="Yoga Room">
+                                </div>
+                            </div>
+
+                            <div class="amenity-item" style="grid-area: 1 / 2 / 3 / 4;">
+                                <div class="amenity-label">Swimming<br>Pool</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/Swimming-Pool.jpg" alt="Swimming Pool">
+                                </div>
+                            </div>
+
+                            <div class="amenity-item" style="grid-area: 1 / 4 / 3 / 5;">
+                                <div class="amenity-label">CCTV<br>Surveillance</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/CCTV--Surveillance.jpg" alt="CCTV Surveillance">
+                                </div>
+                            </div>
+
+                            <div class="amenity-item" style="grid-area: 1 / 5 / 3 / 7;">
+                                <div class="amenity-label">EV Charging<br>Point</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/EV-Charging--Point.jpg" alt="EV Charging Point">
+                                </div>
+                            </div>
+
+                            <div class="amenity-item" style="grid-area: 1 / 7 / 3 / 8;">
+                                <div class="amenity-label">Groundwater</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/intro-img-1.jpg" alt="Groundwater">
+                                </div>
+                            </div>
+
+                            <!-- Row 2 -->
+                            <div class="amenity-item" style="grid-area: 3 / 1 / 5 / 3;">
+                                <div class="amenity-label">Multi Purpose<br>Hall</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/Multi-Purpose--Hall.jpg" alt="Multi Purpose Hall">
+                                </div>
+                            </div>
+
+                            <div class="amenity-item" style="grid-area: 3 / 3 / 6 / 4;">
+                                <div class="amenity-label">Solar Powered<br>LED</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/Solar-Powered--LED.jpg" alt="Solar Powered LED">
+                                </div>
+                            </div>
+
+                            <div class="amenity-item" style="grid-area: 3 / 4 / 5 / 6;">
+                                <div class="amenity-label">Access Control<br>Door</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/Access-Control-Door.jpg" alt="Access Control Door">
+                                </div>
+                            </div>
+
+                            <div class="amenity-item" style="grid-area: 3 / 6 / 5 / 7;">
+                                <div class="amenity-label">Indoor Play<br>Area</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/Indoor-Play-Area.jpg" alt="Indoor Play Area">
+                                </div>
+                            </div>
+
+                            <!-- Row 3 -->
+                            <div class="amenity-item" style="grid-area: 5 / 1 / 7 / 2;">
+                                <div class="amenity-label">Genset</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/Genset.jpg" alt="Genset">
+                                </div>
+                            </div>
+
+                            <div class="amenity-item" style="grid-area: 5 / 2 / 7 / 3;">
+                                <div class="amenity-label">Lift</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/Lift.jpg" alt="Lift">
+                                </div>
+                            </div>
+
+                            <div class="amenity-item" style="grid-area: 6 / 3 / 8 / 4;">
+                                <div class="amenity-label">Kids Play<br>Area</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/Kids-Play-Area.jpg" alt="Kids Play Area">
+                                </div>
+                            </div>
+
+                            <div class="amenity-item" style="grid-area: 5 / 4 / 7 / 6;">
+                                <div class="amenity-label">Video Phone<br>Door</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/Video-Phone-Door.jpg" alt="Video Phone Door">
+                                </div>
+                            </div>
+
+                            <div class="amenity-item" style="grid-area: 5 / 6 / 7 / 8;">
+                                <div class="amenity-label">Gym</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/Gym.jpg" alt="Gym">
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Duplicate grid for demo (can be customized later) -->
+                    <div class="swiper-slide">
+                        <div class="amenities-masonry-grid">
+                            
+                            <!-- Same layout repeated for slide 2 -->
+                            <div class="amenity-item" style="grid-area: 1 / 1 / 3 / 2;">
+                                <div class="amenity-label">Yoga<br>Room</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/Yoga-Room.jpg" alt="Yoga Room">
+                                </div>
+                            </div>
+
+                            <div class="amenity-item" style="grid-area: 1 / 2 / 3 / 4;">
+                                <div class="amenity-label">Swimming<br>Pool</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/Swimming-Pool.jpg" alt="Swimming Pool">
+                                </div>
+                            </div>
+
+                            <div class="amenity-item" style="grid-area: 1 / 4 / 3 / 5;">
+                                <div class="amenity-label">CCTV<br>Surveillance</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/CCTV--Surveillance.jpg" alt="CCTV Surveillance">
+                                </div>
+                            </div>
+
+                            <div class="amenity-item" style="grid-area: 1 / 5 / 3 / 7;">
+                                <div class="amenity-label">EV Charging<br>Point</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/EV-Charging--Point.jpg" alt="EV Charging Point">
+                                </div>
+                            </div>
+
+                            <div class="amenity-item" style="grid-area: 1 / 7 / 3 / 8;">
+                                <div class="amenity-label">Groundwater</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/intro-img-1.jpg" alt="Groundwater">
+                                </div>
+                            </div>
+
+                            <div class="amenity-item" style="grid-area: 3 / 1 / 5 / 3;">
+                                <div class="amenity-label">Multi Purpose<br>Hall</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/Multi-Purpose--Hall.jpg" alt="Multi Purpose Hall">
+                                </div>
+                            </div>
+
+                            <div class="amenity-item" style="grid-area: 3 / 3 / 6 / 4;">
+                                <div class="amenity-label">Solar Powered<br>LED</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/Solar-Powered--LED.jpg" alt="Solar Powered LED">
+                                </div>
+                            </div>
+
+                            <div class="amenity-item" style="grid-area: 3 / 4 / 5 / 6;">
+                                <div class="amenity-label">Access Control<br>Door</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/Access-Control-Door.jpg" alt="Access Control Door">
+                                </div>
+                            </div>
+
+                            <div class="amenity-item" style="grid-area: 3 / 6 / 5 / 7;">
+                                <div class="amenity-label">Indoor Play<br>Area</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/Indoor-Play-Area.jpg" alt="Indoor Play Area">
+                                </div>
+                            </div>
+
+                            <div class="amenity-item" style="grid-area: 5 / 1 / 7 / 2;">
+                                <div class="amenity-label">Genset</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/Genset.jpg" alt="Genset">
+                                </div>
+                            </div>
+
+                            <div class="amenity-item" style="grid-area: 5 / 2 / 7 / 3;">
+                                <div class="amenity-label">Lift</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/Lift.jpg" alt="Lift">
+                                </div>
+                            </div>
+
+                            <div class="amenity-item" style="grid-area: 6 / 3 / 8 / 4;">
+                                <div class="amenity-label">Kids Play<br>Area</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/Kids-Play-Area.jpg" alt="Kids Play Area">
+                                </div>
+                            </div>
+
+                            <div class="amenity-item" style="grid-area: 5 / 4 / 7 / 6;">
+                                <div class="amenity-label">Video Phone<br>Door</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/Video-Phone-Door.jpg" alt="Video Phone Door">
+                                </div>
+                            </div>
+
+                            <div class="amenity-item" style="grid-area: 5 / 6 / 7 / 8;">
+                                <div class="amenity-label">Gym</div>
+                                <div class="amenity-photo">
+                                    <img src="project-detail-page/asset/Gym.jpg" alt="Gym">
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <button class="amenities-nav amenities-nav-next" aria-label="Next">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6"/>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- Section 4: Location Highlights -->
+    <section class="location-highlights">
+        <div class="location-bg"></div>
+        
+        <div class="location-header">
+            <h2 class="location-title">HIGHLIGHTS</h2>
+        </div>
+
+        <div class="location-tabs">
+            <button class="location-tab active" data-tab="schools">Schools</button>
+            <button class="location-tab" data-tab="colleges">Colleges</button>
+            <button class="location-tab" data-tab="hospitals">Hospitals</button>
+            <button class="location-tab" data-tab="work-hubs">Work Hubs</button>
+            <button class="location-tab" data-tab="transport">Transport</button>
+            <button class="location-tab" data-tab="hospitals2">Hospitals</button>
+        </div>
+
+        <div class="location-view-buttons">
+            <button class="location-view-btn">LOCATION MAP VIEW</button>
+            <button class="location-view-btn">GOOGLE MAP VIEW</button>
+        </div>
+
+        <div class="location-content">
+            <img src="project-detail-page/asset/building-bg.png" alt="Building" class="location-building">
+            
+            <!-- Location markers for Schools -->
+            <div class="location-markers" data-content="schools">
+                <div class="location-marker" style="top: 15%; left: 15%;">
+                    <div class="marker-icon"></div>
+                    <div class="marker-text">
+                        <div class="marker-distance">3.6KM</div>
+                        <div class="marker-name">Vels Vidyashram<br>CBSE School</div>
+                    </div>
+                </div>
+                <div class="location-marker" style="top: 25%; left: 35%;">
+                    <div class="marker-icon"></div>
+                    <div class="marker-text">
+                        <div class="marker-distance">850M</div>
+                        <div class="marker-name">ORCHIDS The<br>International School</div>
+                    </div>
+                </div>
+                <div class="location-marker" style="top: 20%; right: 8%;">
+                    <div class="marker-icon"></div>
+                    <div class="marker-text">
+                        <div class="marker-distance">5.6KM</div>
+                        <div class="marker-name">ORCHIDS The<br>International School</div>
+                    </div>
+                </div>
+                <div class="location-marker" style="top: 35%; left: 20%;">
+                    <div class="marker-icon"></div>
+                    <div class="marker-text">
+                        <div class="marker-distance">420M</div>
+                        <div class="marker-name">Vels Vidyashram<br>CBSE School</div>
+                    </div>
+                </div>
+                <div class="location-marker" style="top: 45%; left: 40%;">
+                    <div class="marker-icon"></div>
+                    <div class="marker-text">
+                        <div class="marker-distance">350M</div>
+                        <div class="marker-name">Narayana eTechno<br>School</div>
+                    </div>
+                </div>
+                <div class="location-marker" style="top: 45%; right: 35%;">
+                    <div class="marker-icon"></div>
+                    <div class="marker-text">
+                        <div class="marker-distance">200M</div>
+                        <div class="marker-name">Saint Sebastians<br>Matriculation School</div>
+                    </div>
+                </div>
+                <div class="location-marker" style="top: 30%; right: 15%;">
+                    <div class="marker-icon"></div>
+                    <div class="marker-text">
+                        <div class="marker-distance">2.5KM</div>
+                        <div class="marker-name">Narayana eTechno<br>School</div>
+                    </div>
+                </div>
+                <div class="location-marker" style="top: 38%; right: 5%;">
+                    <div class="marker-icon"></div>
+                    <div class="marker-text">
+                        <div class="marker-distance">1KM</div>
+                        <div class="marker-name">Saint Sebastians<br>Matriculation School</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Specifications -->
+    <section class="specifications">
+        <div class="specifications-bg"></div>
+        
+        <div class="specifications-header">
+            <h2 class="specifications-title">SPECIFICATIONS</h2>
+            <p class="specifications-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+
+        <div class="specifications-content">
+            <div class="specifications-tabs">
+                <button class="spec-tab" data-tab="structure">STRUCTURE</button>
+                <button class="spec-tab" data-tab="tiling">TILING</button>
+                <button class="spec-tab active" data-tab="kitchen">KITCHEN</button>
+                <button class="spec-tab" data-tab="flooring">FLOORING</button>
+                <button class="spec-tab" data-tab="doors-windows">DOORS, WINDOWS</button>
+                <button class="spec-tab" data-tab="painting">PAINTING FINISHES</button>
+                <button class="spec-tab" data-tab="electrical">ELECTRICAL FIXTURES</button>
+                <button class="spec-tab" data-tab="plumbing">PLUMBING & SANITARY</button>
+                <button class="spec-tab" data-tab="common">COMMON POINTS</button>
+            </div>
+
+            <div class="specifications-display">
+                <div class="spec-content active" data-content="kitchen">
+                    <div class="spec-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                            <path d="M15 10h30v40H15V10z" stroke="#2d5f5f" stroke-width="2" fill="none"/>
+                            <rect x="20" y="15" width="8" height="8" fill="#2d5f5f"/>
+                            <rect x="32" y="15" width="8" height="8" fill="#2d5f5f"/>
+                            <rect x="20" y="28" width="20" height="15" fill="none" stroke="#2d5f5f" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="spec-heading">KITCHEN</h3>
+                    <p class="spec-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an unknown</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Floor Plan -->
+    <section class="floor-plan">
+        <div class="floor-plan-bg"></div>
+        
+        <div class="floor-plan-header">
+            <h2 class="floor-plan-title">FLOOR PLAN</h2>
+            <p class="floor-plan-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+
+        <div class="floor-plan-content">
+            <div class="floor-plan-tabs">
+                <div class="floor-tab" data-tab="site-plan">
+                    <div class="floor-tab-name">SITE PLAN</div>
+                    <div class="floor-tab-range">2800 TO 2500 SQ.FT RANGE</div>
+                </div>
+                <div class="floor-tab active" data-tab="symphony">
+                    <div class="floor-tab-name">SYMPHONY</div>
+                    <div class="floor-tab-range">2800 TO 2500 SQ.FT RANGE</div>
+                </div>
+                <div class="floor-tab" data-tab="sonata">
+                    <div class="floor-tab-name">SONATA</div>
+                    <div class="floor-tab-range">2500 TO 1800 SQ.FT RANGE</div>
+                </div>
+                <div class="floor-tab" data-tab="opera">
+                    <div class="floor-tab-name">OPERA</div>
+                    <div class="floor-tab-range">1500 TO 1200 SQ.FT RANGE</div>
+                </div>
+                <div class="floor-tab" data-tab="aria">
+                    <div class="floor-tab-name">ARIA</div>
+                    <div class="floor-tab-range">1100 TO 850 SQ.FT RANGE</div>
+                </div>
+            </div>
+
+            <div class="floor-plan-display">
+                <div class="compass-icon">
+                    <svg width="80" height="80" viewBox="0 0 80 80">
+                        <circle cx="40" cy="40" r="35" stroke="#2d5f5f" stroke-width="1.5" fill="none"/>
+                        <text x="40" y="15" text-anchor="middle" fill="#2d5f5f" font-size="12">N</text>
+                        <text x="40" y="70" text-anchor="middle" fill="#2d5f5f" font-size="12">S</text>
+                        <text x="10" y="45" text-anchor="middle" fill="#2d5f5f" font-size="12">W</text>
+                        <text x="70" y="45" text-anchor="middle" fill="#2d5f5f" font-size="12">E</text>
+                        <polygon points="40,10 45,40 40,45 35,40" fill="#2d5f5f"/>
+                    </svg>
+                </div>
+                
+                <div class="floor-plan-image">
+                    <img src="project-detail-page/asset/intro-img-1.jpg" alt="Floor Plan" class="floor-3d-plan">
+                </div>
+
+                <div class="floor-plan-info">
+                    <div class="floor-sqft">2800 - 2500 SQ.FT</div>
+                    <button class="floor-download-btn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M10 2v12M10 14l-4-4M10 14l4-4M2 16h16" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        DOWNLOAD FLOOR PLAN
+                    </button>
+                </div>
+
+                <div class="floor-2d-plan">
+                    <img src="project-detail-page/asset/intro-img-2.jpg" alt="2D Plan">
+                    <div class="floor-2d-label">2D PLAN</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Gallery -->
+    <section class="gallery">
+        <div class="gallery-bg"></div>
+        
+        <div class="gallery-header">
+            <h2 class="gallery-title">GALLERY</h2>
+            <p class="gallery-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item gallery-item-1">
+                <img src="project-detail-page/asset/intro-img-1.jpg" alt="Interior 1">
+            </div>
+            <div class="gallery-item gallery-item-2">
+                <img src="project-detail-page/asset/intro-img-2.jpg" alt="Interior 2">
+            </div>
+            <div class="gallery-item gallery-item-3">
+                <img src="project-detail-page/asset/gallery.jpg" alt="Interior 3">
+            </div>
+            <div class="gallery-item gallery-item-4">
+                <img src="project-detail-page/asset/intro-img-1.jpg" alt="Interior 4">
+            </div>
+            <div class="gallery-item gallery-item-5">
+                <img src="project-detail-page/asset/intro-img-2.jpg" alt="Interior 5">
+            </div>
+            <div class="gallery-item gallery-item-6">
+                <img src="project-detail-page/asset/gallery.jpg" alt="Interior 6">
+            </div>
+            <div class="gallery-item gallery-item-7">
+                <img src="project-detail-page/asset/intro-img-1.jpg" alt="Interior 7">
+            </div>
+            <div class="gallery-item gallery-item-8">
+                <img src="project-detail-page/asset/intro-img-2.jpg" alt="Interior 8">
+            </div>
+            <div class="gallery-item gallery-item-9">
+                <img src="project-detail-page/asset/gallery.jpg" alt="Interior 9">
+            </div>
+            <div class="gallery-item gallery-item-10">
+                <img src="project-detail-page/asset/intro-img-1.jpg" alt="Interior 10">
+            </div>
+            <div class="gallery-item gallery-item-11">
+                <img src="project-detail-page/asset/intro-img-2.jpg" alt="Interior 11">
+            </div>
+            <div class="gallery-item gallery-item-12">
+                <img src="project-detail-page/asset/gallery.jpg" alt="Interior 12">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7.1: Construction Updates (combined with Gallery) -->
+    <section class="construction-updates">
+        <div class="construction-bg"></div>
+        
+        <!-- Top overlap frame with interior images -->
+        <div class="construction-overlap-frame">
+            <div class="overlap-images">
+                <img src="project-detail-page/asset/intro-img-1.jpg" alt="Interior 1">
+                <img src="project-detail-page/asset/intro-img-2.jpg" alt="Interior 2">
+                <img src="project-detail-page/asset/gallery.jpg" alt="Interior 3">
+                <img src="project-detail-page/asset/intro-img-1.jpg" alt="Interior 4">
+            </div>
+        </div>
+
+        <div class="construction-header">
+            <h2 class="construction-title">MEDLEY'S NEST<br>CONSTRUCTION UPDATES</h2>
+        </div>
+
+        <div class="construction-tabs">
+            <button class="construction-tab active" data-tab="jan-2026">January 2026</button>
+            <button class="construction-tab" data-tab="feb-2026">February 2026</button>
+            <button class="construction-tab" data-tab="mar-2026">March 2026</button>
+            <button class="construction-tab" data-tab="apr-2026">April 2026</button>
+        </div>
+
+        <div class="construction-slider-container">
+            <button class="construction-nav construction-nav-prev" aria-label="Previous">
+                <svg viewBox="0 0 50 50" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="25" cy="25" r="24"/>
+                    <path d="M28 18l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <div class="construction-images" data-content="jan-2026">
+                <div class="construction-image-wrapper">
+                    <img src="project-detail-page/asset/gallery.jpg" alt="Construction January 1">
+                </div>
+                <div class="construction-image-wrapper">
+                    <img src="project-detail-page/asset/gallery.jpg" alt="Construction January 2">
+                </div>
+                <div class="construction-image-wrapper">
+                    <img src="project-detail-page/asset/gallery.jpg" alt="Construction January 3">
+                </div>
+            </div>
+
+            <button class="construction-nav construction-nav-next" aria-label="Next">
+                <svg viewBox="0 0 50 50" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="25" cy="25" r="24"/>
+                    <path d="M22 18l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- Section 8: Venturam Experience (from index.html) -->
+    <section class="experience-section-new">
+        <div class="swiper experience-slider-new">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="experience-slide-item" style="background-image: url('assets/testimonial.png');">
+                        <div class="experience-slide-overlay"></div>
+                        
+                        <!-- Title -->
+                        <h2 class="experience-main-title">THE<br>VENTURAM<br>EXPERIENCE</h2>
+                        
+                        <!-- Decorative Shapes -->
+                        <div class="experience-shape experience-shape-1"></div>
+                        <div class="experience-shape experience-shape-2"></div>
+                        
+                        <!-- Click Here Badge -->
+                        <a href="#" class="experience-badge rotating-badge">
+                            <svg class="badge-text" viewBox="0 0 100 100">
+                                <defs>
+                                    <path id="expCircle" d="M 50, 50 m -38, 0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0"/>
+                                </defs>
+                                <text fill="#666" font-size="8.5" font-family="Arial, sans-serif" letter-spacing="2">
+                                    <textPath href="#expCircle">CLICK HERE FOR MORE - CLICK HERE FOR MORE - </textPath>
+                                </text>
+                            </svg>
+                            <svg class="badge-arrow" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <line x1="5" y1="12" x2="19" y2="12" stroke="#666" stroke-width="2"/>
+                                <polyline points="14,7 19,12 14,17" stroke="#666" stroke-width="2" fill="none"/>
+                            </svg>
+                        </a>
+                        
+                        <!-- Content Card -->
+                        <div class="experience-content-card">
+                            <p class="experience-card-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. gravida Risus commodo viverra
+                            </p>
+                            
+                            <div class="experience-author-row">
+                                <h4 class="experience-author-name">MR. RAJKUMAR</h4>
+                                <a href="#" class="youtube-btn">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#FF0000"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            
+                            <!-- Navigation Arrows -->
+                            <div class="experience-nav-arrows">
+                                <button class="exp-nav-btn experience-prev-new">
+                                    <svg viewBox="0 0 24 24">
+                                        <polyline points="15,18 9,12 15,6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                                <button class="exp-nav-btn experience-next-new">
+                                    <svg viewBox="0 0 24 24">
+                                        <polyline points="9,6 15,12 9,18" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 9: Call to Action -->
+    <section class="call-to-action">
+        <div class="cta-bg" style="background-image: url('assets/testimonial.png');"></div>
+        <div class="cta-overlay"></div>
+        
+        <div class="cta-container">
+            <div class="cta-content">
+                <h2 class="cta-title">OWN A<br>PLACE OF<br>DISTINCTION AT<br>MEDLEY'S<br>NEST</h2>
+            </div>
+
+            <div class="cta-form-wrapper">
+                <form class="cta-form">
+                    <div class="cta-form-group">
+                        <label for="firstName">FIRST NAME</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Vignesh" required>
+                    </div>
+                    <div class="cta-form-group">
+                        <label for="email">EMAIL</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+                    </div>
+                    <div class="cta-form-group">
+                        <label for="phone">PHONE NUMBER</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your Phone Number" required>
+                    </div>
+                    <div class="cta-form-group">
+                        <label for="message">MESSAGE</label>
+                        <textarea id="message" name="message" placeholder="Enter your message" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="cta-submit-btn">SUBMIT</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="cta-footer">
+            <div class="cta-logo">
+                <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+                    <text x="50" y="25" text-anchor="middle" fill="#d4af7a" font-size="18" font-weight="bold" font-family="serif">VENTURAM</text>
+                </svg>
+            </div>
+            <p class="cta-address">Door No. 2, Second Floor, Griffith Street, Pallavaram, Chennai-600043</p>
+        </div>
+    </section>
+
+    <!-- Section 10: Footer (from index.html) -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Top: Logo and Contact -->
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="assets/logo.png" alt="Venturam" class="footer-logo-img">
+                </div>
+                
+                <p class="footer-address">Door No. 2, Second Floor, Griffith Street, Pallavaram, Chennai-600043</p>
+                
+                <div class="footer-contact">
+                    <span>+91 6384 609 609</span>
+                    <span>|</span>
+                    <a href="mailto:sales@venturam.in">sales@venturam.in</a>
+                </div>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="footer-social">
+                <a href="#" class="social-link" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="X (Twitter)">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <!-- Useful Links -->
+            <div class="footer-useful">
+                <p class="footer-useful-title">Useful Links</p>
+                <div class="footer-links">
+                    <a href="#about" class="footer-link">About Us</a>
+                    <span class="footer-link-separator">|</span>
+                    <a href="#testimonials" class="footer-link">Testimonials</a>
+                    <span class="footer-link-separator">|</span>
+                    <a href="#" class="footer-link">News Room</a>
+                    <span class="footer-link-separator">|</span>
+                    <a href="#" class="footer-link">NRI</a>
+                    <span class="footer-link-separator">|</span>
+                    <a href="#career" class="footer-link">Careers</a>
+                    <span class="footer-link-separator">|</span>
+                    <a href="#" class="footer-link">Joint Venture</a>
+                    <span class="footer-link-separator">|</span>
+                    <a href="#" class="footer-link">Channel Partner</a>
+                    <span class="footer-link-separator">|</span>
+                    <a href="#" class="footer-link">Blogs</a>
+                    <span class="footer-link-separator">|</span>
+                    <a href="#" class="footer-link">News</a>
+                    <span class="footer-link-separator">|</span>
+                    <a href="#contact" class="footer-link">Contact Us</a>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    COPYRIGHT © 2025 VENTURAM | <a href="#">TERMS OF USE</a> | <a href="#">PRIVACY POLICY</a>
+                </p>
+                <div class="footer-design">
+                    <span>DESIGN BY</span>
+                    <div class="footer-design-logo">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="2" width="20" height="20" rx="2" fill="#e74c3c"/>
+                            <text x="12" y="16" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="bold">D</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <!-- JavaScript -->
     <script src="js/navbar.js"></script>
     <script src="js/project-details.js"></script>
+    
+    <!-- Swiper.js (or vanilla fallback) -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/vanilla-slider.js"></script>
 </body>
 </html>
